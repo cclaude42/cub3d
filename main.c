@@ -2,49 +2,97 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <math.h>
+#include <stdio.h>
+
+#define WHITE 0x00FFFFFF
+#define BLACK 0x00000000
+#define RED 0x00FF0000
+#define GREEN 0x0000FF00
+#define BLUE 0x000000FF
+#define MAGENTA 0x00FF00FF
+#define YELLOW 0x00FFFF00
+#define CYAN 0x0000FFFF
+#define SKY 0x00CDF9FF
+#define WALL 0x00666666
+#define DIRT 0x00E0AC69
 
 typedef struct	s_param
 {
-	void *mlx_ptr;
-	void *win_ptr;
-	void *img_ptr;
+	void	*mlx_ptr;
+	void	*win_ptr;
+	void	*img_ptr;
 }				t_param;
+
+typedef struct	s_image
+{
+	unsigned int	*addr;
+	int				bpp;
+	int				sl;
+	int				end;
+}				t_image;
 
 // gcc -lmlx -framework OpenGL -framework AppKit main.c && ./a.out
 
-int	main(void)
+void	ft_column(t_param *param, t_image image, int index, int x, int y)
 {
-	void			*mlx_ptr;
-	void			*win_ptr;
-	void			*img_ptr;
-	int				bpp;
-	int				sl;
-	int				end = 42;
-	unsigned int	*addr;
-	t_param			*param;
-	int				x;
-	int				y;
-	int				index;
-
-	mlx_ptr = mlx_init();
-	win_ptr = mlx_new_window(mlx_ptr, 720, 480, "cub3d");
-	param = malloc(sizeof(t_param) * 3);
-	param->mlx_ptr = mlx_ptr;
-	param->win_ptr = win_ptr;
-	param->img_ptr = img_ptr;
-	x = 250;
-	y = 250;
-	img_ptr = mlx_new_image(mlx_ptr, x, y);
-	addr = (unsigned int *)mlx_get_data_addr(img_ptr, &bpp, &sl, &end);
-	index = 0;
+	while (index < (x * y / 2 - 20 * x))
+	{
+		image.addr[index] = mlx_get_color_value(param->mlx_ptr, SKY);
+		index += x;
+	}
+	while (index < (x * y / 2 + 20 * x))
+	{
+		image.addr[index] = mlx_get_color_value(param->mlx_ptr, WALL);
+		index += x;
+	}
 	while (index < x * y)
 	{
-		while (sqrt(pow(x/2 - index%y, 2) + pow(y/2 - index/y, 2)) > x/2)
-			index++;
-		addr[index] = mlx_get_color_value(mlx_ptr, 0x00FF00FF);
-		index++;
+		image.addr[index] = mlx_get_color_value(param->mlx_ptr, DIRT);
+		index += x;
 	}
-	mlx_put_image_to_window(mlx_ptr, win_ptr, img_ptr, 125, 125);
-	mlx_loop(mlx_ptr);
+}
+
+void	ft_wall(t_param *param, int x, int y)
+{
+	t_image	image;
+	int		col;
+
+	image.addr = (unsigned int *)mlx_get_data_addr(param->img_ptr, &image.bpp, &image.sl, &image.end);
+	col = 0;
+	while (col < x)
+	{
+		ft_column(param, image, col, x, y);
+		col++;
+	}
+	mlx_put_image_to_window(param->mlx_ptr, param->win_ptr, param->img_ptr, 0, 0);
+}
+
+void	close_window(t_param *param)
+{
+	mlx_destroy_window(param->mlx_ptr, param->win_ptr);
+	exit(0);
+}
+
+int		deal_key(int key, void *arg)
+{
+	if (key == 53)
+		close_window(arg);
+	return (1);
+}
+
+int		main(void)
+{
+	t_param	*param;
+	int		x;
+	int		y;
+
+	x = 720;
+	y = 480;
+	param->mlx_ptr = mlx_init();
+	param->win_ptr = mlx_new_window(param->mlx_ptr, 720, 480, "cub3d");
+	param->img_ptr = mlx_new_image(param->mlx_ptr, 720, 480);
+	ft_wall(param, x, y);
+	mlx_key_hook(param->win_ptr, deal_key, param);
+	mlx_loop(param->mlx_ptr);
 	return (0);
 }
