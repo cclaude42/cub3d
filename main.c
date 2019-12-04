@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/04 16:05:05 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/04 18:54:24 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,38 +27,50 @@ int		deal_key(int key, void *arg)
 	return (1);
 }
 
-void	ft_column(t_all *s, int index, int size)
+void	ft_column(t_all *s, int size)
 {
-	while (index < s->win.x * s->win.y / 2 - size * s->win.x)
+	while (s->ray.i < s->win.x * s->win.y / 2 - size / 2 * s->win.x)
 	{
-		s->img.adr[index] = mlx_get_color_value(s->mlx.ptr, SKY);
-		index += s->win.x;
+		s->img.adr[s->ray.i] = mlx_get_color_value(s->mlx.ptr, SKY);
+		s->ray.i += s->win.x;
 	}
-	while (index < s->win.x * s->win.y / 2 + size * s->win.x)
+	while (s->ray.i < s->win.x * s->win.y / 2 + size / 2 * s->win.x)
 	{
-		s->img.adr[index] = mlx_get_color_value(s->mlx.ptr, WALL);
-		index += s->win.x;
+		s->img.adr[s->ray.i] = mlx_get_color_value(s->mlx.ptr, WALL);
+		s->ray.i += s->win.x;
 	}
-	while (index < s->win.x * s->win.y)
+	while (s->ray.i < s->win.x * s->win.y)
 	{
-		s->img.adr[index] = mlx_get_color_value(s->mlx.ptr, DIRT);
-		index += s->win.x;
+		s->img.adr[s->ray.i] = mlx_get_color_value(s->mlx.ptr, DIRT);
+		s->ray.i += s->win.x;
 	}
+	s->ray.i -= s->win.x * s->win.y;
+}
+
+int		ft_dist(t_all *s)
+{
+	double	dist;
+	dist = hypot(s->hit.x - s->pos.x, s->hit.y - s->pos.y);
+	dist = dist * cos(fabs((float)s->ray.i / 360 - 1) * 33 * M_PI / 180);
+	return (round(s->win.y / dist));
 }
 
 void	ft_screen(t_all *s)
 {
-	int		index;
-	int		size;
+	t_ray	ray;
+	t_hit	hit;
 
-	index = 0;
-	size = 40;
+	s->ray = ray;
+	s->hit = hit;
+	s->ray.i = 0;
 	s->img.ptr = mlx_new_image(s->mlx.ptr, s->win.x, s->win.y);
 	s->img.adr = (unsigned int *)mlx_get_data_addr(s->img.ptr, &s->img.bpp, &s->img.sl, &s->img.end);
-	while (index < s->win.x)
+	while (s->ray.i < s->win.x)
 	{
-		ft_column(s, index, size);
-		index++;
+		s->hit.x = 5.12;
+		s->hit.y = 6.80;
+		ft_column(s, ft_dist(s));
+		s->ray.i++;
 	}
 	mlx_put_image_to_window(s->mlx.ptr, s->win.ptr, s->img.ptr, 0, 0);
 }

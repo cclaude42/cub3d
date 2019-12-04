@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/04 15:55:40 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/04 18:47:33 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,19 @@ typedef struct	s_dir
 	double			y;
 }				t_dir;
 
+typedef struct	s_ray
+{
+	int				i;
+	double			x;
+	double			y;
+}				t_ray;
+
+typedef struct	s_hit
+{
+	double			x;
+	double			y;
+}				t_hit;
+
 typedef struct	s_all
 {
 	t_mlx			mlx;
@@ -76,4 +89,6 @@ typedef struct	s_all
 	t_map			map;
 	t_pos			pos;
 	t_dir			dir;
+	t_ray			ray;
+	t_hit			hit;
 }				t_all;
