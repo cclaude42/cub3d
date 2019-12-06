@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/04 18:47:33 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/06 17:16:55 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,21 @@
 #define MAGENTA 0x00FF00FF
 #define YELLOW 0x00FFFF00
 #define CYAN 0x0000FFFF
+
 #define SKY 0x00CDF9FF
-#define WALL 0x00666666
+#define DARK_WALL 0x00565656
+#define LIGHT_WALL 0x00767676
 #define DIRT 0x00E0AC69
+
+#define ESC 53
+#define W 13
+#define A 0
+#define S 1
+#define D 2
+#define UP 126
+#define DOWN 125
+#define LEFT 123
+#define RIGHT 124
 
 typedef struct	s_mlx
 {
@@ -44,6 +56,7 @@ typedef struct	s_img
 {
 	void			*ptr;
 	unsigned int	*adr;
+	int				fsh;
 	int				bpp;
 	int				sl;
 	int				end;
@@ -77,6 +90,7 @@ typedef struct	s_ray
 
 typedef struct	s_hit
 {
+	double			d;
 	double			x;
 	double			y;
 }				t_hit;
