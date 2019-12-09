@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/06 17:16:55 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/09 20:01:13 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@
 #define CYAN 0x0000FFFF
 
 #define SKY 0x00CDF9FF
-#define DARK_WALL 0x00565656
-#define LIGHT_WALL 0x00767676
+#define NORTH 0x00C0C0C0
+#define SOUTH 0x00808080
+#define EAST 0x00DCDCDC
+#define WEST 0x00778899
 #define DIRT 0x00E0AC69
 
 #define ESC 53
@@ -39,6 +41,11 @@
 #define DOWN 125
 #define LEFT 123
 #define RIGHT 124
+
+#define SPEED 15
+#define TURN 0.05
+
+#define MAPSIZE 10
 
 typedef struct	s_mlx
 {
@@ -64,7 +71,7 @@ typedef struct	s_img
 
 typedef struct	s_map
 {
-	int				tab[10][10];
+	char			tab[MAPSIZE][MAPSIZE];
 	int				x;
 	int				y;
 }				t_map;
@@ -84,6 +91,8 @@ typedef struct	s_dir
 typedef struct	s_ray
 {
 	int				i;
+	double			v;
+	double			w;
 	double			x;
 	double			y;
 }				t_ray;
@@ -106,3 +115,23 @@ typedef struct	s_all
 	t_ray			ray;
 	t_hit			hit;
 }				t_all;
+
+void	ft_cubed(t_all s);
+void	ft_init(t_all *s);
+void	map_fill(t_all *s);
+
+int		ft_key(int key, void *arg);
+void	ft_rotate(t_all *s, double c);
+void	ft_strafe(t_all *s, double c);
+void	ft_move(t_all *s, double c);
+void	close_window(t_all *s);
+
+void	ft_screen(t_all *s);
+void	ft_hor(t_all *s);
+void	ft_ver(t_all *s);
+void	ft_dir(t_all *s);
+void 	ft_ray(t_all *s);
+
+void	ft_column(t_all *s, int start);
+int		ft_size(t_all *s);
+int		ft_color(t_all *s);
