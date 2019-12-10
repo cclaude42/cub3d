@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:32:10 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/09 20:01:06 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/10 22:40:29 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,12 +86,15 @@ void	ft_screen(t_all *s)
 {
 	t_ray	ray;
 	t_hit	hit;
+	int		b;
+	int		s;
+	int		e;
 
 	s->ray = ray;
 	s->hit = hit;
 	s->ray.i = 0;
 	s->img.ptr = mlx_new_image(s->mlx.ptr, s->win.x, s->win.y);
-	s->img.adr = (unsigned int *)mlx_get_data_addr(s->img.ptr, &s->img.bpp, &s->img.sl, &s->img.end);
+	s->img.adr = (unsigned int *)mlx_get_data_addr(s->img.ptr, &b, &s, &e);
 	while (s->ray.i < s->win.x)
 	{
 		ft_ray(s);

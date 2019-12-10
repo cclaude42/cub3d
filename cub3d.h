@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/09 20:01:13 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/10 22:39:38 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,6 @@ typedef struct	s_img
 	void			*ptr;
 	unsigned int	*adr;
 	int				fsh;
-	int				bpp;
-	int				sl;
-	int				end;
 }				t_img;
 
 typedef struct	s_map
