@@ -6,14 +6,14 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/11 18:29:32 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/11 23:33:22 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include <mlx.h>
+// # include <mlx.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <math.h>
@@ -71,10 +71,18 @@ typedef struct	s_img
 
 typedef struct	s_map
 {
-	char			tab[MAPSIZE][MAPSIZE];
+	char			**tab;
 	int				x;
 	int				y;
 }				t_map;
+
+typedef struct	s_tex
+{
+	unsigned int	**n;
+	unsigned int	**s;
+	unsigned int	**e;
+	unsigned int	**w;
+}				t_tex;
 
 typedef struct	s_pos
 {
@@ -109,6 +117,7 @@ typedef struct	s_all
 	t_mlx			mlx;
 	t_win			win;
 	t_img			img;
+	t_tex			tex;
 	t_map			map;
 	t_pos			pos;
 	t_dir			dir;
@@ -127,7 +136,7 @@ int				ft_key(int key, void *arg);
 void			ft_rotate(t_all *s, double c);
 void			ft_strafe(t_all *s, double c);
 void			ft_move(t_all *s, double c);
-int				close_window(t_all *s);
+int				ft_close(t_all *s);
 
 void			ft_screen(t_all *s);
 void			ft_ray(t_all *s);

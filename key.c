@@ -6,13 +6,13 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/11 18:29:08 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/11 23:33:48 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int		close_window(t_all *s)
+int		ft_close(t_all *s)
 {
 	mlx_destroy_window(s->mlx.ptr, s->win.ptr);
 	exit(0);
@@ -53,7 +53,7 @@ void	ft_rotate(t_all *s, double c)
 int		ft_key(int key, void *arg)
 {
 	if (key == ESC)
-		close_window(arg);
+		ft_close(arg);
 	else if (key == W)
 		ft_move(arg, 1);
 	else if (key == A)

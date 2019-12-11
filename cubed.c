@@ -6,11 +6,40 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/11 18:27:43 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/11 23:34:06 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+void	map_fill(t_all *s)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < MAPSIZE)
+	{
+		while (j < MAPSIZE)
+		{
+			if (i == 0 || i == MAPSIZE - 1 || j == 0 || j == MAPSIZE - 1)
+				s->map.tab[i][j] = '1';
+			else
+				s->map.tab[i][j] = '0';
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+	s->map.tab[5][5] = 'E';
+	s->map.tab[3][6] = '1';
+	s->map.tab[3][3] = '1';
+	s->map.tab[7][2] = '1';
+	s->map.tab[7][7] = '1';
+	s->map.x = MAPSIZE;
+	s->map.y = MAPSIZE;
+}
 
 void	ft_pos(t_all *s)
 {
@@ -42,25 +71,31 @@ void	ft_pos(t_all *s)
 
 void	ft_init(t_all *s)
 {
-	ft_parse(s);
+	//
+	s->win.x = 1080;
+	s->win.y = 720;
+	map_fill(s);
+	// ft_parse(s);
 	s->mlx.ptr = mlx_init();
 	s->win.ptr = mlx_new_window(s->mlx.ptr, s->win.x, s->win.y, "cub3d");
 	ft_pos(s);
+	ft_screen(s);
 }
 
 void	ft_cubed(t_all s)
 {
+	t_tex	tex;
 	t_map	map;
 	t_pos	pos;
 	t_dir	dir;
 
+	s.tex = tex;
 	s.map = map;
 	s.pos = pos;
 	s.dir = dir;
 	ft_init(&s);
-	ft_screen(&s);
 	mlx_hook(s.win.ptr, 2, 0, ft_key, &s);
-	mlx_hook(s.win.ptr, 17, 0, close_window, &s);
+	mlx_hook(s.win.ptr, 17, 0, ft_close, &s);
 	mlx_loop(s.mlx.ptr);
 }
 
