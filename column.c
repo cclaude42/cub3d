@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:37:22 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/09 20:04:44 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/11 17:48:19 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,18 @@
 
 int		ft_color(t_all *s)
 {
-	if (floor(s->hit.x) == s->hit.x)
+	if (floor(s->hit.x) == s->hit.x && floor(s->hit.y) == s->hit.y)
 	{
-		if (s->ray.v == 1)
-			return (SOUTH);
-		else if (s->ray.v == 0)
-			return (NORTH);
+		if (s->ray.x == 0)
+			return (s->ray.y == 1 ? SOUTH : NORTH);
+		if (s->ray.y == 0)
+			return (s->ray.x == 1 ? EAST : WEST);
 	}
+	else if (floor(s->hit.x) == s->hit.x)
+		return (s->ray.v == 1 ? EAST : WEST);
 	else if (floor(s->hit.y) == s->hit.y)
-	{
-		if (s->ray.w == 1)
-			return (EAST);
-		else if (s->ray.w == 0)
-			return (WEST);
-	}
-	return (WHITE);
+		return (s->ray.w == 1 ? SOUTH : NORTH);
+	return (BLACK);
 }
 
 int		ft_size(t_all *s)

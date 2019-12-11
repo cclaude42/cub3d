@@ -6,46 +6,49 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/10 22:39:38 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/11 18:29:32 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <math.h>
-#include <stdio.h>
+#ifndef CUB3D_H
+# define CUB3D_H
 
-#define WHITE 0x00FFFFFF
-#define BLACK 0x00000000
-#define RED 0x00FF0000
-#define GREEN 0x0000FF00
-#define BLUE 0x000000FF
-#define MAGENTA 0x00FF00FF
-#define YELLOW 0x00FFFF00
-#define CYAN 0x0000FFFF
+# include <mlx.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <math.h>
+# include <stdio.h>
 
-#define SKY 0x00CDF9FF
-#define NORTH 0x00C0C0C0
-#define SOUTH 0x00808080
-#define EAST 0x00DCDCDC
-#define WEST 0x00778899
-#define DIRT 0x00E0AC69
+# define WHITE 0x00FFFFFF
+# define BLACK 0x00000000
+# define RED 0x00FF0000
+# define GREEN 0x0000FF00
+# define BLUE 0x000000FF
+# define MAGENTA 0x00FF00FF
+# define YELLOW 0x00FFFF00
+# define CYAN 0x0000FFFF
 
-#define ESC 53
-#define W 13
-#define A 0
-#define S 1
-#define D 2
-#define UP 126
-#define DOWN 125
-#define LEFT 123
-#define RIGHT 124
+# define SKY 0x00CDF9FF
+# define NORTH 0x00C0C0C0
+# define SOUTH 0x00808080
+# define EAST 0x00DCDCDC
+# define WEST 0x00778899
+# define DIRT 0x00E0AC69
 
-#define SPEED 15
-#define TURN 0.05
+# define ESC 53
+# define W 13
+# define A 0
+# define S 1
+# define D 2
+# define UP 126
+# define DOWN 125
+# define LEFT 123
+# define RIGHT 124
 
-#define MAPSIZE 10
+# define SPEED 15
+# define TURN 0.05
+
+# define MAPSIZE 10
 
 typedef struct	s_mlx
 {
@@ -87,18 +90,18 @@ typedef struct	s_dir
 
 typedef struct	s_ray
 {
+	double			x;
+	double			y;
 	int				i;
 	double			v;
 	double			w;
-	double			x;
-	double			y;
 }				t_ray;
 
 typedef struct	s_hit
 {
-	double			d;
 	double			x;
 	double			y;
+	double			d;
 }				t_hit;
 
 typedef struct	s_all
@@ -113,22 +116,27 @@ typedef struct	s_all
 	t_hit			hit;
 }				t_all;
 
-void	ft_cubed(t_all s);
-void	ft_init(t_all *s);
-void	map_fill(t_all *s);
+void			ft_cubed(t_all s);
+void			ft_init(t_all *s);
+void			ft_pos(t_all *s);
 
-int		ft_key(int key, void *arg);
-void	ft_rotate(t_all *s, double c);
-void	ft_strafe(t_all *s, double c);
-void	ft_move(t_all *s, double c);
-void	close_window(t_all *s);
+void			ft_parse(t_all *s);
+void			map_fill(t_all *s);
 
-void	ft_screen(t_all *s);
-void	ft_hor(t_all *s);
-void	ft_ver(t_all *s);
-void	ft_dir(t_all *s);
-void 	ft_ray(t_all *s);
+int				ft_key(int key, void *arg);
+void			ft_rotate(t_all *s, double c);
+void			ft_strafe(t_all *s, double c);
+void			ft_move(t_all *s, double c);
+int				close_window(t_all *s);
 
-void	ft_column(t_all *s, int start);
-int		ft_size(t_all *s);
-int		ft_color(t_all *s);
+void			ft_screen(t_all *s);
+void			ft_ray(t_all *s);
+void			ft_dir(t_all *s);
+void			ft_ver(t_all *s);
+void			ft_hor(t_all *s);
+
+void			ft_column(t_all *s, int start);
+int				ft_size(t_all *s);
+int				ft_color(t_all *s);
+
+#endif

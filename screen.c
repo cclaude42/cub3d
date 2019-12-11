@@ -6,13 +6,13 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:32:10 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/10 22:40:29 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/11 15:06:28 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void 	ft_ray(t_all *s)
+void	ft_ray(t_all *s)
 {
 	double	angle;
 
@@ -86,15 +86,15 @@ void	ft_screen(t_all *s)
 {
 	t_ray	ray;
 	t_hit	hit;
-	int		b;
-	int		s;
-	int		e;
+	int		bpp;
+	int		sl;
+	int		end;
 
 	s->ray = ray;
 	s->hit = hit;
 	s->ray.i = 0;
 	s->img.ptr = mlx_new_image(s->mlx.ptr, s->win.x, s->win.y);
-	s->img.adr = (unsigned int *)mlx_get_data_addr(s->img.ptr, &b, &s, &e);
+	s->img.adr = (unsigned int *)mlx_get_data_addr(s->img.ptr, &bpp, &sl, &end);
 	while (s->ray.i < s->win.x)
 	{
 		ft_ray(s);

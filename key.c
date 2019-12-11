@@ -6,16 +6,17 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/09 20:06:59 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/11 18:29:08 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	close_window(t_all *s)
+int		close_window(t_all *s)
 {
 	mlx_destroy_window(s->mlx.ptr, s->win.ptr);
 	exit(0);
+	return (1);
 }
 
 void	ft_move(t_all *s, double c)
