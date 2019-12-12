@@ -6,29 +6,29 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/12 18:25:55 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/12 22:58:49 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 #include "get_next_line.h"
 
-void	ft_spaceskip(char *str, int *i)
+void	ft_spaceskip(char *line, int *i)
 {
-	while ((str[*i] == ' ' || str[*i] == '\t' || str[*i] == '\n')
-	|| (str[*i] == '\r' || str[*i] == '\v' || str[*i] == '\f'))
+	while ((line[*i] == ' ' || line[*i] == '\t' || line[*i] == '\n')
+	|| (line[*i] == '\r' || line[*i] == '\v' || line[*i] == '\f'))
 		(*i)++;
 }
 
-int		ft_atoi(char *str, int *i)
+int		ft_atoi(char *line, int *i)
 {
 	int	num;
 
 	num = 0;
-	ft_spaceskip(str, i);
-	while (str[*i] >= '0' && str[*i] <= '9')
+	ft_spaceskip(line, i);
+	while (line[*i] >= '0' && line[*i] <= '9')
 	{
-		num = num * 10 + (str[*i] - 48);
+		num = num * 10 + (line[*i] - 48);
 		(*i)++;
 	}
 	return (num);
@@ -72,6 +72,68 @@ void	ft_colors(unsigned int *color, char *line, int *i)
 	ft_spaceskip(line, i);
 }
 
+int		ft_slablen(char *line)
+{
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (line[i] != '\0')
+	{
+		if (line[i] == '0' || line[i] == '1' || line[i] == '2')
+			count++;
+		else if (line[i] == 'N' || line[i] == 'S' || line[i] == 'W')
+			count++;
+		else if (line[i] == 'E')
+			count++;
+		i++;
+	}
+	return (count);
+}
+
+char	*ft_slab(char *line, int *i)
+{
+	char	*slab;
+	char	j;
+
+	slab = malloc(sizeof(char) * (ft_slablen(line) + 1));
+	j = 0;
+	while (line[*i] != '\0')
+	{
+		if (line[*i] == '0' || line[*i] == '1' || line[*i] == '2')
+			slab[j++] = line[*i];
+		else if (line[*i] == 'N' || line[*i] == 'S' || line[*i] == 'W')
+			slab[j++] = line[*i];
+		else if (line[*i] == 'E')
+			slab[j++] = line[*i];
+		(*i)++;
+	}
+	slab[j] = '\0';
+	return (slab);
+}
+
+void	ft_map(t_all *s, char *line, int *i)
+{
+	char	**tmp;
+	int		j;
+
+	tmp = malloc(sizeof(char *) * (s->map.y + 2));
+	j = 0;
+	while (j < s->map.y)
+	{
+		tmp[j] = s->map.tab[j];
+		j++;
+	}
+	tmp[s->map.y] = ft_slab(line, i);
+	tmp[s->map.y + 1] = NULL;
+	if (s->map.y > 0)
+		free(s->map.tab);
+	s->map.tab = tmp;
+	s->map.x = ft_slablen(line);
+	s->map.y++;
+}
+
 void	ft_line(t_all *s, char *line)
 {
 	int		i;
@@ -94,8 +156,8 @@ void	ft_line(t_all *s, char *line)
 		ft_colors(&s->tex.f, line, &i);
 	else if (line[i] == 'C' && line[i + 1] == ' ')
 		ft_colors(&s->tex.c, line, &i);
-	// else if (line[i] == '1' && line[i + 1] == ' ')
-		// ft_map(s, line, &i);
+	else if (line[i] == '1' && line[i + 1] == ' ')
+		ft_map(s, line, &i);
 }
 
 void	ft_parse(t_all *s)
@@ -105,9 +167,8 @@ void	ft_parse(t_all *s)
 	int		ret;
 
 	ret = 1;
-	s->win.x = 3;
-	s->win.y = 5;
-	s->pos.x = 4;
+	s->map.x = 0;
+	s->map.y = 0;
 	fd = open("map.cub", O_RDONLY);
 	while ((ret = get_next_line(fd, &line)) == 1)
 	{
@@ -115,8 +176,22 @@ void	ft_parse(t_all *s)
 		free(line);
 	}
 	close(fd);
-	printf("Res : %d %d\n", s->win.x, s->win.y);
-	printf("%u\n", s->tex.c);
+
+	//
+	int	i = 0;
+	printf("\n");
+	printf("Resolution : %dx%d\n\n", s->win.x, s->win.y);
+	printf("Floor color : #%X\n\n", s->tex.f);
+	printf("Ceiling color #%X\n\n", s->tex.c);
+	printf("Map size : %d by %d\n\n", s->map.x, s->map.y);
+	while (i < s->map.y)
+	{
+		printf("%s\n", s->map.tab[i]);
+		free(s->map.tab[i++]);
+	}
+	printf("\n");
+	free(s->map.tab);
+	//
 }
 
 int		main(void)
