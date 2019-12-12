@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:37:22 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/11 17:48:19 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/12 18:24:27 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,15 @@ void	ft_column(t_all *s, int size)
 	int	start;
 	int	end;
 
+	color = s->tex.c;
 	start = s->win.x * (s->win.y - size) / 2;
 	end = s->win.x * (s->win.y + size) / 2;
 	while (s->ray.i < s->win.x * s->win.y)
 	{
-		if (s->ray.i < start)
-			color = SKY;
-		else if (s->ray.i > end)
-			color = DIRT;
-		else
+		if (s->ray.i >= start && s->ray.i <= end)
 			color = ft_color(s);
+		if (s->ray.i = end + 1)
+			color = s->tex.f;
 		s->img.adr[s->ray.i] = mlx_get_color_value(s->mlx.ptr, color);
 		s->ray.i += s->win.x;
 	}

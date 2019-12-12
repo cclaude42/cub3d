@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/11 23:33:22 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/12 18:07:50 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <math.h>
+# include <fcntl.h>
 # include <stdio.h>
 
 # define WHITE 0x00FFFFFF
@@ -82,6 +83,9 @@ typedef struct	s_tex
 	unsigned int	**s;
 	unsigned int	**e;
 	unsigned int	**w;
+	unsigned int	**i;
+	unsigned int	c;
+	unsigned int	f;
 }				t_tex;
 
 typedef struct	s_pos
