@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/12 22:58:49 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/13 19:20:18 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,23 +42,20 @@ void	ft_res(t_all *s, char *line, int *i)
 	ft_spaceskip(line, i);
 }
 
-unsigned int	**ft_table(void)
+void	ft_texture(unsigned int **adr, char *line, int *i)
 {
-	unsigned int	**tab;
+	char	*file;
+	int		j;
 
-	tab = malloc(sizeof(unsigned int *) * 2);
-	tab[0] = malloc(sizeof(unsigned int) * 2);
-	tab[1] = malloc(sizeof(unsigned int *) * 2);
-	tab[0][0] = 2;
-	tab[0][1] = 3;
-	tab[1][0] = 4;
-	tab[1][1] = 6;
-	return (tab);
-}
-
-void	ft_texture(unsigned int ***tab, char *line, int *i)
-{
-	*tab = ft_table();
+	j = 0;
+	(*i) += 2;
+	ft_spaceskip(line, i);
+	while (line[*i] != ' ' && line[*i] != '\0')
+		file[j++] = line[(*i)++];
+	file[j] = '\0';
+	printf("Link to texture : |%s|\n", file);
+	//
+	// mlx_xpm_file_to_image(s->mlx.ptr, file, 100, 100);
 }
 
 void	ft_colors(unsigned int *color, char *line, int *i)
@@ -142,16 +139,16 @@ void	ft_line(t_all *s, char *line)
 	ft_spaceskip(line, &i);
 	if (line[i] == 'R' && line[i + 1] == ' ')
 		ft_res(s, line, &i);
-	// else if (line[i] == 'N' && line[i + 1] == 'O' && line[i + 2] == ' ')
-		// ft_texture(&s->tex.n, line, &i);
-	// else if (line[i] == 'S' && line[i + 1] == 'O' && line[i + 2] == ' ')
-	// 	ft_texture(&s->tex.s, line, &i);
-	// else if (line[i] == 'W' && line[i + 1] == 'E' && line[i + 2] == ' ')
-	// 	ft_texture(&s->tex.w, line, &i);
-	// else if (line[i] == 'E' && line[i + 1] == 'A' && line[i + 2] == ' ')
-	// 	ft_texture(&s->tex.e, line, &i);
-	// else if (line[i] == 'S' && line[i + 1] == ' ')
-	// 	ft_texture(&s->tex.i, line, &i);
+	else if (line[i] == 'N' && line[i + 1] == 'O' && line[i + 2] == ' ')
+		ft_texture(&s->tex.n, line, &i);
+	else if (line[i] == 'S' && line[i + 1] == 'O' && line[i + 2] == ' ')
+		ft_texture(&s->tex.s, line, &i);
+	else if (line[i] == 'W' && line[i + 1] == 'E' && line[i + 2] == ' ')
+		ft_texture(&s->tex.w, line, &i);
+	else if (line[i] == 'E' && line[i + 1] == 'A' && line[i + 2] == ' ')
+		ft_texture(&s->tex.e, line, &i);
+	else if (line[i] == 'S' && line[i + 1] == ' ')
+		ft_texture(&s->tex.i, line, &i);
 	else if (line[i] == 'F' && line[i + 1] == ' ')
 		ft_colors(&s->tex.f, line, &i);
 	else if (line[i] == 'C' && line[i + 1] == ' ')
@@ -175,6 +172,7 @@ void	ft_parse(t_all *s)
 		ft_line(s, line);
 		free(line);
 	}
+	free(line);
 	close(fd);
 
 	//
@@ -212,6 +210,7 @@ int		main(void)
 	s.map = map;
 	s.pos = pos;
 	s.dir = dir;
+	// s.mlx.ptr = mlx_init();
 	ft_parse(&s);
 	return (0);
 }
