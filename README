@@ -1,3 +1,32 @@
 To launch and compile :
 
 gcc -lmlx -I ./minilibx_opengl_20191021 -framework OpenGL -framework AppKit *.c && ./a.out
+
+void	map_fill(t_all *s)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < MAPSIZE)
+	{
+		while (j < MAPSIZE)
+		{
+			if (i == 0 || i == MAPSIZE - 1 || j == 0 || j == MAPSIZE - 1)
+				s->map.tab[i][j] = '1';
+			else
+				s->map.tab[i][j] = '0';
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+	s->map.tab[5][5] = 'E';
+	s->map.tab[3][6] = '1';
+	s->map.tab[3][3] = '1';
+	s->map.tab[7][2] = '1';
+	s->map.tab[7][7] = '1';
+	s->map.x = MAPSIZE;
+	s->map.y = MAPSIZE;
+}

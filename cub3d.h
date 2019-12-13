@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/13 18:29:19 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/13 21:49:06 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 // # include <mlx.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <string.h>
 # include <math.h>
 # include <fcntl.h>
 # include <stdio.h>
@@ -131,10 +132,22 @@ typedef struct	s_all
 
 void			ft_cubed(t_all s);
 void			ft_init(t_all *s);
-void			ft_pos(t_all *s);
 
 void			ft_parse(t_all *s);
-void			map_fill(t_all *s);
+int				get_next_line(int fd, char **line);
+void			ft_line(t_all *s, char *line);
+
+void			ft_map(t_all *s, char *line, int *i);
+char			*ft_slab(char *line, int *i);
+int				ft_slablen(char *line);
+void			ft_texture(unsigned int **adr, char *line, int *i);
+void			ft_xpm(unsigned int **adr, char *file);
+
+void			ft_pos(t_all *s);
+void			ft_colors(unsigned int *color, char *line, int *i);
+void			ft_res(t_all *s, char *line, int *i);
+int				ft_atoi(char *line, int *i);
+void			ft_spaceskip(char *line, int *i);
 
 int				ft_key(int key, void *arg);
 void			ft_rotate(t_all *s, double c);
@@ -151,5 +164,11 @@ void			ft_hor(t_all *s);
 void			ft_column(t_all *s, int start);
 int				ft_size(t_all *s);
 int				ft_color(t_all *s);
+
+char			*error(char *stock);
+int				newline_check(char *stock, int read_size);
+char			*buf_join(char *stock, char *buf);
+char			*stock_trim(char *stock);
+char			*get_line(char *stock);
 
 #endif

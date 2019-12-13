@@ -6,141 +6,11 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/13 19:45:43 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/13 21:43:34 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-#include "get_next_line.h"
-
-void	ft_spaceskip(char *line, int *i)
-{
-	while ((line[*i] == ' ' || line[*i] == '\t' || line[*i] == '\n')
-	|| (line[*i] == '\r' || line[*i] == '\v' || line[*i] == '\f'))
-		(*i)++;
-}
-
-int		ft_atoi(char *line, int *i)
-{
-	int	num;
-
-	num = 0;
-	ft_spaceskip(line, i);
-	while (line[*i] >= '0' && line[*i] <= '9')
-	{
-		num = num * 10 + (line[*i] - 48);
-		(*i)++;
-	}
-	return (num);
-}
-
-void	ft_res(t_all *s, char *line, int *i)
-{
-	(*i)++;
-	s->win.x = ft_atoi(line, i);
-	s->win.y = ft_atoi(line, i);
-	ft_spaceskip(line, i);
-}
-
-void	ft_xpm(unsigned int **adr, char *file)
-{
-	void	*img;
-	int		bpp;
-	int		sl;
-	int		end;
-
-	// img = mlx_xpm_file_to_image(s->mlx.ptr, file, 100, 100);
-	// *adr = (unsigned int *)mlx_get_data_addr(img, &bpp, &sl, &end);
-}
-
-void	ft_texture(unsigned int **adr, char *line, int *i)
-{
-	char	*file;
-	int		j;
-
-	j = 0;
-	(*i) += 2;
-	ft_spaceskip(line, i);
-	while (line[*i] != ' ' && line[*i] != '\0')
-		file[j++] = line[(*i)++];
-	file[j] = '\0';
-	// 
-	printf("Link to texture : |%s|\n", file);
-	// ft_xpm(adr, file);
-}
-
-void	ft_colors(unsigned int *color, char *line, int *i)
-{
-	(*i)++;
-	*color = ft_atoi(line, i) * 256 * 256;
-	(*i)++;
-	*color += ft_atoi(line, i) * 256;
-	(*i)++;
-	*color += ft_atoi(line, i);
-	ft_spaceskip(line, i);
-}
-
-int		ft_slablen(char *line)
-{
-	int	i;
-	int	count;
-
-	i = 0;
-	count = 0;
-	while (line[i] != '\0')
-	{
-		if (line[i] == '0' || line[i] == '1' || line[i] == '2')
-			count++;
-		else if (line[i] == 'N' || line[i] == 'S' || line[i] == 'W')
-			count++;
-		else if (line[i] == 'E')
-			count++;
-		i++;
-	}
-	return (count);
-}
-
-char	*ft_slab(char *line, int *i)
-{
-	char	*slab;
-	char	j;
-
-	slab = malloc(sizeof(char) * (ft_slablen(line) + 1));
-	j = 0;
-	while (line[*i] != '\0')
-	{
-		if (line[*i] == '0' || line[*i] == '1' || line[*i] == '2')
-			slab[j++] = line[*i];
-		else if (line[*i] == 'N' || line[*i] == 'S' || line[*i] == 'W')
-			slab[j++] = line[*i];
-		else if (line[*i] == 'E')
-			slab[j++] = line[*i];
-		(*i)++;
-	}
-	slab[j] = '\0';
-	return (slab);
-}
-
-void	ft_map(t_all *s, char *line, int *i)
-{
-	char	**tmp;
-	int		j;
-
-	tmp = malloc(sizeof(char *) * (s->map.y + 2));
-	j = 0;
-	while (j < s->map.y)
-	{
-		tmp[j] = s->map.tab[j];
-		j++;
-	}
-	tmp[s->map.y] = ft_slab(line, i);
-	tmp[s->map.y + 1] = NULL;
-	if (s->map.y > 0)
-		free(s->map.tab);
-	s->map.tab = tmp;
-	s->map.x = ft_slablen(line);
-	s->map.y++;
-}
 
 void	ft_line(t_all *s, char *line)
 {
@@ -168,6 +38,35 @@ void	ft_line(t_all *s, char *line)
 		ft_map(s, line, &i);
 }
 
+int		get_next_line(int fd, char **line)
+{
+	int			read_size;
+	char		buf[4096];
+	static char	*stock = NULL;
+
+	if (line == NULL || fd < 0)
+		return (-1);
+	*line = NULL;
+	read_size = 1;
+	while (!(newline_check(stock, read_size)))
+	{
+		if ((read_size = read(fd, buf, 4095)) == -1)
+			return (-1);
+		buf[read_size] = '\0';
+		if ((stock = buf_join(stock, buf)) == NULL)
+			return (-1);
+	}
+	if ((*line = get_line(stock)) == NULL)
+		return (-1);
+	if (read_size == 0)
+		free(stock);
+	if (read_size == 0)
+		return (0);
+	if ((stock = stock_trim(stock)) == NULL)
+		return (-1);
+	return (1);
+}
+
 void	ft_parse(t_all *s)
 {
 	char	*line;
@@ -185,7 +84,7 @@ void	ft_parse(t_all *s)
 	}
 	free(line);
 	close(fd);
-
+	ft_pos(s);
 	//
 	int	i = 0;
 	printf("\n");
