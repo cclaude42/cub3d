@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/13 21:43:34 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/13 22:22:26 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int		get_next_line(int fd, char **line)
 	return (1);
 }
 
-void	ft_parse(t_all *s)
+void	ft_parse(t_all *s, char *cub)
 {
 	char	*line;
 	int		fd;
@@ -76,7 +76,7 @@ void	ft_parse(t_all *s)
 	ret = 1;
 	s->map.x = 0;
 	s->map.y = 0;
-	fd = open("map.cub", O_RDONLY);
+	fd = open(cub, O_RDONLY);
 	while ((ret = get_next_line(fd, &line)) == 1)
 	{
 		ft_line(s, line);
@@ -102,7 +102,7 @@ void	ft_parse(t_all *s)
 	//
 }
 
-int		main(void)
+int		main(int ac, char **av)
 {
 	t_all	s;
 	t_mlx	mlx;
@@ -120,7 +120,8 @@ int		main(void)
 	s.map = map;
 	s.pos = pos;
 	s.dir = dir;
+	(void)ac;
 	// s.mlx.ptr = mlx_init();
-	ft_parse(&s);
+	ft_parse(&s, av[1]);
 	return (0);
 }

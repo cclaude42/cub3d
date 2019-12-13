@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/13 21:49:06 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/13 22:25:41 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,10 +130,10 @@ typedef struct	s_all
 	t_hit			hit;
 }				t_all;
 
-void			ft_cubed(t_all s);
-void			ft_init(t_all *s);
+void			ft_cubed(t_all s, char *cub);
+void			ft_init(t_all *s, char *cub);
 
-void			ft_parse(t_all *s);
+void			ft_parse(t_all *s, char *cub);
 int				get_next_line(int fd, char **line);
 void			ft_line(t_all *s, char *line);
 
