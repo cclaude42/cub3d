@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/13 22:25:41 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/13 23:30:47 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@
 
 # define SPEED 15
 # define TURN 0.05
-
-# define MAPSIZE 10
 
 typedef struct	s_mlx
 {
