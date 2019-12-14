@@ -54,7 +54,10 @@ void			ft_column(t_all *s, int size)
 
 	color = s->tex.c;
 	start = s->win.x * (s->win.y - size) / 2;
-	count = 0;
+	if (size > s->win.y)
+		count = (size - s->win.y) / 2;
+	else
+		count = 0;
 	while (s->ray.i < s->win.x * s->win.y)
 	{
 		if (s->ray.i >= start && count < size)
