@@ -6,13 +6,13 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:37:22 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/14 13:42:31 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/14 17:06:45 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-// unsigned int	ft_color(t_all *s, double i)
+// unsigned int	ft_pixel(t_all *s, double i)
 // {
 // 	int	index;
 //
@@ -35,7 +35,7 @@
 // 	return (BLACK);
 // }
 
-int				ft_color(t_all *s, double i)
+int				ft_pixel(t_all *s, double i)
 {
 	if (floor(s->hit.x) == s->hit.x && floor(s->hit.y) == s->hit.y)
 	{
@@ -75,7 +75,7 @@ void			ft_column(t_all *s, int size)
 	{
 		if (s->ray.i >= start && count < size)
 		{
-			color = ft_color(s, (double)count / size);
+			color = ft_pixel(s, (double)count / size);
 			count++;
 		}
 		else if (count == size)

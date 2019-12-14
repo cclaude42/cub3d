@@ -6,14 +6,14 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/13 23:30:47 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/14 17:08:27 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
-// # include <mlx.h>
+# include <mlx.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
@@ -138,8 +138,8 @@ void			ft_line(t_all *s, char *line);
 void			ft_map(t_all *s, char *line, int *i);
 char			*ft_slab(char *line, int *i);
 int				ft_slablen(char *line);
-void			ft_texture(unsigned int **adr, char *line, int *i);
-void			ft_xpm(unsigned int **adr, char *file);
+void			ft_texture(t_all *s, unsigned int **adr, char *line, int *i);
+void			ft_xpm(t_all *s, unsigned int **adr, char *file);
 
 void			ft_pos(t_all *s);
 void			ft_colors(unsigned int *color, char *line, int *i);
@@ -161,7 +161,7 @@ void			ft_hor(t_all *s);
 
 void			ft_column(t_all *s, int start);
 int				ft_size(t_all *s);
-int				ft_color(t_all *s);
+int				ft_pixel(t_all *s, double i);
 
 char			*error(char *stock);
 int				newline_check(char *stock, int read_size);

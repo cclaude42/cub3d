@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/14 11:11:39 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/14 17:28:17 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ void	ft_line(t_all *s, char *line)
 	if (line[i] == 'R' && line[i + 1] == ' ')
 		ft_res(s, line, &i);
 	else if (line[i] == 'N' && line[i + 1] == 'O' && line[i + 2] == ' ')
-		ft_texture(&s->tex.n, line, &i);
+		ft_texture(s, &s->tex.n, line, &i);
 	else if (line[i] == 'S' && line[i + 1] == 'O' && line[i + 2] == ' ')
-		ft_texture(&s->tex.s, line, &i);
+		ft_texture(s, &s->tex.s, line, &i);
 	else if (line[i] == 'W' && line[i + 1] == 'E' && line[i + 2] == ' ')
-		ft_texture(&s->tex.w, line, &i);
+		ft_texture(s, &s->tex.w, line, &i);
 	else if (line[i] == 'E' && line[i + 1] == 'A' && line[i + 2] == ' ')
-		ft_texture(&s->tex.e, line, &i);
+		ft_texture(s, &s->tex.e, line, &i);
 	else if (line[i] == 'S' && line[i + 1] == ' ')
-		ft_texture(&s->tex.i, line, &i);
+		ft_texture(s, &s->tex.i, line, &i);
 	else if (line[i] == 'F' && line[i + 1] == ' ')
 		ft_colors(&s->tex.f, line, &i);
 	else if (line[i] == 'C' && line[i + 1] == ' ')
@@ -79,6 +79,7 @@ void	ft_parse(t_all *s, char *cub)
 	fd = open(cub, O_RDONLY);
 	while ((ret = get_next_line(fd, &line)) == 1)
 	{
+		// printf("%s\n", line);
 		ft_line(s, line);
 		free(line);
 	}
@@ -93,7 +94,7 @@ void	ft_parse(t_all *s, char *cub)
 	printf("Ceiling color #%X\n\n", s->tex.c);
 	printf("Map size : %d by %d\n\n", s->map.x, s->map.y);
 	while (i < s->map.y)
-		printf("%s\n", s->map.tab[i]);
+	printf("%s\n", s->map.tab[i++]);
 	printf("\n");
 }
 
