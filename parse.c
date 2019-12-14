@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/14 17:28:17 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/14 17:38:30 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,23 +79,12 @@ void	ft_parse(t_all *s, char *cub)
 	fd = open(cub, O_RDONLY);
 	while ((ret = get_next_line(fd, &line)) == 1)
 	{
-		// printf("%s\n", line);
 		ft_line(s, line);
 		free(line);
 	}
 	free(line);
 	close(fd);
 	ft_pos(s);
-
-	int	i = 0;
-	printf("\n");
-	printf("Resolution : %dx%d\n\n", s->win.x, s->win.y);
-	printf("Floor color : #%X\n\n", s->tex.f);
-	printf("Ceiling color #%X\n\n", s->tex.c);
-	printf("Map size : %d by %d\n\n", s->map.x, s->map.y);
-	while (i < s->map.y)
-	printf("%s\n", s->map.tab[i++]);
-	printf("\n");
 }
 
 // int		main(int ac, char **av)

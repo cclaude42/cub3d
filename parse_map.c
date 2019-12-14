@@ -6,22 +6,21 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:41:46 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/14 17:27:47 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/14 18:17:30 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-// void	ft_xpm(t_all *s, unsigned int **adr, char *file)
-// {
-// 	void	*img;
-// 	int		bpp;
-// 	int		sl;
-// 	int		end;
-//
-// 	img = mlx_xpm_file_to_image(s->mlx.ptr, file, 100, 100);
-// 	*adr = (unsigned int *)mlx_get_data_addr(img, &bpp, &sl, &end);
-// }
+void	ft_xpm(t_all *s, unsigned int **adr, void *img)
+{
+	int		bpp;
+	int		sl;
+	int		end;
+
+	*adr = (unsigned int *)mlx_get_data_addr(img, &bpp, &sl, &end);
+	printf("%X\n", *adr[0]);
+}
 
 void	ft_texture(t_all *s, unsigned int **adr, char *line, int *i)
 {
@@ -44,8 +43,8 @@ void	ft_texture(t_all *s, unsigned int **adr, char *line, int *i)
 	file[j] = '\0';
 	//
 	printf("Link to texture : |%s|\n", file);
-	// img = mlx_xpm_file_to_image(s->mlx.ptr, file, &width, &height);
-	// ft_xpm(s, adr, file);
+	img = mlx_xpm_file_to_image(s->mlx.ptr, file, &width, &height);
+	ft_xpm(s, adr, img);
 }
 
 int		ft_slablen(char *line)

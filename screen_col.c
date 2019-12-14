@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:37:22 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/14 17:06:45 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/14 18:20:54 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ int				ft_size(t_all *s)
 	double	correc;
 	double	fisheye;
 
-	fisheye = fabs((float)s->ray.i / (s->win.x / 2) - 1);
+	fisheye = fabs((double)s->ray.i / (s->win.x / 2) - 1);
 	fisheye *= 28 * M_PI / 180;
-	correc = s->hit.d * cos(fisheye);
+	correc = (double)s->hit.d * cos(fisheye);
 	return (round(s->win.y / correc));
 }
 
