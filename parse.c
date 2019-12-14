@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/14 11:09:38 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/14 11:11:39 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	ft_parse(t_all *s, char *cub)
 	free(line);
 	close(fd);
 	ft_pos(s);
-	
+
 	int	i = 0;
 	printf("\n");
 	printf("Resolution : %dx%d\n\n", s->win.x, s->win.y);
@@ -95,7 +95,6 @@ void	ft_parse(t_all *s, char *cub)
 	while (i < s->map.y)
 		printf("%s\n", s->map.tab[i]);
 	printf("\n");
-
 }
 
 // int		main(int ac, char **av)

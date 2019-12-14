@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:37:22 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/14 11:05:30 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/14 13:42:31 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,18 +64,21 @@ int				ft_size(t_all *s)
 
 void			ft_column(t_all *s, int size)
 {
-	unsigned int	color;
-	unsigned int	start;
-	unsigned int	end;
+	int	color;
+	int	start;
+	int	count;
 
 	color = s->tex.c;
 	start = s->win.x * (s->win.y - size) / 2;
-	end = s->win.x * (s->win.y + size) / 2;
+	count = 0;
 	while (s->ray.i < s->win.x * s->win.y)
 	{
-		if (s->ray.i >= start && s->ray.i < end)
-			color = ft_color(s, (s->ray.i - start) / (s->win.x * size));
-		else if (s->ray.i = end)
+		if (s->ray.i >= start && count < size)
+		{
+			color = ft_color(s, (double)count / size);
+			count++;
+		}
+		else if (count == size)
 			color = s->tex.f;
 		s->img.adr[s->ray.i] = mlx_get_color_value(s->mlx.ptr, color);
 		s->ray.i += s->win.x;
