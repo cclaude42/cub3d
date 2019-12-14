@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/13 22:22:26 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/14 11:09:38 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	ft_parse(t_all *s, char *cub)
 	free(line);
 	close(fd);
 	ft_pos(s);
-	//
+	
 	int	i = 0;
 	printf("\n");
 	printf("Resolution : %dx%d\n\n", s->win.x, s->win.y);
@@ -93,35 +93,31 @@ void	ft_parse(t_all *s, char *cub)
 	printf("Ceiling color #%X\n\n", s->tex.c);
 	printf("Map size : %d by %d\n\n", s->map.x, s->map.y);
 	while (i < s->map.y)
-	{
 		printf("%s\n", s->map.tab[i]);
-		free(s->map.tab[i++]);
-	}
 	printf("\n");
-	free(s->map.tab);
-	//
+
 }
 
-int		main(int ac, char **av)
-{
-	t_all	s;
-	t_mlx	mlx;
-	t_win	win;
-	t_img	img;
-	t_tex	tex;
-	t_map	map;
-	t_pos	pos;
-	t_dir	dir;
-
-	s.mlx = mlx;
-	s.win = win;
-	s.img = img;
-	s.tex = tex;
-	s.map = map;
-	s.pos = pos;
-	s.dir = dir;
-	(void)ac;
-	// s.mlx.ptr = mlx_init();
-	ft_parse(&s, av[1]);
-	return (0);
-}
+// int		main(int ac, char **av)
+// {
+// 	t_all	s;
+// 	t_mlx	mlx;
+// 	t_win	win;
+// 	t_img	img;
+// 	t_tex	tex;
+// 	t_map	map;
+// 	t_pos	pos;
+// 	t_dir	dir;
+//
+// 	s.mlx = mlx;
+// 	s.win = win;
+// 	s.img = img;
+// 	s.tex = tex;
+// 	s.map = map;
+// 	s.pos = pos;
+// 	s.dir = dir;
+// 	(void)ac;
+// 	// s.mlx.ptr = mlx_init();
+// 	ft_parse(&s, av[1]);
+// 	return (0);
+// }
