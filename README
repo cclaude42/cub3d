@@ -30,3 +30,19 @@ void	map_fill(t_all *s)
 	s->map.x = MAPSIZE;
 	s->map.y = MAPSIZE;
 }
+
+int		ft_color(t_all *s)
+{
+	if (floor(s->hit.x) == s->hit.x && floor(s->hit.y) == s->hit.y)
+	{
+		if (s->ray.x == 0)
+			return (s->ray.y == 1 ? SOUTH : NORTH);
+		if (s->ray.y == 0)
+			return (s->ray.x == 1 ? EAST : WEST);
+	}
+	else if (floor(s->hit.x) == s->hit.x)
+		return (s->ray.v == 1 ? EAST : WEST);
+	else if (floor(s->hit.y) == s->hit.y)
+		return (s->ray.w == 1 ? SOUTH : NORTH);
+	return (BLACK);
+}
