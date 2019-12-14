@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:41:46 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/14 18:17:30 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/14 18:42:12 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ void	ft_texture(t_all *s, unsigned int **adr, char *line, int *i)
 	while (line[*i] != ' ' && line[*i] != '\0')
 		file[j++] = line[(*i)++];
 	file[j] = '\0';
-	//
-	printf("Link to texture : |%s|\n", file);
 	img = mlx_xpm_file_to_image(s->mlx.ptr, file, &width, &height);
 	ft_xpm(s, adr, img);
 }
