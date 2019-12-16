@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/14 18:20:19 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/16 10:43:03 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 
+# define NONE 0xFF000000
 # define WHITE 0x00FFFFFF
 # define BLACK 0x00000000
 # define RED 0x00FF0000
@@ -67,6 +68,8 @@ typedef struct	s_img
 	void			*ptr;
 	unsigned int	*adr;
 	int				fsh;
+	void			*bkg;
+	unsigned int	*bdr;
 }				t_img;
 
 typedef struct	s_map
@@ -139,6 +142,7 @@ void			ft_init(t_all *s, char *cub);
 void			ft_parse(t_all *s, char *cub);
 int				get_next_line(int fd, char **line);
 void			ft_line(t_all *s, char *line);
+void			ft_background(t_all *s);
 
 void			ft_map(t_all *s, char *line, int *i);
 char			*ft_slab(char *line, int *i);

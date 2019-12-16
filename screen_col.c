@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:37:22 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/14 18:49:27 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/16 12:02:42 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void			ft_column(t_all *s, int size)
 	int	start;
 	int	count;
 
-	color = s->tex.c;
 	start = s->win.x * (s->win.y - size) / 2;
 	if (size > s->win.y)
 		count = (size - s->win.y) / 2;
@@ -65,10 +64,27 @@ void			ft_column(t_all *s, int size)
 			color = ft_pixel(s, (double)count / size);
 			count++;
 		}
-		else if (count == size)
-			color = s->tex.f;
+		else
+			color = NONE;
 		s->img.adr[s->ray.i] = mlx_get_color_value(s->mlx.ptr, color);
 		s->ray.i += s->win.x;
 	}
 	s->ray.i -= s->win.x * s->win.y;
 }
+
+// void			ft_column(t_all *s, int size)
+// {
+// 	int	color;
+// 	int	index;
+// 	int	count;
+//
+// 	count = 0;
+// 	index = s->win.x * floor((s->win.y - size) / 2) + s->ray.i;
+// 	while (count < size)
+// 	{
+// 		color = ft_pixel(s, (double)count / size);
+// 		s->img.adr[index] = mlx_get_color_value(s->mlx.ptr, color);
+// 		index += s->win.x;
+// 		count++;
+// 	}
+// }

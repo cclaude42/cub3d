@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/14 18:19:16 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/16 10:40:59 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_init(t_all *s, char *cub)
 {
 	s->mlx.ptr = mlx_init();
 	ft_parse(s, cub);
-	s->win.ptr = mlx_new_window(s->mlx.ptr, s->win.x, s->win.y, "cub3d");
+	s->win.ptr = mlx_new_window(s->mlx.ptr, s->win.x, s->win.y, "cub3D");
 	ft_screen(s);
 }
 
