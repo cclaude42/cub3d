@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/16 14:53:20 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/16 18:48:34 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,7 @@ typedef struct	s_hit
 	double			x;
 	double			y;
 	double			d;
+	double			tab[2560];
 }				t_hit;
 
 typedef struct	s_all
@@ -128,7 +129,6 @@ typedef struct	s_all
 	t_ray			ray;
 	t_hit			hit;
 }				t_all;
-
 
 void			ft_cubed(t_all s, char *cub);
 void			ft_init(t_all *s, char *cub);
@@ -166,6 +166,8 @@ void			ft_column(t_all *s, int start);
 int				ft_size(t_all *s);
 void			ft_background(t_all *s);
 unsigned int	ft_pixel(t_all *s, double i);
+
+void			ft_sprite(t_all *s);
 
 char			*error(char *stock);
 int				newline_check(char *stock, int read_size);
