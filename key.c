@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/16 10:39:51 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/16 14:53:06 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ int		ft_close(t_all *s)
 	free(s->tex.e);
 	free(s->tex.w);
 	free(s->tex.i);
-	free(s->img.bkg);
-	free(s->img.bdr);
 	mlx_destroy_window(s->mlx.ptr, s->win.ptr);
 	free(s->mlx.ptr);
 	exit(0);

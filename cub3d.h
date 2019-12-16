@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/16 10:43:03 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/16 14:53:20 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,6 @@ typedef struct	s_img
 	void			*ptr;
 	unsigned int	*adr;
 	int				fsh;
-	void			*bkg;
-	unsigned int	*bdr;
 }				t_img;
 
 typedef struct	s_map
@@ -132,10 +130,6 @@ typedef struct	s_all
 }				t_all;
 
 
-void	ft_image(t_all *s);
-
-
-
 void			ft_cubed(t_all s, char *cub);
 void			ft_init(t_all *s, char *cub);
 
@@ -170,6 +164,7 @@ void			ft_hor(t_all *s);
 
 void			ft_column(t_all *s, int start);
 int				ft_size(t_all *s);
+void			ft_background(t_all *s);
 unsigned int	ft_pixel(t_all *s, double i);
 
 char			*error(char *stock);

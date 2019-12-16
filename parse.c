@@ -6,27 +6,11 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/16 10:40:43 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/16 15:47:21 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-void	ft_background(t_all *s)
-{
-	int				i;
-	int				bpp;
-	int				sl;
-	int				end;
-
-	i = 0;
-	s->img.bkg = mlx_new_image(s->mlx.ptr, s->win.x, s->win.y);
-	s->img.bdr = (unsigned int *)mlx_get_data_addr(s->img.bkg, &bpp, &sl, &end);
-	while (i < (s->win.x * s->win.y) / 2)
-		s->img.bdr[i++] = s->tex.c;
-	while (i < s->win.x * s->win.y)
-		s->img.bdr[i++] = s->tex.f;
-}
 
 void	ft_line(t_all *s, char *line)
 {
@@ -101,5 +85,4 @@ void	ft_parse(t_all *s, char *cub)
 	free(line);
 	close(fd);
 	ft_pos(s);
-	ft_background(s);
 }
