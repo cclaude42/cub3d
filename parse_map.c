@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:41:46 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/15 12:37:19 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/16 10:00:53 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_texture(t_all *s, unsigned int **adr, char *line, int *i)
 	img = mlx_xpm_file_to_image(s->mlx.ptr, file, &width, &height);
 	free(file);
 	ft_xpm(s, adr, img);
-	// free(img);
+	free(img);
 }
 
 int		ft_slablen(char *line)

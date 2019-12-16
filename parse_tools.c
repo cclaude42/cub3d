@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:41:51 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/13 21:43:17 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/16 10:15:44 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ void	ft_res(t_all *s, char *line, int *i)
 	(*i)++;
 	s->win.x = ft_atoi(line, i);
 	s->win.y = ft_atoi(line, i);
+	if (s->win.x > 2560)
+		s->win.x = 2560;
+	if (s->win.y > 1400)
+		s->win.y = 1400;
 	ft_spaceskip(line, i);
 }
 

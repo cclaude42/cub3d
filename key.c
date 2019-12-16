@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/15 12:50:55 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/16 10:05:26 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,13 @@ int		ft_close(t_all *s)
 	while (i < s->map.y)
 		free(s->map.tab[i++]);
 	free(s->map.tab);
+	free(s->tex.n);
+	free(s->tex.s);
+	free(s->tex.e);
+	free(s->tex.w);
+	free(s->tex.i);
 	mlx_destroy_window(s->mlx.ptr, s->win.ptr);
-	// free(s->win.ptr);
-	// free(s->mlx.ptr);
+	free(s->mlx.ptr);
 	exit(0);
 	return (1);
 }

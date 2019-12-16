@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:32:10 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/15 12:50:18 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/16 10:07:23 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,6 @@ void	ft_screen(t_all *s)
 		s->ray.i++;
 	}
 	mlx_put_image_to_window(s->mlx.ptr, s->win.ptr, s->img.ptr, 0, 0);
-	// free(s->img.ptr);
-	// free(s->img.adr);
+	free(s->img.ptr);
+	free(s->img.adr);
 }
