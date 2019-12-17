@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/16 14:53:06 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/17 16:28:20 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_move(t_all *s, double c)
 		s->pos.x -= c * (s->dir.x * SPEED / 100);
 		s->pos.y -= c * (s->dir.y * SPEED / 100);
 	}
-	ft_screen(s);
+	ft_draw(s);
 }
 
 void	ft_strafe(t_all *s, double c)
@@ -52,14 +52,14 @@ void	ft_strafe(t_all *s, double c)
 		s->pos.x += c * (s->dir.y * SPEED / 100);
 		s->pos.y -= c * (s->dir.x * SPEED / 100);
 	}
-	ft_screen(s);
+	ft_draw(s);
 }
 
 void	ft_rotate(t_all *s, double c)
 {
 	s->dir.x = s->dir.x * cos(c * TURN) - s->dir.y * sin(c * TURN);
 	s->dir.y = s->dir.y * cos(c * TURN) + s->dir.x * sin(c * TURN);
-	ft_screen(s);
+	ft_draw(s);
 }
 
 int		ft_key(int key, void *arg)

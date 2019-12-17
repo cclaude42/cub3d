@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/16 15:47:21 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/17 16:11:43 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,6 @@ void	ft_parse(t_all *s, char *cub)
 	int		ret;
 
 	ret = 1;
-	s->map.x = 0;
-	s->map.y = 0;
 	fd = open(cub, O_RDONLY);
 	while ((ret = get_next_line(fd, &line)) == 1)
 	{

@@ -6,13 +6,13 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:41:46 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/16 10:00:53 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/17 19:00:30 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_xpm(t_all *s, unsigned int **adr, void *img)
+void	ft_xpm(unsigned int **adr, void *img)
 {
 	int		bpp;
 	int		sl;
@@ -42,7 +42,7 @@ void	ft_texture(t_all *s, unsigned int **adr, char *line, int *i)
 	file[j] = '\0';
 	img = mlx_xpm_file_to_image(s->mlx.ptr, file, &width, &height);
 	free(file);
-	ft_xpm(s, adr, img);
+	ft_xpm(adr, img);
 	free(img);
 }
 
@@ -66,21 +66,24 @@ int		ft_slablen(char *line)
 	return (count);
 }
 
-char	*ft_slab(char *line, int *i)
+char	*ft_slab(t_all *s, char *line, int *i)
 {
 	char	*slab;
-	char	j;
+	int		j;
 
 	slab = malloc(sizeof(char) * (ft_slablen(line) + 1));
 	j = 0;
 	while (line[*i] != '\0')
 	{
-		if (line[*i] == '0' || line[*i] == '1' || line[*i] == '2')
+		if (line[*i] == '0' || line[*i] == '1' || line[*i] == 'N')
 			slab[j++] = line[*i];
-		else if (line[*i] == 'N' || line[*i] == 'S' || line[*i] == 'W')
+		else if (line[*i] == 'E' || line[*i] == 'S' || line[*i] == 'W')
 			slab[j++] = line[*i];
-		else if (line[*i] == 'E')
+		else if (line[*i] == '2')
+		{
 			slab[j++] = line[*i];
+			s->map.spr++;
+		}
 		(*i)++;
 	}
 	slab[j] = '\0';
@@ -99,7 +102,7 @@ void	ft_map(t_all *s, char *line, int *i)
 		tmp[j] = s->map.tab[j];
 		j++;
 	}
-	tmp[s->map.y] = ft_slab(line, i);
+	tmp[s->map.y] = ft_slab(s, line, i);
 	tmp[s->map.y + 1] = NULL;
 	if (s->map.y > 0)
 		free(s->map.tab);
