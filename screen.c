@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:32:10 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/16 18:04:24 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/17 12:50:15 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void	ft_screen(t_all *s)
 		ft_dir(s);
 		ft_ver(s);
 		ft_hor(s);
-		s->hit.tab[s->ray.i] = s->hit.d;
+		// s->hit.tab[s->ray.i] = s->hit.d;
 		ft_column(s, ft_size(s));
 		ft_sprite(s);
 		s->ray.i++;

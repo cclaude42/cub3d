@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/16 18:48:34 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/17 12:50:08 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ typedef struct	s_hit
 	double			x;
 	double			y;
 	double			d;
-	double			tab[2560];
+	// double			tab[2560];
 }				t_hit;
 
 typedef struct	s_all

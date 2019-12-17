@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 18:04:34 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/16 18:13:14 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/17 12:49:47 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 void	ft_sprite(t_all *s)
 {
-	// find sprites in map
-
-	// for each, draw ?
+	
 }
