@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/18 13:46:38 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/18 19:09:55 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,6 +179,7 @@ int				ft_size(t_all *s);
 void			ft_background(t_all *s);
 unsigned int	ft_pixel(t_all *s, double i);
 
+void			ft_sadd(t_all *s);
 void			ft_sprite(t_all *s);
 void			ft_slist(t_all *s);
 void			ft_sorder(t_all *s);

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:32:10 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/18 13:36:17 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/18 19:09:03 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void	ft_ver(t_all *s)
 			s->hit.d = hypot(x - s->pos.x, y - s->pos.y);
 			return ;
 		}
+		else if (s->map.tab[(int)floor(y)][(int)(x - 1 + s->ray.v)] == '2')
+			ft_sadd(s);
 		x += (2 * s->ray.v - 1);
 		y += (2 * s->ray.v - 1) * s->ray.y / s->ray.x;
 	}
@@ -77,6 +79,8 @@ void	ft_hor(t_all *s)
 			}
 			return ;
 		}
+		else if (s->map.tab[(int)floor(y)][(int)(x - 1 + s->ray.v)] == '2')
+			ft_sadd(s);
 		y += (2 * s->ray.w - 1);
 		x += (2 * s->ray.w - 1) * s->ray.x / s->ray.y;
 	}
@@ -100,7 +104,7 @@ void	ft_screen(t_all *s)
 		ft_column(s, ft_size(s));
 		s->ray.i++;
 	}
-	ft_sprite(s);
+	// ft_sprite(s);
 	mlx_put_image_to_window(s->mlx.ptr, s->win.ptr, s->img.ptr, 0, 0);
 	free(s->img.ptr);
 	free(s->img.adr);
