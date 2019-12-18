@@ -6,32 +6,29 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 18:04:34 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/17 19:47:49 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/18 13:51:06 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_sorder(t_all *s, t_spr **tab)
+void	ft_sorder(t_all *s)
 {
-	t_spr	*tmp;
+	t_spr	tmp;
 	int		i;
 	int		j;
 
-	i = -1;
-	while (++i < s->map.spr)
-		tab[i]->d = hypot(tab[i]->x - s->pos.x, tab[i]->y - s->pos.y);
 	i = 0;
 	while (i < s->map.spr - 1)
 	{
 		j = i + 1;
 		while (j < s->map.spr)
 		{
-			if (tab[i]->d > tab[j]->d)
+			if (s->spr[i].d > s->spr[j].d)
 			{
-				tmp = tab[i];
-				tab[i] = tab[j];
-				tab[j] = tmp;
+				tmp = s->spr[i];
+				s->spr[i] = s->spr[j];
+				s->spr[j] = tmp;
 			}
 			j++;
 		}
@@ -39,14 +36,13 @@ void	ft_sorder(t_all *s, t_spr **tab)
 	}
 }
 
-t_spr	*ft_slist(t_all *s)
+void	ft_slist(t_all *s)
 {
 	int		i;
 	int		j;
 	int		k;
-	t_spr	*tab;
 
-	tab = malloc(sizeof(t_spr) * s->map.spr);
+	s->spr = malloc(sizeof(t_spr) * s->map.spr);
 	i = 0;
 	j = 0;
 	while (j < s->map.y)
@@ -56,20 +52,31 @@ t_spr	*ft_slist(t_all *s)
 		{
 			if (s->map.tab[j][k] == '2')
 			{
-				tab[i].y = (double)j + 0.5;
-				tab[i++].x = (double)k + 0.5;
+				s->spr[i].y = (double)j + 0.5;
+				s->spr[i++].x = (double)k + 0.5;
 			}
 			k++;
 		}
 		j++;
 	}
-	// ft_sorder(s, &tab);
-	return (tab);
 }
 
 void	ft_sprite(t_all *s)
 {
-	t_spr	*tab;
+	int	i;
 
-	tab = ft_slist(s);
+	i = 0;
+	while (i < s->map.spr)
+	{
+		s->spr[i].d = hypot(s->spr[i].x - s->pos.x, s->spr[i].y - s->pos.y);
+		i++;
+	}
+	ft_sorder(s);
+
+	i = 0;
+	while (i < s->map.spr)
+	{
+		printf("x : %f ; y : %f ; dist : %f\n", s->spr[i].x, s->spr[i].y, s->spr[i].d);
+		i++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/17 17:38:30 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/18 13:29:45 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,16 @@ void	ft_cubed(t_all s, char *cub)
 {
 	t_pos	pos;
 	t_dir	dir;
+	t_spr	*spr;
 
 	pos.x = 0;
 	pos.y = 0;
 	dir.x = 0;
 	dir.y = 0;
+	spr = NULL;
+	s.pos = pos;
+	s.dir = dir;
+	s.spr = spr;
 	ft_init(&s, cub);
 	mlx_hook(s.win.ptr, 2, 0, ft_key, &s);
 	mlx_hook(s.win.ptr, 17, 0, ft_close, &s);
