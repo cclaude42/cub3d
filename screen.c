@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:32:10 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/18 19:09:03 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/20 16:39:11 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,6 @@ void	ft_ver(t_all *s)
 			s->hit.d = hypot(x - s->pos.x, y - s->pos.y);
 			return ;
 		}
-		else if (s->map.tab[(int)floor(y)][(int)(x - 1 + s->ray.v)] == '2')
-			ft_sadd(s);
 		x += (2 * s->ray.v - 1);
 		y += (2 * s->ray.v - 1) * s->ray.y / s->ray.x;
 	}
@@ -79,8 +77,6 @@ void	ft_hor(t_all *s)
 			}
 			return ;
 		}
-		else if (s->map.tab[(int)floor(y)][(int)(x - 1 + s->ray.v)] == '2')
-			ft_sadd(s);
 		y += (2 * s->ray.w - 1);
 		x += (2 * s->ray.w - 1) * s->ray.x / s->ray.y;
 	}
@@ -94,17 +90,18 @@ void	ft_screen(t_all *s)
 
 	s->img.ptr = mlx_new_image(s->mlx.ptr, s->win.x, s->win.y);
 	s->img.adr = (unsigned int *)mlx_get_data_addr(s->img.ptr, &bpp, &sl, &end);
+	s->stk = malloc(sizeof(t_stk) * s->win.x);
 	while (s->ray.i < s->win.x)
 	{
 		ft_ray(s);
 		ft_dir(s);
 		ft_ver(s);
 		ft_hor(s);
-		s->hit.tab[s->ray.i] = s->hit.d;
+		ft_stock(s);
 		ft_column(s, ft_size(s));
 		s->ray.i++;
 	}
-	// ft_sprite(s);
+	ft_sprite(s);
 	mlx_put_image_to_window(s->mlx.ptr, s->win.ptr, s->img.ptr, 0, 0);
 	free(s->img.ptr);
 	free(s->img.adr);

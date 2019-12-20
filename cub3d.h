@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/18 19:09:55 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/20 16:44:58 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,6 @@ typedef struct	s_hit
 	double			x;
 	double			y;
 	double			d;
-	double			tab[2560];
 }				t_hit;
 
 typedef struct	s_spr
@@ -125,6 +124,12 @@ typedef struct	s_spr
 	double			d;
 }				t_spr;
 
+typedef struct	s_stk
+{
+	double			x;
+	double			y;
+	double			d;
+}				t_stk;
 
 typedef struct	s_all
 {
@@ -138,6 +143,7 @@ typedef struct	s_all
 	t_ray			ray;
 	t_hit			hit;
 	t_spr			*spr;
+	t_stk			*stk;
 }				t_all;
 
 void			ft_declare(t_all s, char *cub);
@@ -174,12 +180,11 @@ void			ft_dir(t_all *s);
 void			ft_ver(t_all *s);
 void			ft_hor(t_all *s);
 
-void			ft_column(t_all *s, int start);
+void			ft_stock(t_all *s);
 int				ft_size(t_all *s);
-void			ft_background(t_all *s);
+void			ft_column(t_all *s, int start);
 unsigned int	ft_pixel(t_all *s, double i);
 
-void			ft_sadd(t_all *s);
 void			ft_sprite(t_all *s);
 void			ft_slist(t_all *s);
 void			ft_sorder(t_all *s);

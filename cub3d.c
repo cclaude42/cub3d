@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/18 13:29:45 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/20 16:43:59 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,14 @@ void	ft_cubed(t_all s, char *cub)
 	t_pos	pos;
 	t_dir	dir;
 	t_spr	*spr;
+	t_stk	*stk;
 
 	pos.x = 0;
 	pos.y = 0;
 	dir.x = 0;
 	dir.y = 0;
 	spr = NULL;
+	stk = NULL;
 	s.pos = pos;
 	s.dir = dir;
 	s.spr = spr;
