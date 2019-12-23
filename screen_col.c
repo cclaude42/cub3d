@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:37:22 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/20 16:43:04 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/23 18:55:54 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ unsigned int	ft_pixel(t_all *s, double i)
 
 void			ft_column(t_all *s, int size)
 {
-	int	color;
-	int	start;
-	int	count;
+	unsigned int	color;
+	int				start;
+	int				count;
 
 	start = s->win.x * (s->win.y - size) / 2;
 	if (size > s->win.y)
