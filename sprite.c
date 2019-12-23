@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 18:04:34 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/23 17:24:51 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/23 18:07:27 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,26 @@
 void	ft_sdraw(t_all *s, double dirx, double diry, double dist)
 {
 	double	diff;
+	double	prev;
 	int		ret;
 	int		i;
 
 	dirx = (dirx - s->pos.x) / dist;
 	diry = (diry - s->pos.y) / dist;
-	diff = 10;
+	prev = 10;
 	ret = -1;
 	i = 0;
-	while(i < s->win.x)
+	while (i < s->win.x)
 	{
-		if (diff > fabs(dirx - s->stk[i].x) + fabs(diry - s->stk[i].y))
-			ret = i;
 		diff = fabs(dirx - s->stk[i].x) + fabs(diry - s->stk[i].y);
-		// printf("I %4d ; Diff %f\n", i, diff);
+		if (prev > diff && diff < 0.5)
+			ret = i;
+		prev = diff;
 		i++;
 	}
-	printf("Ret : %d\n", ret);
-	if (s->stk[ret].d < dist || ret == 0 || ret == s->win.x - 1)
-		return ;
+	// printf("Ret : %d\n", ret);
+	// if (s->stk[ret].d < dist || ret == 0 || ret == s->win.x - 1)
+	// 	return ;
 	while (ret < s->win.x * s->win.y)
 	{
 		s->img.adr[ret] = mlx_get_color_value(s->mlx.ptr, MAGENTA);

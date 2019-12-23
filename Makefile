@@ -41,9 +41,12 @@ fclean: clean
 re: fclean all
 
 test: re
-	./$(NAME) map.cub
+	./$(NAME) tests/map.cub
+
+square: re
+	./$(NAME) tests/sqr.cub
 
 norm:
 	norminette $(SRC) $(HEADER)
 
-.PHONY: all re clean fclean test norm
+.PHONY: all re clean fclean test sqr norm
