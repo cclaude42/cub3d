@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/23 14:03:40 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/23 15:56:42 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,7 +188,7 @@ unsigned int	ft_pixel(t_all *s, double i);
 void			ft_sprite(t_all *s);
 void			ft_slist(t_all *s);
 void			ft_sorder(t_all *s);
-void			ft_sdraw(t_all *s, int num);
+void	ft_sdraw(t_all *s, double dirx, double diry, double dist);
 
 char			*error(char *stock);
 int				newline_check(char *stock, int read_size);
