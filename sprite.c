@@ -6,26 +6,21 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 18:04:34 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/20 18:37:35 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/23 14:30:04 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_sprint(t_all *s, double coeff)
+void	ft_sdraw(t_all *s, int n)
 {
-	double	diff;
 	int		i;
 
 	i = 0;
-	diff = fabs(coeff - (s->stk[i].x / s->stk[i].y));
-	while (diff > fabs(coeff - (s->stk[i + 1].x / s->stk[i + 1].y)))
-	{
-		diff = fabs(coeff - (s->stk[i].x / s->stk[i].y));
-		i++;
-	}
-	printf("index : %d\n", i);
-	printf("diff : %f\n", fabs(coeff - (s->stk[540].x / s->stk[540].y)));
+	printf("X diff : %f\n", s->pos.x - s->spr[n].x);
+	printf("Y diff : %f\n", s->pos.y - s->spr[n].y);
+	printf("X divided : %f\n", (s->pos.x - s->spr[n].x) / s->spr[n].d);
+	printf("Y divided : %f\n", (s->pos.y - s->spr[n].y) / s->spr[n].d);
 }
 
 void	ft_sorder(t_all *s)
@@ -87,7 +82,7 @@ void	ft_sprite(t_all *s)
 	ft_sorder(s);
 	i = -1;
 	while (++i < s->map.spr)
-		ft_sprint(s, (s->pos.x - s->spr[i].x) / (s->pos.y - s->spr[i].y));
+		ft_sdraw(s, i);
 	printf("\n");
 	free(s->stk);
 }
