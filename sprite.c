@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 18:04:34 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/23 16:15:50 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/23 17:24:51 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,13 @@ void	ft_sdraw(t_all *s, double dirx, double diry, double dist)
 		i++;
 	}
 	printf("Ret : %d\n", ret);
+	if (s->stk[ret].d < dist || ret == 0 || ret == s->win.x - 1)
+		return ;
+	while (ret < s->win.x * s->win.y)
+	{
+		s->img.adr[ret] = mlx_get_color_value(s->mlx.ptr, MAGENTA);
+		ret += s->win.x;
+	}
 }
 
 void	ft_sorder(t_all *s)
