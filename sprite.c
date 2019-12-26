@@ -6,58 +6,31 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 18:04:34 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/26 12:19:32 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/26 14:27:11 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-// void	ft_sdraw(t_all *s, int loc, double ver, int size)
-// {
-// 	unsigned int	color;
-// 	int				start;
-// 	int				count;
-// 	int				index;
-//
-// 	start = s->win.x * (s->win.y - size) / 2;
-// 	if (size > s->win.y)
-// 		count = (size - s->win.y) / 2;
-// 	else
-// 		count = 0;
-// 	color = NONE;
-// 	while (loc < s->win.x * s->win.y)
-// 	{
-// 		if (loc >= start && count < size)
-// 		{
-// 			index = 64 * floor(64 * (double)count / size);
-// 			index += 64 * ver;
-// 			color = s->tex.i[index];
-// 			count++;
-// 		}
-// 		else if (count == size)
-// 			color = NONE;
-// 		if (color != NONE)
-// 			s->img.adr[loc] = mlx_get_color_value(s->mlx.ptr, color);
-// 		loc += s->win.x;
-// 	}
-// }
-
-void	ft_sdraw(t_all *s, int loc, int size)
+void	ft_sdraw(t_all *s, int loc, double dist)
 {
 	unsigned int	col;
+	double			size;
 	int				index;
 	int				i;
 	int				j;
 
 	i = 0;
 	j = 0;
+	size = s->win.y / dist / 2;
+	loc = loc - size / 2;
 	while (i < size)
 	{
-		while (j < size)
+		while (j < size && s->stk[loc + i].d > dist)
 		{
 			col = 64 * floor(64 * (double)j / size) + (double)i / size * 64;
 			col = s->tex.i[col];
-			index = (j + (s->win.y / 2)) * s->win.x + i - (size / 2) + loc;
+			index = loc + i + (s->win.y / 2 + j) * s->win.x;
 			if (col != NONE && index < s->win.x * s->win.y)
 				s->img.adr[index] = mlx_get_color_value(s->mlx.ptr, col);
 			j++;
@@ -74,6 +47,7 @@ void	ft_slocate(t_all *s, double dirx, double diry, double dist)
 	int		loc;
 	int		i;
 
+	printf("here\n");
 	dirx = (dirx - s->pos.x) / dist;
 	diry = (diry - s->pos.y) / dist;
 	prev = 10;
@@ -89,7 +63,7 @@ void	ft_slocate(t_all *s, double dirx, double diry, double dist)
 	}
 	if (loc <= 0 || loc >= s->win.x - 1)
 		return ;
-	ft_sdraw(s, loc, s->win.y / dist / 2);
+	ft_sdraw(s, loc, dist);
 }
 
 void	ft_sorder(t_all *s)
@@ -122,6 +96,8 @@ void	ft_slist(t_all *s)
 	int		j;
 	int		k;
 
+	if (s->spr != NULL)
+		free(s->spr);
 	s->spr = malloc(sizeof(t_spr) * s->map.spr);
 	i = 0;
 	j = 0;

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/20 12:50:58 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/26 13:40:45 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,6 @@ void	ft_parse(t_all *s, char *cub)
 	free(line);
 	close(fd);
 	ft_pos(s);
+	s->spr = NULL;
 	ft_slist(s);
 }
