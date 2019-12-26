@@ -22,10 +22,14 @@ SRC = cub3d.c \
 
 OBJ = $(SRC:.c=.o)
 
+.PHONY: all re clean fclean test sqr norm
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	clang -o $(NAME) -L $(MLX) $(LXFLAGS) $(OBJ)
+	$(CC) -o $(NAME) -L $(MLX) $(LXFLAGS) $(OBJ)
+	mkdir -p bin
+	mv $(OBJ) bin/
 
 %.o: %.c
 	@echo "\033[0;32mGenerating obj..."
@@ -33,7 +37,7 @@ $(NAME): $(OBJ)
 	@echo "\033[0m"
 
 clean:
-	rm -f $(OBJ)
+	rm -rf bin
 
 fclean: clean
 	rm -f $(NAME)
@@ -41,12 +45,10 @@ fclean: clean
 re: fclean all
 
 test: re
-	./$(NAME) tests/map.cub
+	./$(NAME) maps/map.cub
 
-square: re
-	./$(NAME) tests/sqr.cub
+sqr: re
+	./$(NAME) maps/sqr.cub
 
 norm:
 	norminette $(SRC) $(HEADER)
-
-.PHONY: all re clean fclean test sqr norm

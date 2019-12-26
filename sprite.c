@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 18:04:34 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/26 14:27:11 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/26 18:03:56 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_sdraw(t_all *s, int loc, double dist)
 	loc = loc - size / 2;
 	while (i < size)
 	{
-		while (j < size && s->stk[loc + i].d > dist)
+		while (j < size && i < s->win.x && s->stk[loc + i].d > dist && i)
 		{
 			col = 64 * floor(64 * (double)j / size) + (double)i / size * 64;
 			col = s->tex.i[col];
@@ -47,15 +47,17 @@ void	ft_slocate(t_all *s, double dirx, double diry, double dist)
 	int		loc;
 	int		i;
 
-	printf("here\n");
 	dirx = (dirx - s->pos.x) / dist;
 	diry = (diry - s->pos.y) / dist;
 	prev = 10;
 	loc = -1;
 	i = 0;
+	printf("Dir x : %f\n", dirx);
+	printf("Dir y : %f\n", diry);
 	while (i < s->win.x)
 	{
 		diff = fabs(dirx - s->stk[i].x) + fabs(diry - s->stk[i].y);
+		printf("Diff : %f     i = %d\n", diff, i);
 		if (prev > diff && diff < 0.5)
 			loc = i;
 		prev = diff;
@@ -63,6 +65,7 @@ void	ft_slocate(t_all *s, double dirx, double diry, double dist)
 	}
 	if (loc <= 0 || loc >= s->win.x - 1)
 		return ;
+	printf("Location : %d\n", loc);
 	ft_sdraw(s, loc, dist);
 }
 

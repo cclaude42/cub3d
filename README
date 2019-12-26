@@ -1,3 +1,0 @@
-To launch and compile :
-
-gcc -lmlx -I ./minilibx_opengl_20191021 -framework OpenGL -framework AppKit *.c && ./a.out map.cub
