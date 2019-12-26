@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/23 19:12:23 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/26 12:01:17 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,8 +189,7 @@ void			ft_sprite(t_all *s);
 void			ft_slist(t_all *s);
 void			ft_sorder(t_all *s);
 void			ft_slocate(t_all *s, double dirx, double diry, double dist);
-void			ft_sdraw(t_all *s, int loc, double ver, int size);
-
+void			ft_sdraw(t_all *s, int loc, int size);
 
 char			*error(char *stock);
 int				newline_check(char *stock, int read_size);

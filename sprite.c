@@ -6,52 +6,64 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 18:04:34 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/23 19:22:31 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/26 12:19:32 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-// void	ft_sdraw(t_all *s, int loc)
+// void	ft_sdraw(t_all *s, int loc, double ver, int size)
 // {
-// 	printf("loc %d\n", loc);
+// 	unsigned int	color;
+// 	int				start;
+// 	int				count;
+// 	int				index;
+//
+// 	start = s->win.x * (s->win.y - size) / 2;
+// 	if (size > s->win.y)
+// 		count = (size - s->win.y) / 2;
+// 	else
+// 		count = 0;
+// 	color = NONE;
 // 	while (loc < s->win.x * s->win.y)
 // 	{
-// 		s->img.adr[loc] = mlx_get_color_value(s->mlx.ptr, MAGENTA);
+// 		if (loc >= start && count < size)
+// 		{
+// 			index = 64 * floor(64 * (double)count / size);
+// 			index += 64 * ver;
+// 			color = s->tex.i[index];
+// 			count++;
+// 		}
+// 		else if (count == size)
+// 			color = NONE;
+// 		if (color != NONE)
+// 			s->img.adr[loc] = mlx_get_color_value(s->mlx.ptr, color);
 // 		loc += s->win.x;
 // 	}
 // }
 
-void	ft_sdraw(t_all *s, int loc, double ver, int size)
+void	ft_sdraw(t_all *s, int loc, int size)
 {
-	unsigned int	color;
-	int				start;
-	int				count;
+	unsigned int	col;
 	int				index;
+	int				i;
+	int				j;
 
-	start = s->win.x * (s->win.y - size) / 2;
-	if (size > s->win.y)
-		count = (size - s->win.y) / 2;
-	else
-		count = 0;
-	color = NONE;
-	while (loc < s->win.x * s->win.y)
+	i = 0;
+	j = 0;
+	while (i < size)
 	{
-		if (loc >= start && count < size)
+		while (j < size)
 		{
-			index = 64 * floor(64 * (double)count / size);
-			index += 64 * ver;
-			color = s->tex.i[index];
-			count++;
-			//
-			// ver = 0;
-			// color = GREEN;
+			col = 64 * floor(64 * (double)j / size) + (double)i / size * 64;
+			col = s->tex.i[col];
+			index = (j + (s->win.y / 2)) * s->win.x + i - (size / 2) + loc;
+			if (col != NONE && index < s->win.x * s->win.y)
+				s->img.adr[index] = mlx_get_color_value(s->mlx.ptr, col);
+			j++;
 		}
-		else if (count == size)
-			color = NONE;
-		if (color != NONE)
-			s->img.adr[loc] = mlx_get_color_value(s->mlx.ptr, color);
-		loc += s->win.x;
+		i++;
+		j = 0;
 	}
 }
 
@@ -77,12 +89,7 @@ void	ft_slocate(t_all *s, double dirx, double diry, double dist)
 	}
 	if (loc <= 0 || loc >= s->win.x - 1)
 		return ;
-	i = 0;
-	while (i < 100)
-	{
-		ft_sdraw(s, loc + i - 50, (double)i / 100, 100);
-		i++;
-	}
+	ft_sdraw(s, loc, s->win.y / dist / 2);
 }
 
 void	ft_sorder(t_all *s)
