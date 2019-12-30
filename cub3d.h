@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/30 15:00:45 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/30 16:31:42 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,7 @@ void			ft_draw(t_all *s);
 void			ft_parse(t_all *s, char *cub);
 int				get_next_line(int fd, char **line);
 void			ft_line(t_all *s, char *line);
-void			ft_background(t_all *s);
+void			ft_slist(t_all *s);
 
 void			ft_map(t_all *s, char *line, int *i);
 char			*ft_slab(t_all *s, char *line, int *i);
@@ -187,10 +187,10 @@ void			ft_column(t_all *s, int start);
 unsigned int	ft_pixel(t_all *s, double i);
 
 void			ft_sprite(t_all *s);
-void			ft_slist(t_all *s);
 void			ft_sorder(t_all *s);
 void			ft_slocate(t_all *s, double dirx, double diry, double dist);
 void			ft_sdraw(t_all *s, int loc, double dist);
+unsigned int	ft_spixel(t_all *s, int index, unsigned int col);
 
 char			*error(char *stock);
 int				newline_check(char *stock, int read_size);

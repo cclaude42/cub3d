@@ -6,13 +6,23 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 18:04:34 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/30 16:04:01 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/30 17:16:51 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_sdraw(t_all *s, int loc, double dist)
+unsigned int	ft_spixel(t_all *s, int index, unsigned int col)
+{
+	if (col == NONE)
+		return (s->img.adr[index]);
+	else if (col < 16777216)
+		return (col);
+	else
+		return (s->img.adr[index] / 2);
+}
+
+void			ft_sdraw(t_all *s, int loc, double dist)
 {
 	unsigned int	col;
 	double			size;
@@ -33,7 +43,7 @@ void	ft_sdraw(t_all *s, int loc, double dist)
 			col = s->tex.i[col];
 			index = loc + i + (s->win.y / 2 + j) * s->win.x;
 			if (index < s->win.x * s->win.y)
-				s->img.adr[index] = mlx_get_color_value(s->mlx.ptr, col);
+				s->img.adr[index] = ft_spixel(s, index, col);
 			j++;
 		}
 		i++;
@@ -41,7 +51,7 @@ void	ft_sdraw(t_all *s, int loc, double dist)
 	}
 }
 
-void	ft_slocate(t_all *s, double dirx, double diry, double dist)
+void			ft_slocate(t_all *s, double dirx, double diry, double dist)
 {
 	double	angle;
 
@@ -56,11 +66,10 @@ void	ft_slocate(t_all *s, double dirx, double diry, double dist)
 		angle -= 360;
 	else if (angle <= -180)
 		angle += 360;
-	printf("Index : %f\n", angle * s->win.x / 66);
 	ft_sdraw(s, angle * s->win.x / 66, dist);
 }
 
-void	ft_sorder(t_all *s)
+void			ft_sorder(t_all *s)
 {
 	t_spr	tmp;
 	int		i;
@@ -84,34 +93,7 @@ void	ft_sorder(t_all *s)
 	}
 }
 
-void	ft_slist(t_all *s)
-{
-	int		i;
-	int		j;
-	int		k;
-
-	if (s->spr != NULL)
-		free(s->spr);
-	s->spr = malloc(sizeof(t_spr) * s->map.spr);
-	i = 0;
-	j = 0;
-	while (j < s->map.y)
-	{
-		k = 0;
-		while (k < s->map.x)
-		{
-			if (s->map.tab[j][k] == '2')
-			{
-				s->spr[i].y = (double)j + 0.5;
-				s->spr[i++].x = (double)k + 0.5;
-			}
-			k++;
-		}
-		j++;
-	}
-}
-
-void	ft_sprite(t_all *s)
+void			ft_sprite(t_all *s)
 {
 	int		i;
 	double	dist;
@@ -134,6 +116,5 @@ void	ft_sprite(t_all *s)
 		ft_slocate(s, s->spr[i].x, s->spr[i].y, s->spr[i].d);
 		i++;
 	}
-	printf("\n");
 	free(s->stk);
 }
