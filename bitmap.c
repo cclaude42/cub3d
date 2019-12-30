@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/30 17:38:47 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/30 23:08:52 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/30 23:10:49 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_bdata(t_all *s, int fd)
 			buffer[0] = (unsigned char)(s->img.adr[i] % 256);
 			buffer[1] = (unsigned char)(s->img.adr[i] / 256 % 256);
 			buffer[2] = (unsigned char)(s->img.adr[i] / 256 / 256 % 256);
-			buffer[3] = (unsigned char)(s->img.adr[i] / 256 / 256 / 256);
+			buffer[3] = (unsigned char)(0);
 			write(fd, buffer, 4);
 			i++;
 			j++;
