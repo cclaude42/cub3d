@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/26 13:32:40 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/30 15:00:45 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ typedef struct	s_dir
 {
 	double			x;
 	double			y;
+	double			a;
 }				t_dir;
 
 typedef struct	s_ray

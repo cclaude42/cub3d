@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/26 13:41:51 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/30 15:26:53 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,13 @@ void	ft_strafe(t_all *s, double c)
 
 void	ft_rotate(t_all *s, double c)
 {
+	double	dist;
+
 	s->dir.x = s->dir.x * cos(c * TURN) - s->dir.y * sin(c * TURN);
 	s->dir.y = s->dir.y * cos(c * TURN) + s->dir.x * sin(c * TURN);
+	dist = hypot(s->dir.x, s->dir.y);
+	s->dir.x /= dist;
+	s->dir.y /= dist;
 	ft_draw(s);
 }
 
