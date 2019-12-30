@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/30 17:38:47 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/30 19:26:21 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/30 20:18:19 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,26 +37,43 @@ void	ft_bdata(t_all *s, int fd)
 	int	i;
 
 	i = 0;
-	while (i < s->win.x * s->win.y)
+	while (i < 25)
 	{
-		write(fd, "00 FF 00 00 ", 12);
+		write(fd, "\0", 1);
+		write(fd, "\0", 1);
+		write(fd, "\0", 1);
+		write(fd, "\0", 1);
 		i++;
 	}
+	s->pos.x = 1;
 }
 
 void	ft_bheader(t_all *s, int fd)
 {
-	// s->pos.x = 1;
-	write(fd, "42 4D ", 6);
-	ft_putbyte(s->win.x * s->win.y * 4 + 54, fd);
-	// ft_putbyte(154, fd);
-	write(fd, "00 00 00 00 36 00 00 00 28 00 00 00 ", 36);
-	ft_putbyte(s->win.x, fd);
-	ft_putbyte(s->win.y, fd);
-	// ft_putbyte(5, fd);
-	// ft_putbyte(5, fd);
-	write(fd, "01 00 20 00 00 00 00 00 00 00 00 00 00 00 00 00 ", 48);
-	write(fd, "00 00 00 00 00 00 00 00 00 00 00 00 ", 36);
+	int				i;
+	unsigned char	header[54];
+
+	i = 0;
+	while (i < 54)
+		header[i++] = (unsigned char)(0);
+	header[0] = (unsigned char)(66);
+	header[1] = (unsigned char)(77);
+
+	// ft_putbyte(s->win.x * s->win.y * 4 + 54, fd);2
+	header[2] = (unsigned char)(154);
+
+	header[10] = (unsigned char)(54);
+	header[14] = (unsigned char)(40);
+
+	// ft_putbyte(s->win.x, fd);18
+	// ft_putbyte(s->win.y, fd);22
+	header[18] = (unsigned char)(5);
+	header[22] = (unsigned char)(5);
+
+	header[26] = (unsigned char)(1);
+	header[28] = (unsigned char)(32);
+	write(fd, header, 54);
+	s->pos.x = 1;
 }
 
 void	ft_bdraw(t_all *s)
@@ -82,11 +99,10 @@ void	ft_bitmap(t_all *s)
 	int		fd;
 
 	ft_bdraw(s);
-	fd = open("screenshot.bmp", O_CREAT|O_WRONLY|O_TRUNC, S_IRWXU);
+	fd = open("bmp.bmp", O_CREAT|O_WRONLY|O_TRUNC, S_IRWXU);
 	ft_bheader(s, fd);
 	ft_bdata(s, fd);
 	close(fd);
 	free(s->img.ptr);
 	free(s->img.adr);
-	printf("success\n");
 }
