@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/30 19:02:01 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/30 22:39:41 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,9 +192,9 @@ unsigned int	ft_spixel(t_all *s, int index, unsigned int col);
 
 void			ft_bitmap(t_all *s);
 void			ft_bdraw(t_all *s);
-void			ft_bheader(t_all *s, int fd);
+void			ft_bfile(t_all *s, int fd);
+void			ft_binfo(t_all *s, int fd);
 void			ft_bdata(t_all *s, int fd);
-void			ft_putbyte(unsigned int byte, int fd);
 
 char			*error(char *stock);
 int				newline_check(char *stock, int read_size);

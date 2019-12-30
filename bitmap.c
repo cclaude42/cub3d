@@ -6,74 +6,77 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/30 17:38:47 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/30 20:18:19 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/30 23:08:52 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_putbyte(unsigned int byte, int fd)
-{
-	char	*table;
-	int		nb;
-
-	table = "0123456789ABCDEF";
-	nb = byte % 256;
-	write(fd, &table[nb / 16], 1);
-	write(fd, &table[nb % 16], 1);
-	write(fd, " ", 1);
-	nb = byte / 256 % 256;
-	write(fd, &table[nb / 16], 1);
-	write(fd, &table[nb % 16], 1);
-	write(fd, " ", 1);
-	nb = byte / 256 / 256 % 256;
-	write(fd, &table[nb / 16], 1);
-	write(fd, &table[nb % 16], 1);
-	write(fd, " 00 ", 4);
-}
-
 void	ft_bdata(t_all *s, int fd)
 {
-	int	i;
+	int				i;
+	int				j;
+	unsigned char	buffer[4];
 
-	i = 0;
-	while (i < 25)
+	i = s->win.x * (s->win.y - 1);
+	while (i >= 0)
 	{
-		write(fd, "\0", 1);
-		write(fd, "\0", 1);
-		write(fd, "\0", 1);
-		write(fd, "\0", 1);
-		i++;
+		j = 0;
+		while (j < s->win.x)
+		{
+			buffer[0] = (unsigned char)(s->img.adr[i] % 256);
+			buffer[1] = (unsigned char)(s->img.adr[i] / 256 % 256);
+			buffer[2] = (unsigned char)(s->img.adr[i] / 256 / 256 % 256);
+			buffer[3] = (unsigned char)(s->img.adr[i] / 256 / 256 / 256);
+			write(fd, buffer, 4);
+			i++;
+			j++;
+		}
+		i -= 2 * s->win.x;
 	}
-	s->pos.x = 1;
 }
 
-void	ft_bheader(t_all *s, int fd)
+void	ft_binfo(t_all *s, int fd)
 {
-	int				i;
-	unsigned char	header[54];
+	int				n;
+	unsigned char	header[40];
 
-	i = 0;
-	while (i < 54)
-		header[i++] = (unsigned char)(0);
-	header[0] = (unsigned char)(66);
-	header[1] = (unsigned char)(77);
-
-	// ft_putbyte(s->win.x * s->win.y * 4 + 54, fd);2
-	header[2] = (unsigned char)(154);
-
-	header[10] = (unsigned char)(54);
+	n = 0;
+	while (n < 40)
+		header[n++] = (unsigned char)(0);
 	header[14] = (unsigned char)(40);
-
-	// ft_putbyte(s->win.x, fd);18
-	// ft_putbyte(s->win.y, fd);22
-	header[18] = (unsigned char)(5);
-	header[22] = (unsigned char)(5);
-
+	n = s->win.x;
+	header[18] = (unsigned char)(n % 256);
+	header[19] = (unsigned char)(n / 256 % 256);
+	header[20] = (unsigned char)(n / 256 / 256 % 256);
+	header[21] = (unsigned char)(n / 256 / 256 / 256);
+	n = s->win.y;
+	header[22] = (unsigned char)(n % 256);
+	header[23] = (unsigned char)(n / 256 % 256);
+	header[24] = (unsigned char)(n / 256 / 256 % 256);
+	header[25] = (unsigned char)(n / 256 / 256 / 256);
 	header[26] = (unsigned char)(1);
 	header[28] = (unsigned char)(32);
-	write(fd, header, 54);
-	s->pos.x = 1;
+	write(fd, header, 40);
+}
+
+void	ft_bfile(t_all *s, int fd)
+{
+	int				n;
+	unsigned char	header[14];
+
+	n = 0;
+	while (n < 14)
+		header[n++] = (unsigned char)(0);
+	header[0] = (unsigned char)(66);
+	header[1] = (unsigned char)(77);
+	n = s->win.x * s->win.y * 4 + 54;
+	header[2] = (unsigned char)(n % 256);
+	header[3] = (unsigned char)(n / 256 % 256);
+	header[4] = (unsigned char)(n / 256 / 256 % 256);
+	header[5] = (unsigned char)(n / 256 / 256 / 256);
+	header[10] = (unsigned char)(54);
+	write(fd, header, 14);
 }
 
 void	ft_bdraw(t_all *s)
@@ -100,7 +103,8 @@ void	ft_bitmap(t_all *s)
 
 	ft_bdraw(s);
 	fd = open("bmp.bmp", O_CREAT|O_WRONLY|O_TRUNC, S_IRWXU);
-	ft_bheader(s, fd);
+	ft_bfile(s, fd);
+	ft_binfo(s, fd);
 	ft_bdata(s, fd);
 	close(fd);
 	free(s->img.ptr);
