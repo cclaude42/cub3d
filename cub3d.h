@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/30 16:31:42 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/30 19:02:01 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,15 +147,14 @@ typedef struct	s_all
 	t_stk			*stk;
 }				t_all;
 
-void			ft_declare(t_all s, char *cub);
-void			ft_cubed(t_all s, char *cub);
-void			ft_init(t_all *s, char *cub);
+void			ft_init(char *cub, int bmp);
+void			ft_declare(t_all s, char *cub, int bmp);
+void			ft_cubed(t_all s, char *cub, int bmp);
 void			ft_draw(t_all *s);
 
 void			ft_parse(t_all *s, char *cub);
 int				get_next_line(int fd, char **line);
 void			ft_line(t_all *s, char *line);
-void			ft_slist(t_all *s);
 
 void			ft_map(t_all *s, char *line, int *i);
 char			*ft_slab(t_all *s, char *line, int *i);
@@ -163,11 +162,10 @@ int				ft_slablen(char *line);
 void			ft_texture(t_all *s, unsigned int **adr, char *line, int *i);
 void			ft_xpm(unsigned int **adr, void *img);
 
+void			ft_slist(t_all *s);
 void			ft_pos(t_all *s);
 void			ft_colors(unsigned int *color, char *line, int *i);
 void			ft_res(t_all *s, char *line, int *i);
-int				ft_atoi(char *line, int *i);
-void			ft_spaceskip(char *line, int *i);
 
 int				ft_key(int key, void *arg);
 void			ft_rotate(t_all *s, double c);
@@ -192,10 +190,20 @@ void			ft_slocate(t_all *s, double dirx, double diry, double dist);
 void			ft_sdraw(t_all *s, int loc, double dist);
 unsigned int	ft_spixel(t_all *s, int index, unsigned int col);
 
+void			ft_bitmap(t_all *s);
+void			ft_bdraw(t_all *s);
+void			ft_bheader(t_all *s, int fd);
+void			ft_bdata(t_all *s, int fd);
+void			ft_putbyte(unsigned int byte, int fd);
+
 char			*error(char *stock);
 int				newline_check(char *stock, int read_size);
 char			*buf_join(char *stock, char *buf);
 char			*stock_trim(char *stock);
 char			*get_line(char *stock);
+
+int				ft_atoi(char *line, int *i);
+void			ft_spaceskip(char *line, int *i);
+int				ft_savecheck(char *arg, char *save);
 
 #endif

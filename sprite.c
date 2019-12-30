@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 18:04:34 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/30 17:16:51 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/30 17:33:57 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ unsigned int	ft_spixel(t_all *s, int index, unsigned int col)
 		return (s->img.adr[index]);
 	else if (col < 16777216)
 		return (col);
-	else
-		return (s->img.adr[index] / 2);
+	return (s->img.adr[index] / (256 / (col / 16777216)));
 }
 
 void			ft_sdraw(t_all *s, int loc, double dist)

@@ -19,10 +19,12 @@ SRC = cub3d.c \
 	screen.c \
 	screen_col.c \
 	sprite.c \
+	bitmap.c \
+	tools.c \
 
 OBJ = $(SRC:.c=.o)
 
-.PHONY: all re clean fclean test sqr norm
+.PHONY: all re clean fclean test sqr bmp norm
 
 all: $(NAME)
 
@@ -49,6 +51,9 @@ test: re
 
 sqr: re
 	./$(NAME) maps/sqr.cub
+
+bmp: re
+	./$(NAME) maps/map.cub --save
 
 norm:
 	norminette $(SRC) $(HEADER)

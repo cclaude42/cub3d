@@ -6,38 +6,11 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/30 16:19:02 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/30 18:03:24 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-void	ft_slist(t_all *s)
-{
-	int		i;
-	int		j;
-	int		k;
-
-	if (s->spr != NULL)
-		free(s->spr);
-	s->spr = malloc(sizeof(t_spr) * s->map.spr);
-	i = 0;
-	j = 0;
-	while (j < s->map.y)
-	{
-		k = 0;
-		while (k < s->map.x)
-		{
-			if (s->map.tab[j][k] == '2')
-			{
-				s->spr[i].y = (double)j + 0.5;
-				s->spr[i++].x = (double)k + 0.5;
-			}
-			k++;
-		}
-		j++;
-	}
-}
 
 void	ft_line(t_all *s, char *line)
 {

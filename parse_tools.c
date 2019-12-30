@@ -6,32 +6,11 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:41:51 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/20 18:31:33 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/30 18:03:33 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-void	ft_spaceskip(char *line, int *i)
-{
-	while ((line[*i] == ' ' || line[*i] == '\t' || line[*i] == '\n')
-	|| (line[*i] == '\r' || line[*i] == '\v' || line[*i] == '\f'))
-		(*i)++;
-}
-
-int		ft_atoi(char *line, int *i)
-{
-	int	num;
-
-	num = 0;
-	ft_spaceskip(line, i);
-	while (line[*i] >= '0' && line[*i] <= '9')
-	{
-		num = num * 10 + (line[*i] - 48);
-		(*i)++;
-	}
-	return (num);
-}
 
 void	ft_res(t_all *s, char *line, int *i)
 {
@@ -81,5 +60,32 @@ void	ft_pos(t_all *s)
 			}
 		}
 		j = -1;
+	}
+}
+
+void	ft_slist(t_all *s)
+{
+	int		i;
+	int		j;
+	int		k;
+
+	if (s->spr != NULL)
+		free(s->spr);
+	s->spr = malloc(sizeof(t_spr) * s->map.spr);
+	i = 0;
+	j = 0;
+	while (j < s->map.y)
+	{
+		k = 0;
+		while (k < s->map.x)
+		{
+			if (s->map.tab[j][k] == '2')
+			{
+				s->spr[i].y = (double)j + 0.5;
+				s->spr[i++].x = (double)k + 0.5;
+			}
+			k++;
+		}
+		j++;
 	}
 }
