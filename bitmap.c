@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/30 17:38:47 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/31 13:52:22 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/31 16:21:23 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	ft_bdraw(t_all *s)
 	ft_screen(s);
 }
 
-void	ft_bitmap(t_all *s)
+int		ft_bitmap(t_all *s)
 {
 	int		fd;
 
@@ -110,4 +110,5 @@ void	ft_bitmap(t_all *s)
 	free(s->img.ptr);
 	free(s->img.adr);
 	ft_close(s, 0);
+	return (1);
 }

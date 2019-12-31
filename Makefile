@@ -24,7 +24,7 @@ SRC = cub3d.c \
 
 OBJ = $(SRC:.c=.o)
 
-.PHONY: all re clean fclean test sqr bmp norm
+.PHONY: all re clean fclean test sqr bmp err inv norm
 
 all: $(NAME)
 
@@ -50,7 +50,7 @@ clean:
 	@echo "\033[0m"
 
 fclean: clean
-	@echo "\033[0;31mDeleting executable..."
+	@echo "\033[0;31mRemoving executable..."
 	rm -f $(NAME)
 	@echo "\033[0m"
 
@@ -64,6 +64,12 @@ sqr: re
 
 bmp: re
 	./$(NAME) maps/map.cub --save
+
+err: re
+	./$(NAME) maps/none
+
+inv: re
+	./$(NAME) maps/inv.cub
 
 norm:
 	norminette $(SRC) $(HEADER)

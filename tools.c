@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/30 18:01:54 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/30 18:08:43 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/31 16:56:01 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,18 @@ int		ft_savecheck(char *arg, char *save)
 			return (1);
 		i++;
 	}
+	return (0);
+}
+
+int		ft_namecheck(char *arg)
+{
+	int	i;
+
+	i = 0;
+	while (arg[i] != '\0')
+		i++;
+	if ((i > 4 && arg[i - 1] == 'b' && arg[i - 2] == 'u')
+		&& (arg[i - 3] == 'c' && arg[i - 4] == '.'))
+		return (1);
 	return (0);
 }

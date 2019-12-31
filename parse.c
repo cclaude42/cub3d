@@ -6,13 +6,13 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/30 18:03:24 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/31 17:16:38 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_line(t_all *s, char *line)
+int		ft_line(t_all *s, char *line)
 {
 	int		i;
 
@@ -36,6 +36,9 @@ void	ft_line(t_all *s, char *line)
 		ft_colors(&s->tex.c, line, &i);
 	else if (line[i] == '1' && line[i + 1] == ' ')
 		ft_map(s, line, &i);
+	if (s->tex.err == -1)
+		return (-1);
+	return (1);
 }
 
 int		get_next_line(int fd, char **line)
@@ -67,7 +70,7 @@ int		get_next_line(int fd, char **line)
 	return (1);
 }
 
-void	ft_parse(t_all *s, char *cub)
+int		ft_parse(t_all *s, char *cub)
 {
 	char	*line;
 	int		fd;
@@ -77,12 +80,20 @@ void	ft_parse(t_all *s, char *cub)
 	fd = open(cub, O_RDONLY);
 	while ((ret = get_next_line(fd, &line)) == 1)
 	{
-		ft_line(s, line);
+		if ((ret = ft_line(s, line)) == -1)
+			write(2, "Parsing error\n", 14);
 		free(line);
+		if (ret == -1)
+			return (-1);
 	}
 	free(line);
 	close(fd);
+	if (ret == -1)
+		write(2, "GNL error\n", 10);
+	if (ret == -1)
+		return (-1);
 	ft_pos(s);
 	s->spr = NULL;
 	ft_slist(s);
+	return (1);
 }

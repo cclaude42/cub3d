@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/31 14:31:22 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/31 17:07:48 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ typedef struct	s_tex
 	unsigned int	*i;
 	unsigned int	c;
 	unsigned int	f;
+	int				err;
 }				t_tex;
 
 typedef struct	s_pos
@@ -142,12 +143,12 @@ typedef struct	s_all
 
 void			ft_init(char *cub, int bmp);
 void			ft_declare(t_all s, char *cub, int bmp);
-void			ft_cubed(t_all s, char *cub, int bmp);
+int				ft_cubed(t_all s, char *cub, int bmp);
 void			ft_draw(t_all *s);
 
-void			ft_parse(t_all *s, char *cub);
+int				ft_parse(t_all *s, char *cub);
 int				get_next_line(int fd, char **line);
-void			ft_line(t_all *s, char *line);
+int				ft_line(t_all *s, char *line);
 
 void			ft_map(t_all *s, char *line, int *i);
 char			*ft_slab(t_all *s, char *line, int *i);
@@ -183,7 +184,7 @@ void			ft_slocate(t_all *s, double dirx, double diry, double dist);
 void			ft_sdraw(t_all *s, int loc, double dist);
 unsigned int	ft_spixel(t_all *s, int index, unsigned int col);
 
-void			ft_bitmap(t_all *s);
+int				ft_bitmap(t_all *s);
 void			ft_bdraw(t_all *s);
 void			ft_bfile(t_all *s, int fd);
 void			ft_binfo(t_all *s, int fd);
@@ -198,5 +199,6 @@ char			*get_line(char *stock);
 int				ft_atoi(char *line, int *i);
 void			ft_spaceskip(char *line, int *i);
 int				ft_savecheck(char *arg, char *save);
+int				ft_namecheck(char *arg);
 
 #endif

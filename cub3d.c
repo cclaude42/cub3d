@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/30 18:14:38 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/31 17:06:33 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_draw(t_all *s)
 	free(s->img.adr);
 }
 
-void	ft_cubed(t_all s, char *cub, int bmp)
+int		ft_cubed(t_all s, char *cub, int bmp)
 {
 	t_pos	pos;
 	t_dir	dir;
@@ -50,7 +50,8 @@ void	ft_cubed(t_all s, char *cub, int bmp)
 	s.dir = dir;
 	s.spr = spr;
 	s.mlx.ptr = mlx_init();
-	ft_parse(&s, cub);
+	if (ft_parse(&s, cub) == -1)
+		return (ft_close(&s, 0));
 	if (bmp == 1)
 		return (ft_bitmap(&s));
 	s.win.ptr = mlx_new_window(s.mlx.ptr, s.win.x, s.win.y, "cub3D");
@@ -58,6 +59,7 @@ void	ft_cubed(t_all s, char *cub, int bmp)
 	mlx_hook(s.win.ptr, 2, 0, ft_key, &s);
 	mlx_hook(s.win.ptr, 17, 0, ft_close, &s);
 	mlx_loop(s.mlx.ptr);
+	return (1);
 }
 
 void	ft_declare(t_all s, char *cub, int bmp)
@@ -76,6 +78,7 @@ void	ft_declare(t_all s, char *cub, int bmp)
 	map.spr = 0;
 	tex.c = 0;
 	tex.f = 0;
+	tex.err = 0;
 	s.map = map;
 	s.tex = tex;
 	ft_cubed(s, cub, bmp);
@@ -105,9 +108,9 @@ int		main(int ac, char **av)
 {
 	if (ac == 3 && ft_savecheck(av[2], "--save"))
 		ft_init(av[1], 1);
-	else if (ac == 2)
+	else if (ac == 2 && ft_namecheck(av[1]))
 		ft_init(av[1], 0);
 	else
-		printf("invalid arg num\n");
+		write(2, "Invalid arguments\n", 18);
 	return (0);
 }
