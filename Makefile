@@ -29,20 +29,30 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	@echo "\033[0;33mCompiling..."
 	$(CC) -o $(NAME) -L $(MLX) $(LXFLAGS) $(OBJ)
+	@echo "\033[0m"
+
+	@echo "\033[0;32mMoving binaries..."
 	mkdir -p bin
 	mv $(OBJ) bin/
+	@echo "\033[0m"
 
 %.o: %.c
-	@echo "\033[0;32mGenerating obj..."
+	@echo "\033[0;32mGenerating binary..."
 	$(CC) $(CFLAGS) -c $<
 	@echo "\033[0m"
 
 clean:
+	@echo "\033[0;31mCleaning..."
 	rm -rf bin
+	rm -f bitmap.bmp
+	@echo "\033[0m"
 
 fclean: clean
+	@echo "\033[0;31mDeleting executable..."
 	rm -f $(NAME)
+	@echo "\033[0m"
 
 re: fclean all
 
