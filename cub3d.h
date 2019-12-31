@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/31 17:07:48 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/31 18:30:10 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,13 +153,13 @@ int				ft_line(t_all *s, char *line);
 void			ft_map(t_all *s, char *line, int *i);
 char			*ft_slab(t_all *s, char *line, int *i);
 int				ft_slablen(char *line);
-void			ft_texture(t_all *s, unsigned int **adr, char *line, int *i);
-void			ft_xpm(unsigned int **adr, void *img);
+int				ft_texture(t_all *s, unsigned int **adr, char *line, int *i);
+int				ft_xpm(t_all *s, unsigned int **adr, char *file);
 
 void			ft_slist(t_all *s);
 void			ft_pos(t_all *s);
-void			ft_colors(unsigned int *color, char *line, int *i);
-void			ft_res(t_all *s, char *line, int *i);
+int				ft_colors(unsigned int *color, char *line, int *i);
+int				ft_res(t_all *s, char *line, int *i);
 
 int				ft_key(int key, void *arg);
 void			ft_rotate(t_all *s, double c);
@@ -199,6 +199,7 @@ char			*get_line(char *stock);
 int				ft_atoi(char *line, int *i);
 void			ft_spaceskip(char *line, int *i);
 int				ft_savecheck(char *arg, char *save);
-int				ft_namecheck(char *arg);
+int				ft_namecheck(char *arg, char *ext);
+int				ft_strerror(int err);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/31 17:06:33 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/31 18:28:37 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ void	ft_declare(t_all s, char *cub, int bmp)
 	map.x = 0;
 	map.y = 0;
 	map.spr = 0;
-	tex.c = 0;
-	tex.f = 0;
+	tex.c = NONE;
+	tex.f = NONE;
 	tex.err = 0;
 	s.map = map;
 	s.tex = tex;
@@ -108,7 +108,7 @@ int		main(int ac, char **av)
 {
 	if (ac == 3 && ft_savecheck(av[2], "--save"))
 		ft_init(av[1], 1);
-	else if (ac == 2 && ft_namecheck(av[1]))
+	else if (ac == 2 && ft_namecheck(av[1], "cub"))
 		ft_init(av[1], 0);
 	else
 		write(2, "Invalid arguments\n", 18);

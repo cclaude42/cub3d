@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/31 17:16:38 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/31 18:04:02 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,25 +19,25 @@ int		ft_line(t_all *s, char *line)
 	i = 0;
 	ft_spaceskip(line, &i);
 	if (line[i] == 'R' && line[i + 1] == ' ')
-		ft_res(s, line, &i);
+		s->tex.err = ft_res(s, line, &i);
 	else if (line[i] == 'N' && line[i + 1] == 'O' && line[i + 2] == ' ')
-		ft_texture(s, &s->tex.n, line, &i);
+		s->tex.err = ft_texture(s, &s->tex.n, line, &i);
 	else if (line[i] == 'S' && line[i + 1] == 'O' && line[i + 2] == ' ')
-		ft_texture(s, &s->tex.s, line, &i);
+		s->tex.err = ft_texture(s, &s->tex.s, line, &i);
 	else if (line[i] == 'W' && line[i + 1] == 'E' && line[i + 2] == ' ')
-		ft_texture(s, &s->tex.w, line, &i);
+		s->tex.err = ft_texture(s, &s->tex.w, line, &i);
 	else if (line[i] == 'E' && line[i + 1] == 'A' && line[i + 2] == ' ')
-		ft_texture(s, &s->tex.e, line, &i);
+		s->tex.err = ft_texture(s, &s->tex.e, line, &i);
 	else if (line[i] == 'S' && line[i + 1] == ' ')
-		ft_texture(s, &s->tex.i, line, &i);
+		s->tex.err = ft_texture(s, &s->tex.i, line, &i);
 	else if (line[i] == 'F' && line[i + 1] == ' ')
-		ft_colors(&s->tex.f, line, &i);
+		s->tex.err = ft_colors(&s->tex.f, line, &i);
 	else if (line[i] == 'C' && line[i + 1] == ' ')
-		ft_colors(&s->tex.c, line, &i);
+		s->tex.err = ft_colors(&s->tex.c, line, &i);
 	else if (line[i] == '1' && line[i + 1] == ' ')
 		ft_map(s, line, &i);
-	if (s->tex.err == -1)
-		return (-1);
+	if (s->tex.err < 0)
+		return (ft_strerror(s->tex.err));
 	return (1);
 }
 
@@ -78,10 +78,11 @@ int		ft_parse(t_all *s, char *cub)
 
 	ret = 1;
 	fd = open(cub, O_RDONLY);
+	if (fd == -1)
+		return (ft_strerror(-1));
 	while ((ret = get_next_line(fd, &line)) == 1)
 	{
-		if ((ret = ft_line(s, line)) == -1)
-			write(2, "Parsing error\n", 14);
+		ret = ft_line(s, line);
 		free(line);
 		if (ret == -1)
 			return (-1);
@@ -89,9 +90,7 @@ int		ft_parse(t_all *s, char *cub)
 	free(line);
 	close(fd);
 	if (ret == -1)
-		write(2, "GNL error\n", 10);
-	if (ret == -1)
-		return (-1);
+		return (ft_strerror(-2));
 	ft_pos(s);
 	s->spr = NULL;
 	ft_slist(s);

@@ -6,44 +6,54 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:41:46 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/17 19:00:30 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/31 18:33:30 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_xpm(unsigned int **adr, void *img)
+int		ft_xpm(t_all *s, unsigned int **adr, char *file)
 {
-	int		bpp;
-	int		sl;
-	int		end;
+	int		fd;
+	void	*img;
+	int		tab[5];
 
-	*adr = (unsigned int *)mlx_get_data_addr(img, &bpp, &sl, &end);
+	if (ft_namecheck(file, "xpm") == 0)
+		return (-1);
+	if ((fd = open(file, O_RDONLY)) == -1)
+		return (-1);
+	close(fd);
+	img = mlx_xpm_file_to_image(s->mlx.ptr, file, &tab[0], &tab[1]);
+	*adr = (unsigned int *)mlx_get_data_addr(img, &tab[2], &tab[3], &tab[4]);
+	free(img);
+	return (0);
 }
 
-void	ft_texture(t_all *s, unsigned int **adr, char *line, int *i)
+int		ft_texture(t_all *s, unsigned int **adr, char *line, int *i)
 {
 	char	*file;
-	void	*img;
-	int		width;
-	int		height;
 	int		j;
 
+	if (*adr != NULL)
+		return (-7);
 	(*i) += 2;
 	ft_spaceskip(line, i);
 	j = *i;
 	while (line[*i] != ' ' && line[*i] != '\0')
 		(*i)++;
-	file = malloc(sizeof(char) * (*i - j + 1));
+	if (!(file = malloc(sizeof(char) * (*i - j + 1))))
+		return (-8);
 	*i = j;
 	j = 0;
 	while (line[*i] != ' ' && line[*i] != '\0')
 		file[j++] = line[(*i)++];
 	file[j] = '\0';
-	img = mlx_xpm_file_to_image(s->mlx.ptr, file, &width, &height);
-	free(file);
-	ft_xpm(adr, img);
-	free(img);
+	if (ft_xpm(s, adr, file) == -1)
+	{
+		free(file);
+		return (-9);
+	}
+	return (0);
 }
 
 int		ft_slablen(char *line)
