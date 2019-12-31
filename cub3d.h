@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/31 13:52:49 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/31 14:31:22 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,6 @@
 # define MAGENTA 0x00FF00FF
 # define YELLOW 0x00FFFF00
 # define CYAN 0x0000FFFF
-
-# define SKY 0x00CDF9FF
-# define NORTH 0x00C0C0C0
-# define SOUTH 0x00808080
-# define EAST 0x00DCDCDC
-# define WEST 0x00778899
-# define DIRT 0x00E0AC69
 
 # define ESC 53
 # define W 13
