@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/30 22:39:41 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/31 13:52:49 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,7 +171,7 @@ int				ft_key(int key, void *arg);
 void			ft_rotate(t_all *s, double c);
 void			ft_strafe(t_all *s, double c);
 void			ft_move(t_all *s, double c);
-int				ft_close(t_all *s);
+int				ft_close(t_all *s, int win);
 
 void			ft_screen(t_all *s);
 void			ft_ray(t_all *s);

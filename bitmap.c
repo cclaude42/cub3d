@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/30 17:38:47 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/30 23:10:49 by cclaude          ###   ########.fr       */
+/*   Updated: 2019/12/31 13:52:22 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,19 +44,19 @@ void	ft_binfo(t_all *s, int fd)
 	n = 0;
 	while (n < 40)
 		header[n++] = (unsigned char)(0);
-	header[14] = (unsigned char)(40);
+	header[0] = (unsigned char)(40);
 	n = s->win.x;
-	header[18] = (unsigned char)(n % 256);
-	header[19] = (unsigned char)(n / 256 % 256);
-	header[20] = (unsigned char)(n / 256 / 256 % 256);
-	header[21] = (unsigned char)(n / 256 / 256 / 256);
+	header[4] = (unsigned char)(n % 256);
+	header[5] = (unsigned char)(n / 256 % 256);
+	header[6] = (unsigned char)(n / 256 / 256 % 256);
+	header[7] = (unsigned char)(n / 256 / 256 / 256);
 	n = s->win.y;
-	header[22] = (unsigned char)(n % 256);
-	header[23] = (unsigned char)(n / 256 % 256);
-	header[24] = (unsigned char)(n / 256 / 256 % 256);
-	header[25] = (unsigned char)(n / 256 / 256 / 256);
-	header[26] = (unsigned char)(1);
-	header[28] = (unsigned char)(32);
+	header[8] = (unsigned char)(n % 256);
+	header[9] = (unsigned char)(n / 256 % 256);
+	header[10] = (unsigned char)(n / 256 / 256 % 256);
+	header[11] = (unsigned char)(n / 256 / 256 / 256);
+	header[12] = (unsigned char)(1);
+	header[14] = (unsigned char)(32);
 	write(fd, header, 40);
 }
 
@@ -102,11 +102,12 @@ void	ft_bitmap(t_all *s)
 	int		fd;
 
 	ft_bdraw(s);
-	fd = open("bmp.bmp", O_CREAT|O_WRONLY|O_TRUNC, S_IRWXU);
+	fd = open("bitmap.bmp", O_CREAT | O_WRONLY | O_TRUNC, S_IRWXU);
 	ft_bfile(s, fd);
 	ft_binfo(s, fd);
 	ft_bdata(s, fd);
 	close(fd);
 	free(s->img.ptr);
 	free(s->img.adr);
+	ft_close(s, 0);
 }
