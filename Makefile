@@ -14,6 +14,7 @@ SRC = cub3d.c \
 	parse.c \
 	parse_map.c \
 	parse_tools.c \
+	parse_check.c \
 	gnl.c \
 	key.c \
 	screen.c \

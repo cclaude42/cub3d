@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/02 12:44:52 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/02 16:48:42 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ void	ft_declare(t_all s, char *cub, int bmp)
 	map.spr = 0;
 	tex.c = NONE;
 	tex.f = NONE;
-	tex.err = 0;
 	s.map = map;
 	s.tex = tex;
 	s.spr = spr;
@@ -93,6 +92,7 @@ void	ft_init(char *cub, int bmp)
 	t_mlx	mlx;
 	t_win	win;
 	t_img	img;
+	t_err	err;
 
 	mlx.ptr = NULL;
 	win.ptr = NULL;
@@ -101,9 +101,13 @@ void	ft_init(char *cub, int bmp)
 	win.x = 0;
 	win.y = 0;
 	img.fsh = 0;
+	err.n = 0;
+	err.m = 0;
+	err.p = 0;
 	s.mlx = mlx;
 	s.win = win;
 	s.img = img;
+	s.err = err;
 	ft_declare(s, cub, bmp);
 }
 

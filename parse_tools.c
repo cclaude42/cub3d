@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:41:51 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/31 18:12:54 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/02 17:17:26 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,14 @@ void	ft_pos(t_all *s)
 				s->dir.x *= (c == 'W') ? -1 : 1;
 				s->dir.y = (c == 'S' || c == 'N') ? 1 : 0;
 				s->dir.y *= (c == 'N') ? -1 : 1;
-				return ;
+				s->err.p++;
 			}
 		}
 		j = -1;
 	}
 }
 
-void	ft_slist(t_all *s)
+int		ft_slist(t_all *s)
 {
 	int		i;
 	int		j;
@@ -86,7 +86,8 @@ void	ft_slist(t_all *s)
 
 	if (s->spr != NULL)
 		free(s->spr);
-	s->spr = malloc(sizeof(t_spr) * s->map.spr);
+	if (!(s->spr = malloc(sizeof(t_spr) * s->map.spr)))
+		return (-1);
 	i = 0;
 	j = 0;
 	while (j < s->map.y)
@@ -103,4 +104,5 @@ void	ft_slist(t_all *s)
 		}
 		j++;
 	}
+	return (1);
 }

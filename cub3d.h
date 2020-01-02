@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/31 18:30:10 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/02 17:18:08 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,13 @@ typedef struct	s_img
 	int				fsh;
 }				t_img;
 
+typedef struct	s_err
+{
+	int				n;
+	int				m;
+	int				p;
+}				t_err;
+
 typedef struct	s_map
 {
 	char			**tab;
@@ -80,7 +87,6 @@ typedef struct	s_tex
 	unsigned int	*i;
 	unsigned int	c;
 	unsigned int	f;
-	int				err;
 }				t_tex;
 
 typedef struct	s_pos
@@ -131,8 +137,9 @@ typedef struct	s_all
 	t_mlx			mlx;
 	t_win			win;
 	t_img			img;
-	t_tex			tex;
+	t_err			err;
 	t_map			map;
+	t_tex			tex;
 	t_pos			pos;
 	t_dir			dir;
 	t_ray			ray;
@@ -150,16 +157,21 @@ int				ft_parse(t_all *s, char *cub);
 int				get_next_line(int fd, char **line);
 int				ft_line(t_all *s, char *line);
 
-void			ft_map(t_all *s, char *line, int *i);
+int				ft_map(t_all *s, char *line, int *i);
 char			*ft_slab(t_all *s, char *line, int *i);
-int				ft_slablen(char *line);
+int				ft_slablen(t_all *s, char *line);
 int				ft_texture(t_all *s, unsigned int **adr, char *line, int *i);
 int				ft_xpm(t_all *s, unsigned int **adr, char *file);
 
-void			ft_slist(t_all *s);
+int				ft_slist(t_all *s);
 void			ft_pos(t_all *s);
 int				ft_colors(unsigned int *color, char *line, int *i);
 int				ft_res(t_all *s, char *line, int *i);
+
+int				ft_parcheck(t_all *s);
+int				ft_mapcheck(t_all *s);
+int				ft_savecheck(char *arg, char *save);
+int				ft_namecheck(char *arg, char *ext);
 
 int				ft_key(int key, void *arg);
 void			ft_rotate(t_all *s, double c);
@@ -198,8 +210,6 @@ char			*get_line(char *stock);
 
 int				ft_atoi(char *line, int *i);
 void			ft_spaceskip(char *line, int *i);
-int				ft_savecheck(char *arg, char *save);
-int				ft_namecheck(char *arg, char *ext);
 int				ft_strerror(int err);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/02 12:44:36 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/02 17:25:27 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_close(t_all *s, int win)
 	int	i;
 
 	i = 0;
-	write(1, "Closing program...\n", 20);
+	write(1, "Closing program.\n", 18);
 	while (i < s->map.y)
 		free(s->map.tab[i++]);
 	free(s->map.tab);

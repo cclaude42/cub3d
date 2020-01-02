@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:41:46 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/31 18:33:30 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/02 16:48:56 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,12 @@ int		ft_texture(t_all *s, unsigned int **adr, char *line, int *i)
 	while (line[*i] != ' ' && line[*i] != '\0')
 		file[j++] = line[(*i)++];
 	file[j] = '\0';
-	if (ft_xpm(s, adr, file) == -1)
-	{
-		free(file);
-		return (-9);
-	}
-	return (0);
+	j = ft_xpm(s, adr, file);
+	free(file);
+	return (j == -1 ? -9 : 0);
 }
 
-int		ft_slablen(char *line)
+int		ft_slablen(t_all *s, char *line)
 {
 	int	i;
 	int	count;
@@ -73,6 +70,8 @@ int		ft_slablen(char *line)
 			count++;
 		i++;
 	}
+	if (s->map.x != 0 && s->map.x != count)
+		return (-1);
 	return (count);
 }
 
@@ -81,18 +80,23 @@ char	*ft_slab(t_all *s, char *line, int *i)
 	char	*slab;
 	int		j;
 
-	slab = malloc(sizeof(char) * (ft_slablen(line) + 1));
+	if (!(slab = malloc(sizeof(char) * (ft_slablen(s, line) + 1))))
+		return (NULL);
 	j = 0;
 	while (line[*i] != '\0')
 	{
-		if (line[*i] == '0' || line[*i] == '1' || line[*i] == 'N')
-			slab[j++] = line[*i];
-		else if (line[*i] == 'E' || line[*i] == 'S' || line[*i] == 'W')
+		if ((line[*i] == '0' || line[*i] == '1' || line[*i] == 'N')
+			|| (line[*i] == 'E' || line[*i] == 'S' || line[*i] == 'W'))
 			slab[j++] = line[*i];
 		else if (line[*i] == '2')
 		{
 			slab[j++] = line[*i];
 			s->map.spr++;
+		}
+		else if (line[*i] != ' ')
+		{
+			free(slab);
+			return (NULL);
 		}
 		(*i)++;
 	}
@@ -100,23 +104,31 @@ char	*ft_slab(t_all *s, char *line, int *i)
 	return (slab);
 }
 
-void	ft_map(t_all *s, char *line, int *i)
+int		ft_map(t_all *s, char *line, int *i)
 {
 	char	**tmp;
 	int		j;
 
-	tmp = malloc(sizeof(char *) * (s->map.y + 2));
+	s->err.m = 1;
+	if (!(tmp = malloc(sizeof(char *) * (s->map.y + 2))))
+		return (-11);
 	j = 0;
 	while (j < s->map.y)
 	{
 		tmp[j] = s->map.tab[j];
 		j++;
 	}
-	tmp[s->map.y] = ft_slab(s, line, i);
+	if ((tmp[s->map.y] = ft_slab(s, line, i)) == NULL)
+	{
+		free(tmp);
+		return (-12);
+	}
 	tmp[s->map.y + 1] = NULL;
 	if (s->map.y > 0)
 		free(s->map.tab);
 	s->map.tab = tmp;
-	s->map.x = ft_slablen(line);
 	s->map.y++;
+	if ((s->map.x = ft_slablen(s, line)) == -1)
+		return (-13);
+	return (0);
 }
