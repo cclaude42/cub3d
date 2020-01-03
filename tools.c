@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/30 18:01:54 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/03 11:45:52 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/03 12:34:52 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		ft_strerror(int err)
 	(err == -6) ? write(2, "Error : Invalid floor/ceiling line\n", 35) : 0;
 	(err == -7) ? write(2, "Error : Texture path specified twice\n", 37) : 0;
 	(err == -8) ? write(2, "Error : Malloc fail (texture path)\n", 35) : 0;
-	(err == -9) ? write(2, "Error : Invalid XPM image for texture\n", 38) : 0;
+	(err == -9) ? write(2, "Error : Invalid texture image\n", 30) : 0;
 	(err == -10) ? write(2, "Error : Invalid line in file\n", 29) : 0;
 	(err == -11) ? write(2, "Error : Malloc fail (map table)\n", 32) : 0;
 	(err == -12) ? write(2, "Error : Invalid map\n", 20) : 0;
