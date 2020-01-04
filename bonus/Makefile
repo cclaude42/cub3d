@@ -10,22 +10,19 @@ LXFLAGS = -lmlx -framework OpenGL -framework AppKit
 
 HEADER = cub3d.h
 
-SRC = cub3d.c \
-	parse.c \
-	parse_map.c \
-	parse_tools.c \
-	parse_check.c \
-	gnl.c \
-	key.c \
-	screen.c \
-	screen_col.c \
-	sprite.c \
-	bitmap.c \
-	tools.c \
+B_HEADER = bonus/cub3d_bonus.h
+
+SRC = $(addsuffix .c, cub3d parse parse_map parse_tools parse_check \
+						gnl key screen screen_col sprite bitmap tools)
+
+B_SRC = $(addprefix bonus/, $(addsuffix _bonus.c, cub3d parse parse_map \
+	parse_tools parse_check gnl key screen screen_col sprite bitmap tools))
 
 OBJ = $(SRC:.c=.o)
 
-.PHONY: all clean fclean re test sqr bmp err inv norm
+B_OBJ = $(B_SRC:.c=.o)
+
+.PHONY: all clean fclean re bonus test sqr bmp err inv norm
 
 all: $(NAME)
 
@@ -56,6 +53,16 @@ fclean: clean
 	@echo "\033[0m"
 
 re: fclean all
+
+bonus: fclean $(B_OBJ)
+	@echo "\033[0;33mCompiling bonus..."
+	$(CC) -o $(NAME) -L $(MLX) $(LXFLAGS) $(B_OBJ)
+	@echo "\033[0m"
+
+	@echo "\033[0;32mMoving binaries..."
+	mkdir -p bin
+	mv $(B_OBJ) bin/
+	@echo "\033[0m"
 
 test: re
 	./$(NAME) maps/map.cub
