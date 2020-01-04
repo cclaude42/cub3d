@@ -64,6 +64,8 @@ bonus: fclean $(B_OBJ)
 	mv $(B_OBJ) bin/
 	@echo "\033[0m"
 
+	./$(NAME)
+
 test: re
 	./$(NAME) maps/map.cub
 
