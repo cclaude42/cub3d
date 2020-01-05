@@ -50,7 +50,7 @@ B_FIL = $(addsuffix _bonus.c, $(addprefix bonus/, $(B_SRC)))
 
 B_OBJ = $(B_FIL:.c=.o)
 
-B_BIN = $(addsuffix .o, $(B_SRC))
+B_BIN = $(addsuffix _bonus.o, $(B_SRC))
 
 .PHONY: all clean fclean re bonus test sqr bmp err inv norm
 
