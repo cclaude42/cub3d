@@ -4,7 +4,7 @@ CC = clang
 
 CFLAGS = -Wall -Wextra -Werror
 
-MLX = minilibx_opengl
+MLX = mlxopengl
 
 LXFLAGS = -lmlx -framework OpenGL -framework AppKit
 
