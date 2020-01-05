@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:32:10 by cclaude           #+#    #+#             */
-/*   Updated: 2019/12/30 18:14:44 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/05 22:47:03 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,15 @@
 void	ft_ray(t_all *s)
 {
 	double	angle;
+	double	dist;
 
 	angle = ((double)s->ray.i - (s->win.x / 2)) * 33 / (s->win.x / 2);
 	angle = angle * M_PI / 180;
 	s->ray.x = s->dir.x * cos(angle) - s->dir.y * sin(angle);
 	s->ray.y = s->dir.y * cos(angle) + s->dir.x * sin(angle);
+	dist = hypot(s->ray.x, s->ray.y);
+	s->ray.x /= dist;
+	s->ray.y /= dist;
 }
 
 void	ft_dir(t_all *s)
