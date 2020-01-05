@@ -6,14 +6,14 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/02 17:18:08 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/05 15:20:18 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include "minilibx_opengl/mlx.h"
+# include "../minilibx_opengl/mlx.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>

@@ -23,6 +23,19 @@ SRC = cub3d.c \
 	bitmap.c \
 	tools.c \
 
+B_SRC = bonus/cub3d_bonus.c \
+	bonus/parse_bonus.c \
+	bonus/parse_map_bonus.c \
+	bonus/parse_tools_bonus.c \
+	bonus/parse_check_bonus.c \
+	bonus/gnl_bonus.c \
+	bonus/key_bonus.c \
+	bonus/screen_bonus.c \
+	bonus/screen_col_bonus.c \
+	bonus/sprite_bonus.c \
+	bonus/bitmap_bonus.c \
+	bonus/tools_bonus.c \
+
 OBJ = $(SRC:.c=.o)
 
 .PHONY: all clean fclean re test sqr bmp err inv norm
