@@ -90,6 +90,7 @@ bonus: fclean $(B_OBJ)
 	@echo "\033[0m"
 
 	@echo "\033[0;32mMoving binaries..."
+	mkdir -p bin
 	mv $(B_BIN) bin/
 	@echo "\033[0m"
 
