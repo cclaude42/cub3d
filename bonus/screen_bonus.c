@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:32:10 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/06 21:38:35 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/06 23:39:21 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,9 @@ void	ft_screen(t_all *s)
 	s->img.ptr = mlx_new_image(s->mlx.ptr, s->win.x, s->win.y);
 	s->img.adr = (unsigned int *)mlx_get_data_addr(s->img.ptr, &bpp, &sl, &end);
 	ft_sky(s);
+	s->ray.i = s->win.y - 1;
+	while (s->ray.i >= 700)
+		ft_floor(s);
 	s->stk = malloc(sizeof(t_stk) * s->win.x);
 	s->ray.i = 0;
 	while (s->ray.i < s->win.x)

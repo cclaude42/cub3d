@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/06 18:52:46 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/06 23:04:57 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,6 +185,8 @@ void			ft_ver(t_all *s);
 void			ft_hor(t_all *s);
 
 void			ft_sky(t_all *s);
+void			ft_row(t_all *s, int index);
+void			ft_floor(t_all *s);
 
 void			ft_stock(t_all *s);
 int				ft_size(t_all *s);

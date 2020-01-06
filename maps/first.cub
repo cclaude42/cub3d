@@ -6,8 +6,8 @@ WE ./textures/banner.xpm
 EA ./textures/eagle.xpm
 
 S ./textures/chest.xpm
-F ./textures/skycrop.xpm
-C ./textures/floor.xpm
+F ./textures/floor.xpm
+C ./textures/skycrop.xpm
 
 1 1 1 1 1 1 3 1 1 1 1 1 1 1 1 1 4 1 1 1 1 1 1 1 1 1 1 1 1
 1 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
