@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/06 18:19:13 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/06 22:24:23 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,11 @@ void	ft_rotate(t_all *s, double c)
 	dist = hypot(s->dir.x, s->dir.y);
 	s->dir.x /= dist;
 	s->dir.y /= dist;
+	dist = hypot(s->dir.x, s->dir.y);
+	if (s->dir.y <= 0)
+		s->dir.a = acos(s->dir.x / dist) * 180 / M_PI;
+	else
+		s->dir.a = 360 - acos(s->dir.x / dist) * 180 / M_PI;
 	if (c == 1 || c == -1)
 		ft_draw(s);
 }
