@@ -112,4 +112,4 @@ inv: re
 	./$(NAME) maps/inv.cub
 
 norm:
-	norminette $(SRC) $(HEADER)
+	norminette $(FIL) $(B_FIL) files/$(HEADER) bonus/$(B_HEADER)

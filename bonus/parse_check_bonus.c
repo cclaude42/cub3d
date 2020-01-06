@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/02 17:16:06 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/05 15:10:29 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/06 17:44:28 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ int		ft_mapcheck(t_all *s)
 		j = 0;
 		while (j < s->map.x)
 		{
-			if (s->map.tab[i][j] != '1' && i == 0)
+			if (ft_is(WALL, s->map.tab[i][j]) == 0 && i == 0)
 				return (-1);
-			else if (s->map.tab[i][j] != '1' && i == s->map.y - 1)
+			else if (ft_is(WALL, s->map.tab[i][j]) == 0 && i == s->map.y - 1)
 				return (-1);
-			else if (s->map.tab[i][j] != '1' && j == 0)
+			else if (ft_is(WALL, s->map.tab[i][j]) == 0 && j == 0)
 				return (-1);
-			else if (s->map.tab[i][j] != '1' && j == s->map.x - 1)
+			else if (ft_is(WALL, s->map.tab[i][j]) == 0 && j == s->map.x - 1)
 				return (-1);
 			j++;
 		}
