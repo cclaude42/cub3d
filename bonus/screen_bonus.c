@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:32:10 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/05 22:47:15 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/06 13:48:52 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,19 @@ void	ft_ver(t_all *s)
 {
 	double	x;
 	double	y;
+	char	c;
 
 	x = floor(s->pos.x) + s->ray.v;
 	y = s->pos.y + (x - s->pos.x) * (s->ray.y / s->ray.x);
 	while ((int)floor(y) > 0 && (int)floor(y) < s->map.y)
 	{
-		if (s->map.tab[(int)floor(y)][(int)(x - 1 + s->ray.v)] == '1')
+		c = s->map.tab[(int)floor(y)][(int)(x - 1 + s->ray.v)];
+		if (ft_is(WALL, c))
 		{
 			s->hit.x = x;
 			s->hit.y = y;
 			s->hit.d = hypot(x - s->pos.x, y - s->pos.y);
+			s->hit.c = c;
 			return ;
 		}
 		x += (2 * s->ray.v - 1);
@@ -60,24 +63,28 @@ void	ft_ver(t_all *s)
 	s->hit.x = s->pos.x;
 	s->hit.y = s->pos.y;
 	s->hit.d = 1000000000;
+	s->hit.c = 0;
 }
 
 void	ft_hor(t_all *s)
 {
 	double	y;
 	double	x;
+	char	c;
 
 	y = floor(s->pos.y) + s->ray.w;
 	x = s->pos.x + (y - s->pos.y) * (s->ray.x / s->ray.y);
 	while ((int)floor(x) > 0 && (int)floor(x) < s->map.x)
 	{
-		if (s->map.tab[(int)(y - 1 + s->ray.w)][(int)floor(x)] == '1')
+		c = s->map.tab[(int)(y - 1 + s->ray.w)][(int)floor(x)];
+		if (ft_is(WALL, c))
 		{
 			if (s->hit.d > hypot(x - s->pos.x, y - s->pos.y))
 			{
 				s->hit.x = x;
 				s->hit.y = y;
 				s->hit.d = hypot(x - s->pos.x, y - s->pos.y);
+				s->hit.c = c;
 			}
 			return ;
 		}

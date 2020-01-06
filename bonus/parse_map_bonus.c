@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:41:46 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/05 15:10:34 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/06 13:58:34 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,9 @@ int		ft_slablen(t_all *s, char *line)
 	count = 0;
 	while (line[i] != '\0')
 	{
-		if (line[i] == '0' || line[i] == '1' || line[i] == '2')
+		if (ft_is(WALL, line[i]) || ft_is(POS, line[i]))
 			count++;
-		else if (line[i] == 'N' || line[i] == 'S' || line[i] == 'W')
-			count++;
-		else if (line[i] == 'E')
+		if (ft_is(SPRITE, line[i]))
 			count++;
 		i++;
 	}
@@ -85,10 +83,10 @@ char	*ft_slab(t_all *s, char *line, int *i)
 	j = 0;
 	while (line[*i] != '\0')
 	{
-		if ((line[*i] == '0' || line[*i] == '1' || line[*i] == 'N')
-			|| (line[*i] == 'E' || line[*i] == 'S' || line[*i] == 'W'))
+		printf("%c", line[*i]);
+		if (ft_is(WALL, line[*i]) || ft_is(POS, line[*i]))
 			slab[j++] = line[*i];
-		else if (line[*i] == '2')
+		else if (ft_is(SPRITE, line[*i]))
 		{
 			slab[j++] = line[*i];
 			s->map.spr++;

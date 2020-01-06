@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/05 19:14:11 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/06 13:53:42 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,6 @@
 # define NONE 0xFF000000
 # define WHITE 0x00FFFFFF
 # define BLACK 0x00000000
-# define RED 0x00FF0000
-# define GREEN 0x0000FF00
-# define BLUE 0x000000FF
-# define MAGENTA 0x00FF00FF
-# define YELLOW 0x00FFFF00
-# define CYAN 0x0000FFFF
 
 # define ESC 53
 # define W 13
@@ -40,6 +34,10 @@
 # define DOWN 125
 # define LEFT 123
 # define RIGHT 124
+
+# define WALL 1
+# define POS 2
+# define SPRITE 3
 
 # define SPEED 15
 # define TURN 0.05
@@ -116,6 +114,7 @@ typedef struct	s_hit
 	double			x;
 	double			y;
 	double			d;
+	char			c;
 }				t_hit;
 
 typedef struct	s_spr
@@ -210,6 +209,7 @@ char			*get_line(char *stock);
 
 int				ft_atoi(char *line, int *i);
 void			ft_spaceskip(char *line, int *i);
+int				ft_is(int n, char c);
 int				ft_strerror(int err);
 
 #endif

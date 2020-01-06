@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:41:51 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/05 15:10:40 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/06 13:43:15 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int		ft_slist(t_all *s)
 		k = 0;
 		while (k < s->map.x)
 		{
-			if (s->map.tab[j][k] == '2')
+			if (s->map.tab[j][k] == '5')
 			{
 				s->spr[i].y = (double)j + 0.5;
 				s->spr[i++].x = (double)k + 0.5;

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/05 15:07:15 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/06 13:37:39 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_draw(t_all *s)
 	hit.x = 0;
 	hit.y = 0;
 	hit.d = 0;
+	hit.c = 0;
 	s->ray = ray;
 	s->hit = hit;
 	ft_screen(s);
@@ -111,13 +112,8 @@ void	ft_init(char *cub, int bmp)
 	ft_declare(s, cub, bmp);
 }
 
-int		main(int ac, char **av)
+int		main(void)
 {
-	if (ac == 3 && ft_namecheck(av[1], "cub") && ft_savecheck(av[2], "--save"))
-		ft_init(av[1], 1);
-	else if (ac == 2 && ft_namecheck(av[1], "cub"))
-		ft_init(av[1], 0);
-	else
-		write(2, "Error : Invalid arguments\n", 26);
+	ft_init("maps/first.cub", 0);
 	return (0);
 }
