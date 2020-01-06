@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:32:10 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/06 20:05:49 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/06 21:38:35 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ void	ft_screen(t_all *s)
 		ft_ver(s);
 		ft_hor(s);
 		ft_stock(s);
-		// ft_column(s, ft_size(s));
+		ft_column(s, ft_size(s));
 		s->ray.i++;
 	}
 	ft_sprite(s);
