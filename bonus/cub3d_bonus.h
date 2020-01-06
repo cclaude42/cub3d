@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/06 13:53:42 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/06 18:52:46 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,8 @@ typedef struct	s_tex
 	unsigned int	*e;
 	unsigned int	*w;
 	unsigned int	*i;
-	unsigned int	c;
-	unsigned int	f;
+	unsigned int	*c;
+	unsigned int	*f;
 }				t_tex;
 
 typedef struct	s_pos
@@ -183,6 +183,8 @@ void			ft_ray(t_all *s);
 void			ft_dir(t_all *s);
 void			ft_ver(t_all *s);
 void			ft_hor(t_all *s);
+
+void			ft_sky(t_all *s);
 
 void			ft_stock(t_all *s);
 int				ft_size(t_all *s);

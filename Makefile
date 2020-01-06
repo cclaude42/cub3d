@@ -33,24 +33,13 @@ BIN = $(addsuffix .o, $(SRC))
 
 B_HEADER = cub3d_bonus.h
 
-B_SRC = cub3d \
-	parse \
-	parse_map \
-	parse_tools \
-	parse_check \
-	gnl \
-	key \
-	screen \
-	screen_col \
-	sprite \
-	bitmap \
-	tools \
+B_SRC = screen_row
 
-B_FIL = $(addsuffix _bonus.c, $(addprefix bonus/, $(B_SRC)))
+B_FIL = $(addsuffix _bonus.c, $(addprefix bonus/, $(SRC) $(B_SRC)))
 
 B_OBJ = $(B_FIL:.c=.o)
 
-B_BIN = $(addsuffix _bonus.o, $(B_SRC))
+B_BIN = $(addsuffix _bonus.o, $(SRC) $(B_SRC))
 
 .PHONY: all clean fclean re bonus test sqr bmp err inv norm
 

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/02 17:16:06 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/06 17:44:28 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/06 19:21:01 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int		ft_parcheck(t_all *s)
 	else if ((s->tex.n == NULL || s->tex.s == NULL || s->tex.e == NULL)
 			|| (s->tex.w == NULL || s->tex.i == NULL))
 		return (ft_strerror(-15));
-	else if (s->tex.c == NONE || s->tex.f == NONE)
+	else if (s->tex.c == NULL || s->tex.f == NULL)
 		return (ft_strerror(-16));
 	else if (s->err.p == 0)
 		return (ft_strerror(-17));

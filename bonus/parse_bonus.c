@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/05 15:10:22 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/06 18:52:35 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int		ft_line(t_all *s, char *line)
 	else if (line[i] == 'S' && line[i + 1] == ' ')
 		s->err.n = ft_texture(s, &s->tex.i, line, &i);
 	else if (line[i] == 'F' && line[i + 1] == ' ')
-		s->err.n = ft_colors(&s->tex.f, line, &i);
+		s->err.n = ft_texture(s, &s->tex.f, line, &i);
 	else if (line[i] == 'C' && line[i + 1] == ' ')
-		s->err.n = ft_colors(&s->tex.c, line, &i);
+		s->err.n = ft_texture(s, &s->tex.c, line, &i);
 	if (s->err.n == 0 && line[i] != '\0')
 		return (ft_strerror(-10));
 	return (s->err.n < 0 ? ft_strerror(s->err.n) : 0);

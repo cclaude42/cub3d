@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/05 15:07:25 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/06 18:19:13 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ void	ft_move(t_all *s, double c)
 {
 	s->pos.x += c * (s->dir.x * SPEED / 100);
 	s->pos.y += c * (s->dir.y * SPEED / 100);
-	if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == '1')
+	if (ft_is(WALL, s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)]))
 	{
 		s->pos.x -= c * (s->dir.x * SPEED / 100);
 		s->pos.y -= c * (s->dir.y * SPEED / 100);
 	}
-	else if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == '2')
+	else if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == '5')
 	{
 		s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] = '0';
 		s->map.spr--;
@@ -54,12 +54,12 @@ void	ft_strafe(t_all *s, double c)
 {
 	s->pos.x -= c * (s->dir.y * SPEED / 100);
 	s->pos.y += c * (s->dir.x * SPEED / 100);
-	if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == '1')
+	if (ft_is(WALL, s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)]))
 	{
 		s->pos.x += c * (s->dir.y * SPEED / 100);
 		s->pos.y -= c * (s->dir.x * SPEED / 100);
 	}
-	else if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == '2')
+	else if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == '5')
 	{
 		s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] = '0';
 		s->map.spr--;
