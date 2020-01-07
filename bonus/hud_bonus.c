@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 15:43:00 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/07 17:55:32 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/07 18:16:40 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,5 @@ void	ft_hud(t_all *s)
 void	ft_hudparse(t_all *s)
 {
 	ft_xpm(s, &s->hud.l, "./textures/lifebar.xpm");
+	ft_xpm(s, &s->hud.s, "./textures/numbers.xpm")
 }
