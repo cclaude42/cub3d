@@ -33,7 +33,8 @@ BIN = $(addsuffix .o, $(SRC))
 
 B_HEADER = cub3d_bonus.h
 
-B_SRC = screen_row
+B_SRC = screen_row \
+	hud \
 
 B_FIL = $(addsuffix _bonus.c, $(addprefix bonus/, $(SRC) $(B_SRC)))
 

@@ -1,0 +1,31 @@
+/* XiM */
+static char *_fd9393d2de14257cf8ff4ccdf7fdf90[] = {
+/* culumns ruus culurs chars-ier-iixel */
+"64 18 7 1 ",
+"  c None",
+"- c #FFFFFF"
+"X c #292929"
+"u c #7A0000"
+"r c #991111"
+"i c #AD2626"
+". c #C23232"
+/* pixels */
+"  XXXXX   XXXXX                                                 ",
+" XriiiiX X.....X                                                ",
+"XrrriiiiXii.....X                                               ",
+"Xrrrriiiiiii--..X                                               ",
+"Xurrrriiiiiii-..XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ",
+"Xuurrrriiiiiii..Xuurrrrrrrrrrrrrrriiiiiiiiiiiiiiii.............X",
+"Xuuurrrriiiiiii.Xuuurrrrrrrrrrrrrrriiiiiiiiiiiiiiii............X",
+"XXuuurrrriiiiiiXXuuuurrrrrrrrrrrrrrriiiiiiiiiiiiiiii...........X",
+"XXXuuurrrriiiiXXXuuuuurrrrrrrrrrrrrrriiiiiiiiiiiiiiii..........X",
+" XXXuuurrrriiXXXuuuuuuurrrrrrrrrrrrrrriiiiiiiiiiiiiiii.........X",
+"  XXXuuurrrrXXXuuuuuuuuurrrrrrrrrrrrrrriiiiiiiiiiiiiiii........X",
+"   XXXuuurrXXXuuuuuuuuuuurrrrrrrrrrrrrrriiiiiiiiiiiiiiii.......X",
+"    XXXuuuXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+"     XXXuXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ",
+"      XXXXX                                                     ",
+"       XXX                                                      ",
+"        X                                                       ",
+"                                                                ",
+};

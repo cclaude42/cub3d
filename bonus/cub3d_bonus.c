@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/06 19:20:33 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/07 17:31:56 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int		ft_cubed(t_all s, char *cub, int bmp)
 	s.mlx.ptr = mlx_init();
 	if (ft_parse(&s, cub) == -1)
 		return (ft_close(&s, 0));
+	ft_hudparse(&s);
 	if (bmp == 1)
 		return (ft_bitmap(&s));
 	ft_rotate(&s, 2);
@@ -63,27 +64,29 @@ int		ft_cubed(t_all s, char *cub, int bmp)
 void	ft_declare(t_all s, char *cub, int bmp)
 {
 	t_map	map;
-	t_tex	tex;
 	t_spr	*spr;
 	t_stk	*stk;
+	t_hud	hud;
+	t_err	err;
 
+	hud.l = NULL;
+	hud.k = NULL;
+	hud.g = NULL;
+	hud.s = NULL;
 	map.tab = NULL;
-	tex.n = NULL;
-	tex.s = NULL;
-	tex.e = NULL;
-	tex.w = NULL;
-	tex.i = NULL;
-	tex.c = NULL;
-	tex.f = NULL;
 	spr = NULL;
 	stk = NULL;
+	err.n = 0;
+	err.m = 0;
+	err.p = 0;
 	map.x = 0;
 	map.y = 0;
 	map.spr = 0;
 	s.map = map;
-	s.tex = tex;
 	s.spr = spr;
 	s.stk = stk;
+	s.hud = hud;
+	s.err = err;
 	ft_cubed(s, cub, bmp);
 }
 
@@ -93,22 +96,26 @@ void	ft_init(char *cub, int bmp)
 	t_mlx	mlx;
 	t_win	win;
 	t_img	img;
-	t_err	err;
+	t_tex	tex;
 
 	mlx.ptr = NULL;
 	win.ptr = NULL;
 	img.ptr = NULL;
 	img.adr = NULL;
+	tex.n = NULL;
+	tex.s = NULL;
+	tex.e = NULL;
+	tex.w = NULL;
+	tex.i = NULL;
+	tex.c = NULL;
+	tex.f = NULL;
 	win.x = 0;
 	win.y = 0;
 	img.fsh = 0;
-	err.n = 0;
-	err.m = 0;
-	err.p = 0;
 	s.mlx = mlx;
 	s.win = win;
 	s.img = img;
-	s.err = err;
+	s.tex = tex;
 	ft_declare(s, cub, bmp);
 }
 

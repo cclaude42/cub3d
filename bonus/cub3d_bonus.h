@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/07 12:31:08 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/07 17:31:40 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,14 @@ typedef struct	s_tex
 	unsigned int	*f;
 }				t_tex;
 
+typedef struct	s_hud
+{
+	unsigned int	*l;
+	unsigned int	*k;
+	unsigned int	*g;
+	unsigned int	*s;
+}				t_hud;
+
 typedef struct	s_pos
 {
 	double			x;
@@ -140,6 +148,7 @@ typedef struct	s_all
 	t_err			err;
 	t_map			map;
 	t_tex			tex;
+	t_hud			hud;
 	t_pos			pos;
 	t_dir			dir;
 	t_ray			ray;
@@ -199,6 +208,10 @@ void			ft_sorder(t_all *s);
 void			ft_slocate(t_all *s, double dirx, double diry, double dist);
 void			ft_sdraw(t_all *s, int loc, double dist);
 unsigned int	ft_spixel(t_all *s, int index, unsigned int col);
+
+void			ft_hud(t_all *s);
+void			ft_lifebar(t_all *s);
+void			ft_hudparse(t_all *s);
 
 int				ft_bitmap(t_all *s);
 void			ft_bdraw(t_all *s);

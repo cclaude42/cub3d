@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:41:46 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/06 23:30:26 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/07 17:35:25 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int		ft_xpm(t_all *s, unsigned int **adr, char *file)
 	close(fd);
 	img = mlx_xpm_file_to_image(s->mlx.ptr, file, &tab[0], &tab[1]);
 	*adr = (unsigned int *)mlx_get_data_addr(img, &tab[2], &tab[3], &tab[4]);
+	if (adr == NULL)
+		printf("Nique tes morts\n");
 	free(img);
 	return (0);
 }
