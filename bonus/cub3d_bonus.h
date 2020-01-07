@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/07 17:31:40 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/07 19:52:30 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,8 @@ typedef struct	s_hud
 	unsigned int	*l;
 	unsigned int	*k;
 	unsigned int	*g;
-	unsigned int	*s;
+	unsigned int	*n;
+	unsigned int	s;
 }				t_hud;
 
 typedef struct	s_pos
@@ -157,7 +158,7 @@ typedef struct	s_all
 	t_stk			*stk;
 }				t_all;
 
-void			ft_init(char *cub, int bmp);
+void			ft_init(t_all s, char *cub, int bmp);
 void			ft_declare(t_all s, char *cub, int bmp);
 int				ft_cubed(t_all s, char *cub, int bmp);
 void			ft_draw(t_all *s);

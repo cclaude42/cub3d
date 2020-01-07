@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/06 22:24:23 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/07 19:55:45 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	ft_move(t_all *s, double c)
 	{
 		s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] = '0';
 		s->map.spr--;
+		s->hud.s += 1000;
 		ft_slist(s);
 	}
 	ft_draw(s);
@@ -63,6 +64,7 @@ void	ft_strafe(t_all *s, double c)
 	{
 		s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] = '0';
 		s->map.spr--;
+		s->hud.s += 1000;
 		ft_slist(s);
 	}
 	ft_draw(s);

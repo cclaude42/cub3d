@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 15:43:00 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/07 18:16:40 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/07 19:54:24 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,46 @@ void	ft_lifebar(t_all *s)
 	}
 }
 
+void	ft_score(t_all *s, int loc, int num)
+{
+	unsigned int	color;
+	int				i;
+	int				j;
+
+	i = 0;
+	while (i < 35)
+	{
+		j = 0;
+		while (j < 40)
+		{
+			color = s->hud.n[i / 5 * 80 + j / 5 + num * 8];
+			if (color != NONE)
+				s->img.adr[s->win.x * (i + 37) + (j + s->win.x - loc)] = color;
+			j++;
+		}
+		i++;
+	}
+}
+
 void	ft_hud(t_all *s)
 {
+	int	loc;
+	int	score;
+
+	loc = 100;
+	score = s->hud.s;
 	ft_lifebar(s);
+	ft_score(s, loc, score % 10);
+	while (score > 0)
+	{
+		ft_score(s, loc, score % 10);
+		score /= 10;
+		loc += 37;
+	}
 }
 
 void	ft_hudparse(t_all *s)
 {
 	ft_xpm(s, &s->hud.l, "./textures/lifebar.xpm");
-	ft_xpm(s, &s->hud.s, "./textures/numbers.xpm")
+	ft_xpm(s, &s->hud.n, "./textures/numbers.xpm");
 }
