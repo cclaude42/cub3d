@@ -6,11 +6,28 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/06 18:52:35 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/08 15:33:11 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
+
+int		ft_texline(t_all *s, char *line, int *i)
+{
+	if (line[*i] == 'N' && line[*i + 1] == 'O' && line[*i + 2] == ' ')
+		s->err.n = ft_texture(s, &s->tex.n, line, i);
+	else if (line[*i] == 'S' && line[*i + 1] == 'O' && line[*i + 2] == ' ')
+		s->err.n = ft_texture(s, &s->tex.s, line, i);
+	else if (line[*i] == 'W' && line[*i + 1] == 'E' && line[*i + 2] == ' ')
+		s->err.n = ft_texture(s, &s->tex.w, line, i);
+	else if (line[*i] == 'E' && line[*i + 1] == 'A' && line[*i + 2] == ' ')
+		s->err.n = ft_texture(s, &s->tex.e, line, i);
+	else if (line[*i] == 'S' && line[*i + 1] == ' ')
+		s->err.n = ft_texture(s, &s->tex.i, line, i);
+	else if (line[*i] == 'T' && line[*i + 1] == ' ')
+		s->err.n = ft_texture(s, &s->tex.j, line, i);
+	return (s->err.n);
+}
 
 int		ft_line(t_all *s, char *line)
 {
@@ -22,20 +39,12 @@ int		ft_line(t_all *s, char *line)
 		s->err.n = ft_map(s, line, &i);
 	else if (line[i] == 'R' && line[i + 1] == ' ')
 		s->err.n = ft_res(s, line, &i);
-	else if (line[i] == 'N' && line[i + 1] == 'O' && line[i + 2] == ' ')
-		s->err.n = ft_texture(s, &s->tex.n, line, &i);
-	else if (line[i] == 'S' && line[i + 1] == 'O' && line[i + 2] == ' ')
-		s->err.n = ft_texture(s, &s->tex.s, line, &i);
-	else if (line[i] == 'W' && line[i + 1] == 'E' && line[i + 2] == ' ')
-		s->err.n = ft_texture(s, &s->tex.w, line, &i);
-	else if (line[i] == 'E' && line[i + 1] == 'A' && line[i + 2] == ' ')
-		s->err.n = ft_texture(s, &s->tex.e, line, &i);
-	else if (line[i] == 'S' && line[i + 1] == ' ')
-		s->err.n = ft_texture(s, &s->tex.i, line, &i);
 	else if (line[i] == 'F' && line[i + 1] == ' ')
 		s->err.n = ft_texture(s, &s->tex.f, line, &i);
 	else if (line[i] == 'C' && line[i + 1] == ' ')
 		s->err.n = ft_texture(s, &s->tex.c, line, &i);
+	else if (ft_is(POS, line[i]) || line[i] == 'T')
+		s->err.n = ft_texline(s, line, &i);
 	if (s->err.n == 0 && line[i] != '\0')
 		return (ft_strerror(-10));
 	return (s->err.n < 0 ? ft_strerror(s->err.n) : 0);

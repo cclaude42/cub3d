@@ -3,12 +3,12 @@ static char *_1bc6a7ba6364da7aa9a447fc21c4c6c[] = {
 /* columns rows colors chars-per-pixel */
 "64 64 256 2 ",
 "   c None",
-".  c #0000A8",
-"X  c #00A800",
-"o  c #00A8A8",
-"O  c #A80000",
-"+  c #A800A8",
-"@  c #A85400",
+".  c #80000000",
+"X  c #80080808",
+"o  c #80101010",
+"O  c #80181818",
+"+  c #80202020",
+"@  c #80282828",
 "#  c gray66",
 "$  c gray33",
 "%  c #5454FC",
@@ -318,9 +318,9 @@ static char *_1bc6a7ba6364da7aa9a447fc21c4c6c[] = {
 "                                    wXwXeXeXeXeXeXeXtXtXaXtXtXyXyXyXyXyXsXyXyXyXyXpXpXyXiXyXiXyX                                ",
 "                                    wX9XwX8X6X0X6X8X8X0XrX0XqXqXqXqXwXeXyXeXeXrXtXiXyXyXiXyXiX                                  ",
 "                                      wX9X9X7XwX8X8X8X0XrXwXqXqXqXqXwXtXyXeXeXrXtXiXyXyXiXyXiX                                  ",
-"                                      7 9XwX9X9XwX8X8X0XrXeXqXqXqXwXeXyXyXeXeXrXyXiXyXiXyXiX8 8 8 8 8 8 8 8 8 8 8 8 8 8         ",
-"                                      7 5 4 5 9XwX0X0X0XeXrXwXwXwXwXeXyXtXeXrXtXiXyXiXiXiXq q q q q q q q q q q q 0 0 9 8 8     ",
-"                                        6 6 6 5 5 5 5 6 6 6 7 7 8 8 8 9 9 9 0 0 0 q q w e e e e e e e e e e e w w q 0 0 9 9 8   ",
-"                                          6 7 6 6 7 7 7 8 8 8 8 9 9 9 9 0 0 0 q q q w w w w w w w w w w w w w w q q 0 0 9 9 8   ",
-"                                              9 9 9 9 9 0 0 0 0 0 q q q q w w w w w q q q q q q q q q q q q q q 0 0 0 9 9 8     "
+"                                      7 9XwX9X9XwX8X8X0XrXeXqXqXqXwXeXyXyXeXeXrXyXiXyXiXyXiX@ @ @ @ @ @ @ @ @ @ @ @ @ @         ",
+"                                      7 5 4 5 9XwX0X0X0XeXrXwXwXwXwXeXyXtXeXrXtXiXyXiXiXiXo o o o o o o o o o o o O O + @ @     ",
+"                                        6 6 6 5 5 5 5 6 6 6 7 7 8 8 8 9 9 9 0 0 0 q q w . . . . . . . . . . . X X o O O + + @   ",
+"                                          6 7 6 6 7 7 7 8 8 8 8 9 9 9 9 0 0 0 q q q w X X X X X X X X X X X X X o o O O + + @   ",
+"                                              9 9 9 9 9 0 0 0 0 0 q q q q w w w w w o o o o o o o o o o o o o o O O O + + @     "
 };

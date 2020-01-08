@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/07 19:52:30 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/08 15:23:33 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@
 # define WALL 1
 # define POS 2
 # define SPRITE 3
+# define DECOR 4
 
 # define ANG 0.57595865315
 # define SPEED 15
@@ -83,9 +84,10 @@ typedef struct	s_tex
 	unsigned int	*s;
 	unsigned int	*e;
 	unsigned int	*w;
-	unsigned int	*i;
 	unsigned int	*c;
 	unsigned int	*f;
+	unsigned int	*i;
+	unsigned int	*j;
 }				t_tex;
 
 typedef struct	s_hud
@@ -132,6 +134,7 @@ typedef struct	s_spr
 	double			x;
 	double			y;
 	double			d;
+	char			c;
 }				t_spr;
 
 typedef struct	s_stk
@@ -173,7 +176,6 @@ int				ft_slablen(t_all *s, char *line);
 int				ft_texture(t_all *s, unsigned int **adr, char *line, int *i);
 int				ft_xpm(t_all *s, unsigned int **adr, char *file);
 
-int				ft_slist(t_all *s);
 void			ft_pos(t_all *s);
 int				ft_colors(unsigned int *color, char *line, int *i);
 int				ft_res(t_all *s, char *line, int *i);
@@ -205,9 +207,12 @@ void			ft_column(t_all *s, int start);
 unsigned int	ft_pixel(t_all *s, double i);
 
 void			ft_sprite(t_all *s);
+int				ft_slist(t_all *s);
 void			ft_sorder(t_all *s);
-void			ft_slocate(t_all *s, double dirx, double diry, double dist);
+void			ft_slocate(t_all *s, t_spr spr);
+
 void			ft_sdraw(t_all *s, int loc, double dist);
+void			ft_ddraw(t_all *s, int loc, double dist);
 unsigned int	ft_spixel(t_all *s, int index, unsigned int col);
 
 void			ft_hud(t_all *s);

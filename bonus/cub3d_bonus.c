@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/07 19:52:49 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/08 15:23:58 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,9 +93,10 @@ void	ft_init(t_all s, char *cub, int bmp)
 	tex.s = NULL;
 	tex.e = NULL;
 	tex.w = NULL;
-	tex.i = NULL;
 	tex.c = NULL;
 	tex.f = NULL;
+	tex.i = NULL;
+	tex.j = NULL;
 	hud.l = NULL;
 	hud.k = NULL;
 	hud.g = NULL;
@@ -123,6 +124,6 @@ int		main(void)
 	s.mlx = mlx;
 	s.win = win;
 	s.img = img;
-	ft_init(s, "maps/first.cub", 0);
+	ft_init(s, "maps/first.cubonus", 0);
 	return (0);
 }

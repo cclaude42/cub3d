@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/07 19:55:45 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/08 15:34:15 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int		ft_close(t_all *s, int win)
 	free(s->tex.s);
 	free(s->tex.e);
 	free(s->tex.w);
+	free(s->tex.f);
+	free(s->tex.c);
 	free(s->tex.i);
+	free(s->tex.j);
 	if (win == 1)
 		mlx_destroy_window(s->mlx.ptr, s->win.ptr);
 	free(s->mlx.ptr);
@@ -36,7 +39,8 @@ void	ft_move(t_all *s, double c)
 {
 	s->pos.x += c * (s->dir.x * SPEED / 100);
 	s->pos.y += c * (s->dir.y * SPEED / 100);
-	if (ft_is(WALL, s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)]))
+	if (ft_is(WALL, s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)]) ||
+	ft_is(DECOR, s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)]))
 	{
 		s->pos.x -= c * (s->dir.x * SPEED / 100);
 		s->pos.y -= c * (s->dir.y * SPEED / 100);
@@ -55,7 +59,8 @@ void	ft_strafe(t_all *s, double c)
 {
 	s->pos.x -= c * (s->dir.y * SPEED / 100);
 	s->pos.y += c * (s->dir.x * SPEED / 100);
-	if (ft_is(WALL, s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)]))
+	if (ft_is(WALL, s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)]) ||
+	ft_is(DECOR, s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)]))
 	{
 		s->pos.x += c * (s->dir.y * SPEED / 100);
 		s->pos.y -= c * (s->dir.x * SPEED / 100);
