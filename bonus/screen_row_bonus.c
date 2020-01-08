@@ -6,13 +6,32 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 18:34:47 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/07 12:28:07 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/08 17:13:16 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
 
-void	ft_sky(t_all *s)
+unsigned int	ft_shadow(t_all *s, unsigned int col)
+{
+	double	shadow;
+	int		r;
+	int		g;
+	int		b;
+
+	if (SHADOW == 0)
+		return (col);
+	shadow = 1 - hypot(s->pos.x - s->hit.x, s->pos.y - s->hit.y) / SHADOW;
+	if (shadow < 0)
+		shadow = 0;
+	r = (col / (256 * 256) % 256) * shadow;
+	g = (col / 256 % 256) * shadow;
+	b = (col % 256) * shadow;
+	col = r * 256 * 256 + g * 256 + b;
+	return (col);
+}
+
+void			ft_sky(t_all *s)
 {
 	unsigned int	col;
 	int				shift;
@@ -37,7 +56,7 @@ void	ft_sky(t_all *s)
 	}
 }
 
-void	ft_floor(t_all *s)
+void			ft_floor(t_all *s)
 {
 	double	dist;
 	int		index;
@@ -60,7 +79,7 @@ void	ft_floor(t_all *s)
 		color += (int)(fabs(s->hit.y - floor(s->hit.y)) * 64);
 		index = (s->win.y - s->ray.i - 1) * s->win.x + i;
 		if (color >= 0 && color < 4096)
-			s->img.adr[index] = s->tex.f[color];
+			s->img.adr[index] = ft_shadow(s, s->tex.f[color]);
 		i++;
 	}
 	s->ray.i++;

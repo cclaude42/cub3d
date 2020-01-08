@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/08 15:23:33 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/08 17:01:22 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@
 # define ANG 0.57595865315
 # define SPEED 15
 # define TURN 0.05
+# define SHADOW 25
 
 typedef struct	s_mlx
 {
@@ -198,8 +199,8 @@ void			ft_ver(t_all *s);
 void			ft_hor(t_all *s);
 
 void			ft_sky(t_all *s);
-void			ft_row(t_all *s, int index);
 void			ft_floor(t_all *s);
+unsigned int	ft_shadow(t_all *s, unsigned int col);
 
 void			ft_stock(t_all *s);
 int				ft_size(t_all *s);
@@ -215,9 +216,10 @@ void			ft_sdraw(t_all *s, int loc, double dist);
 void			ft_ddraw(t_all *s, int loc, double dist);
 unsigned int	ft_spixel(t_all *s, int index, unsigned int col);
 
-void			ft_hud(t_all *s);
-void			ft_lifebar(t_all *s);
 void			ft_hudparse(t_all *s);
+void			ft_hud(t_all *s);
+void			ft_score(t_all *s, int loc, int num);
+void			ft_lifebar(t_all *s);
 
 int				ft_bitmap(t_all *s);
 void			ft_bdraw(t_all *s);

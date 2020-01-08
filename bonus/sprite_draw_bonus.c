@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 18:04:34 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/08 15:34:42 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/08 17:12:41 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ unsigned int	ft_spixel(t_all *s, int index, unsigned int col)
 	if (col >= NONE)
 		return (s->img.adr[index]);
 	else if (col < 256 * 256 * 256)
-		return (col);
+		return (ft_shadow(s, col));
 	t = col / (256 * 256 * 256);
 	r = (col / (256 * 256) % 256) * (1 - (double)t / 256);
 	g = (col / 256 % 256) * (1 - (double)t / 256);
@@ -30,7 +30,8 @@ unsigned int	ft_spixel(t_all *s, int index, unsigned int col)
 	r += (s->img.adr[index] / (256 * 256) % 256) * ((double)t / 256);
 	g += (s->img.adr[index] / 256 % 256) * ((double)t / 256);
 	b += (s->img.adr[index] % 256) * ((double)t / 256);
-	return (r * 256 * 256 + g * 256 + b);
+	col = r * 256 * 256 + g * 256 + b;
+	return (ft_shadow(s, col));
 }
 
 void			ft_sdraw(t_all *s, int loc, double dist)

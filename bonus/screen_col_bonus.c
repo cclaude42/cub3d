@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:37:22 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/06 21:38:00 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/08 17:13:28 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void			ft_column(t_all *s, int size)
 		else if (count == size)
 			color = NONE;
 		if (color != NONE)
-			s->img.adr[s->ray.i] = mlx_get_color_value(s->mlx.ptr, color);
+			s->img.adr[s->ray.i] = ft_shadow(s, color);
 		s->ray.i += s->win.x;
 	}
 	s->ray.i -= s->win.x * s->win.y;
