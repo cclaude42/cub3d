@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 15:43:00 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/07 19:54:24 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/08 19:16:54 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_lifebar(t_all *s)
 {
 	unsigned int	color;
+	int				index;
 	int				i;
 	int				j;
 
@@ -25,8 +26,15 @@ void	ft_lifebar(t_all *s)
 		while (j < 256)
 		{
 			color = s->hud.l[i / 4 * 64 + j / 4];
-			if (color != NONE)
-				s->img.adr[s->win.x * (i + 20) + (j + 20)] = color;
+			index = s->win.x * (i + 20) + (j + 20);
+			if (color == 2147483648)
+			{
+				color = (s->img.adr[index] / (256 * 256) % 256) / 2 * 256 * 256;
+				color += (s->img.adr[index] / 256 % 256) / 2 * 256;
+				color += (s->img.adr[index] % 256) / 2;
+			}
+			if (color < NONE)
+				s->img.adr[index] = color;
 			j++;
 		}
 		i++;
