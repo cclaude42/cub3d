@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/09 15:10:47 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/09 15:20:29 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ typedef struct	s_hud
 	unsigned int	*g;
 	unsigned int	*n;
 	unsigned int	s;
+	unsigned int	h;
 }				t_hud;
 
 typedef struct	s_pos

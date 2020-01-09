@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 15:43:00 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/08 19:16:54 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/09 15:38:41 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 void	ft_lifebar(t_all *s)
 {
 	unsigned int	color;
-	int				index;
-	int				i;
-	int				j;
+	unsigned int	index;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
 	while (i < 72)
 	{
 		j = 0;
-		while (j < 256)
+		while (j < 260)
 		{
-			color = s->hud.l[i / 4 * 64 + j / 4];
+			color = s->hud.l[i / 4 * 65 + j / 4];
 			index = s->win.x * (i + 20) + (j + 20);
 			if (color == 2147483648)
 			{
@@ -34,6 +34,29 @@ void	ft_lifebar(t_all *s)
 				color += (s->img.adr[index] % 256) / 2;
 			}
 			if (color < NONE)
+				s->img.adr[index] = color;
+			j++;
+		}
+		i++;
+	}
+}
+
+void	ft_health(t_all *s)
+{
+	unsigned int	color;
+	unsigned int	index;
+	unsigned int	i;
+	unsigned int	j;
+
+	i = 0;
+	while (i < 72)
+	{
+		j = 0;
+		while (j < 260)
+		{
+			color = s->hud.l[(i / 4 + 18) * 65 + j / 4];
+			index = s->win.x * (i + 20) + (j + 20);
+			if (color != NONE && j - 56 < s->hud.h * 2)
 				s->img.adr[index] = color;
 			j++;
 		}
@@ -70,6 +93,7 @@ void	ft_hud(t_all *s)
 	loc = 100;
 	score = s->hud.s;
 	ft_lifebar(s);
+	ft_health(s);
 	ft_score(s, loc, score % 10);
 	while (score > 0)
 	{
