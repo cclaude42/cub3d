@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/09 15:41:26 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/09 17:23:49 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ int		ft_close(t_all *s, int win)
 	free(s->tex.c);
 	free(s->tex.i);
 	free(s->tex.j);
+	free(s->hud.l);
+	free(s->hud.n);
+	free(s->hud.k);
+	free(s->hud.p);
 	if (win == 1)
 		mlx_destroy_window(s->mlx.ptr, s->win.ptr);
 	free(s->mlx.ptr);
@@ -105,6 +109,8 @@ int		ft_key(int key, void *arg)
 		ft_rotate(arg, -1);
 	else if (key == RIGHT)
 		ft_rotate(arg, 1);
+	else if (key == SPACE)
+		ft_action(arg);
 	ft_draw(arg);
 	return (1);
 }

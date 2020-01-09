@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/09 15:20:29 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/09 17:13:15 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 # define DOWN 125
 # define LEFT 123
 # define RIGHT 124
+# define SPACE 49
 
 # define WALL 1
 # define POS 2
@@ -97,10 +98,12 @@ typedef struct	s_hud
 {
 	unsigned int	*l;
 	unsigned int	*k;
-	unsigned int	*g;
+	unsigned int	*p;
 	unsigned int	*n;
 	unsigned int	s;
 	unsigned int	h;
+	unsigned int	a;
+	unsigned int	f;
 }				t_hud;
 
 typedef struct	s_pos
@@ -196,6 +199,7 @@ void			ft_move(t_all *s, double c);
 int				ft_close(t_all *s, int win);
 
 int				ft_mouse(int x, int y, t_all *s);
+void			ft_action(t_all *s);
 
 void			ft_screen(t_all *s);
 void			ft_ray(t_all *s);
@@ -225,6 +229,10 @@ void			ft_hudparse(t_all *s);
 void			ft_hud(t_all *s);
 void			ft_score(t_all *s, int loc, int num);
 void			ft_lifebar(t_all *s);
+void			ft_health(t_all *s);
+
+void			ft_knife(t_all *s, int frame);
+void			ft_pistol(t_all *s, int frame);
 
 int				ft_bitmap(t_all *s);
 void			ft_bdraw(t_all *s);
