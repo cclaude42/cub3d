@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/02 17:16:06 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/06 19:21:01 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/09 15:10:05 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,10 @@ int		ft_mapcheck(t_all *s)
 
 int		ft_parcheck(t_all *s)
 {
+	ft_rotate(s, 1);
+	ft_move(s, 1);
+	ft_rotate(s, -1);
+	ft_move(s, -1);
 	if (s->win.x <= 0 || s->win.y <= 0)
 		return (ft_strerror(-14));
 	else if ((s->tex.n == NULL || s->tex.s == NULL || s->tex.e == NULL)

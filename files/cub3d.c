@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/03 11:23:45 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/09 15:06:03 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,10 @@ int		ft_cubed(t_all s, char *cub, int bmp)
 		return (ft_close(&s, 0));
 	if (bmp == 1)
 		return (ft_bitmap(&s));
-	ft_rotate(&s, 2);
-	ft_rotate(&s, -2);
+	ft_rotate(&s, 1);
+	ft_move(&s, 1);
+	ft_rotate(&s, -1);
+	ft_move(&s, -1);
 	s.win.ptr = mlx_new_window(s.mlx.ptr, s.win.x, s.win.y, "cub3D");
 	ft_draw(&s);
 	mlx_hook(s.win.ptr, 2, 0, ft_key, &s);

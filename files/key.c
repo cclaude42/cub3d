@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/03 11:22:58 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/09 15:04:50 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,37 +35,33 @@ int		ft_close(t_all *s, int win)
 void	ft_move(t_all *s, double c)
 {
 	s->pos.x += c * (s->dir.x * SPEED / 100);
+	if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == '1')
+		s->pos.x -= c * (s->dir.x * SPEED / 100);
 	s->pos.y += c * (s->dir.y * SPEED / 100);
 	if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == '1')
-	{
-		s->pos.x -= c * (s->dir.x * SPEED / 100);
 		s->pos.y -= c * (s->dir.y * SPEED / 100);
-	}
-	else if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == '2')
+	if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == '2')
 	{
 		s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] = '0';
 		s->map.spr--;
 		ft_slist(s);
 	}
-	ft_draw(s);
 }
 
 void	ft_strafe(t_all *s, double c)
 {
 	s->pos.x -= c * (s->dir.y * SPEED / 100);
+	if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == '1')
+		s->pos.x += c * (s->dir.y * SPEED / 100);
 	s->pos.y += c * (s->dir.x * SPEED / 100);
 	if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == '1')
-	{
-		s->pos.x += c * (s->dir.y * SPEED / 100);
 		s->pos.y -= c * (s->dir.x * SPEED / 100);
-	}
-	else if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == '2')
+	if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == '2')
 	{
 		s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] = '0';
 		s->map.spr--;
 		ft_slist(s);
 	}
-	ft_draw(s);
 }
 
 void	ft_rotate(t_all *s, double c)
@@ -77,8 +73,6 @@ void	ft_rotate(t_all *s, double c)
 	dist = hypot(s->dir.x, s->dir.y);
 	s->dir.x /= dist;
 	s->dir.y /= dist;
-	if (c == 1 || c == -1)
-		ft_draw(s);
 }
 
 int		ft_key(int key, void *arg)
@@ -97,5 +91,6 @@ int		ft_key(int key, void *arg)
 		ft_rotate(arg, -1);
 	else if (key == RIGHT)
 		ft_rotate(arg, 1);
+	ft_draw(arg);
 	return (1);
 }
