@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 19:53:30 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 19:57:04 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,8 @@ int		get_next_line(int fd, char **line)
 	char		buf[4096];
 	static char	*stock = NULL;
 
-	if (line == NULL || fd < 0)
+	if (line == NULL || fd < 0 || (read(fd, buf, 0) < 0))
 		return (-3);
-	*line = NULL;
 	read_size = 1;
 	while (!(newline_check(stock, read_size)))
 	{
@@ -70,13 +69,13 @@ int		get_next_line(int fd, char **line)
 	}
 	if ((*line = get_line(stock)) == NULL)
 		return (-3);
-	if (read_size == 0)
-		free(stock);
-	if (read_size == 0)
-		return (0);
 	if ((stock = stock_trim(stock)) == NULL)
 		return (-3);
-	return (1);
+	if (read_size != 0)
+		return (1);
+	free(stock);
+	stock = NULL;
+	return (0);
 }
 
 int		ft_parse(t_all *s, char *cub)
@@ -88,17 +87,14 @@ int		ft_parse(t_all *s, char *cub)
 	ret = 1;
 	line = NULL;
 	fd = open(cub, O_RDONLY);
-	printf("Start\n");
 	if (fd == -1)
 		return (ft_strerror(-1));
 	while ((ret = get_next_line(fd, &line)) == 1)
 	{
-		printf("%s\n", line);
 		if ((ret = ft_line(s, line)) == -1)
 			break ;
 		free(line);
 	}
-	printf("Out\n");
 	free(line);
 	close(fd);
 	if (ret == -1 || ret == -3)
