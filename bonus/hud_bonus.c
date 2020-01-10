@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 15:43:00 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 17:36:08 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 18:41:59 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,13 +92,23 @@ void	ft_hudloop(t_all *s)
 
 void	ft_hud(t_all *s)
 {
+	int	pid;
+
 	if (s->hud.a > 0)
+	{
+		if (s->hud.f == 1)
+		{
+			pid = fork();
+			(pid == 0) ? system("afplay ./textures/sound/pistol.mp3") : 0;
+			(pid == 0) ? ft_close(s, 1) : 0;
+		}
 		ft_pistol(s, s->hud.f);
+	}
 	else
 		ft_knife(s, s->hud.f);
 	s->hud.f > 0 ? s->hud.f++ : 0;
-	s->hud.f >= 20 && s->hud.a > 0 ? s->hud.a-- : 0;
-	s->hud.f >= 20 ? s->hud.f = 0 : 0;
+	s->hud.f == 12 && s->hud.a > 0 ? s->hud.a-- : 0;
+	s->hud.f >= 18 ? s->hud.f = 0 : 0;
 	ft_hudloop(s);
 }
 

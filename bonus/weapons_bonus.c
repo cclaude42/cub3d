@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 16:44:55 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 17:35:54 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 17:53:03 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	ft_knife(t_all *s, int frame)
 	unsigned int	j;
 
 	i = 0;
-	if (frame >= 12)
-		frame = 0;
+	if (frame == 12 || frame == 13)
+		frame = 3;
 	else
-		frame = frame / 3;
+		frame = (frame >= 12) ? 0 : frame / 3;
 	while (i < 96 * 4)
 	{
 		j = 0;
@@ -48,10 +48,10 @@ void	ft_pistol(t_all *s, int frame)
 	unsigned int	j;
 
 	i = 0;
-	if (frame >= 12)
-		frame = 0;
+	if (frame == 12 || frame == 13)
+		frame = 3;
 	else
-		frame = frame / 3;
+		frame = (frame >= 12) ? 0 : frame / 3;
 	while (i < 96 * 4)
 	{
 		j = 0;
