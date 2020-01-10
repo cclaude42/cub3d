@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 16:51:57 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 19:37:41 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int		ft_close(t_all *s, int win)
 	while (i < s->map.y)
 		free(s->map.tab[i++]);
 	free(s->map.tab);
+	free(s->spr);
 	free(s->tex.n);
 	free(s->tex.s);
 	free(s->tex.e);
@@ -50,7 +51,7 @@ void	ft_move(t_all *s, double c)
 	if (ft_is(WALL, s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)]) ||
 	ft_is(DECOR, s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)]))
 		s->pos.y -= c * (s->dir.y * SPEED / 100);
-	if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == '5')
+	if (ft_is(PICK, s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)]))
 	{
 		s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] = '0';
 		s->map.spr--;
@@ -69,7 +70,7 @@ void	ft_strafe(t_all *s, double c)
 	if (ft_is(WALL, s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)]) ||
 	ft_is(DECOR, s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)]))
 		s->pos.y -= c * (s->dir.x * SPEED / 100);
-	if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == '5')
+	if (ft_is(PICK, s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)]))
 	{
 		s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] = '0';
 		s->map.spr--;

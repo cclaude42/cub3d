@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 17:34:24 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 19:27:55 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@
 # define POS 2
 # define SPRITE 3
 # define DECOR 4
+# define PICK 5
 
 # define ANG 0.57595865315
 # define SPEED 15

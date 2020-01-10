@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/08 15:33:11 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 19:53:30 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,15 +86,19 @@ int		ft_parse(t_all *s, char *cub)
 	int		ret;
 
 	ret = 1;
+	line = NULL;
 	fd = open(cub, O_RDONLY);
+	printf("Start\n");
 	if (fd == -1)
 		return (ft_strerror(-1));
 	while ((ret = get_next_line(fd, &line)) == 1)
 	{
+		printf("%s\n", line);
 		if ((ret = ft_line(s, line)) == -1)
 			break ;
 		free(line);
 	}
+	printf("Out\n");
 	free(line);
 	close(fd);
 	if (ret == -1 || ret == -3)

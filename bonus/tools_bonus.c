@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/30 18:01:54 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/08 14:35:54 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 19:24:46 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,25 +35,15 @@ int		ft_atoi(char *line, int *i)
 
 int		ft_is(int n, char c)
 {
-	if (n == WALL && c == '1')
-		return (1);
-	else if (n == WALL && c == '2')
-		return (1);
-	else if (n == WALL && c == '3')
-		return (1);
-	else if (n == WALL && c == '4')
+	if (n == WALL && (c == '1' || c == '2' || c == '3' || c == '4'))
 		return (1);
 	else if (n == SPRITE && c == '5')
 		return (1);
 	else if ((n == SPRITE || n == DECOR) && c == '6')
 		return (1);
-	else if (n == POS && c == 'N')
+	else if (n == POS && (c == 'N' || c == 'S' || c == 'E' || c == 'W'))
 		return (1);
-	else if (n == POS && c == 'S')
-		return (1);
-	else if (n == POS && c == 'E')
-		return (1);
-	else if (n == POS && c == 'W')
+	else if (n == 0 && (c == '0' || c == 'X'))
 		return (1);
 	else
 		return (0);

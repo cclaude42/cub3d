@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:41:46 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/07 17:35:25 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 19:25:49 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ int		ft_xpm(t_all *s, unsigned int **adr, char *file)
 	close(fd);
 	img = mlx_xpm_file_to_image(s->mlx.ptr, file, &tab[0], &tab[1]);
 	*adr = (unsigned int *)mlx_get_data_addr(img, &tab[2], &tab[3], &tab[4]);
-	if (adr == NULL)
-		printf("Nique tes morts\n");
 	free(img);
 	return (0);
 }
@@ -66,7 +64,7 @@ int		ft_slablen(t_all *s, char *line)
 	{
 		if (ft_is(WALL, line[i]) || ft_is(POS, line[i]))
 			count++;
-		if (ft_is(SPRITE, line[i]) || line[i] == '0')
+		if (ft_is(SPRITE, line[i]) || ft_is(0, line[i]))
 			count++;
 		i++;
 	}
@@ -85,7 +83,7 @@ char	*ft_slab(t_all *s, char *line, int *i)
 	j = 0;
 	while (line[*i] != '\0')
 	{
-		if (ft_is(WALL, line[*i]) || ft_is(POS, line[*i]) || line[*i] == '0')
+		if (ft_is(WALL, line[*i]) || ft_is(POS, line[*i]) || ft_is(0, line[*i]))
 			slab[j++] = line[*i];
 		else if (ft_is(SPRITE, line[*i]))
 		{
