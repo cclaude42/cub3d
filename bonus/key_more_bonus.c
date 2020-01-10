@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 18:09:58 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 20:15:26 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 20:43:12 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ft_reset(t_all *s)
 	s->tex.s = NULL;
 	s->tex.e = NULL;
 	s->tex.w = NULL;
+	s->tex.d = NULL;
 	s->tex.f = NULL;
 	s->tex.c = NULL;
 	s->tex.i = NULL;
@@ -56,6 +57,7 @@ void	ft_level(t_all *s)
 	free(s->tex.s);
 	free(s->tex.e);
 	free(s->tex.w);
+	free(s->tex.d);
 	free(s->tex.f);
 	free(s->tex.c);
 	free(s->tex.i);

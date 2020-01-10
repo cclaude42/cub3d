@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 19:57:04 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 20:41:26 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int		ft_texline(t_all *s, char *line, int *i)
 		s->err.n = ft_texture(s, &s->tex.w, line, i);
 	else if (line[*i] == 'E' && line[*i + 1] == 'A' && line[*i + 2] == ' ')
 		s->err.n = ft_texture(s, &s->tex.e, line, i);
+	else if (line[*i] == 'D' && line[*i + 1] == ' ')
+		s->err.n = ft_texture(s, &s->tex.d, line, i);
 	else if (line[*i] == 'S' && line[*i + 1] == ' ')
 		s->err.n = ft_texture(s, &s->tex.i, line, i);
 	else if (line[*i] == 'T' && line[*i + 1] == ' ')
@@ -43,7 +45,7 @@ int		ft_line(t_all *s, char *line)
 		s->err.n = ft_texture(s, &s->tex.f, line, &i);
 	else if (line[i] == 'C' && line[i + 1] == ' ')
 		s->err.n = ft_texture(s, &s->tex.c, line, &i);
-	else if (ft_is(POS, line[i]) || line[i] == 'T')
+	else if (ft_is(POS, line[i]) || line[i] == 'D' || line[i] == 'T')
 		s->err.n = ft_texline(s, line, &i);
 	if (s->err.n == 0 && line[i] != '\0')
 		return (ft_strerror(-10));

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 18:04:34 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/08 17:02:40 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 20:19:20 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_slocate(t_all *s, t_spr spr)
 		angle -= 360;
 	else if (angle <= -180)
 		angle += 360;
-	if (spr.c == '5')
+	if (spr.c == '8')
 		ft_sdraw(s, angle * s->win.x / 66, spr.d);
 	else if (spr.c == '6')
 		ft_ddraw(s, angle * s->win.x / 66, spr.d);

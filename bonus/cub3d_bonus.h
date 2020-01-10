@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 20:11:35 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 20:39:02 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ typedef struct	s_tex
 	unsigned int	*s;
 	unsigned int	*e;
 	unsigned int	*w;
+	unsigned int	*d;
 	unsigned int	*c;
 	unsigned int	*f;
 	unsigned int	*i;
