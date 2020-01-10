@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 18:09:58 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/09 17:24:32 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 14:32:43 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int		ft_mouse(int x, int y, t_all *s)
 
 void	ft_action(t_all *s)
 {
-	s->hud.f++;
-	if (s->hud.f >= 4)
-		s->hud.f = 0;
+	if (s->hud.f == 0)
+		s->hud.f++;
 }

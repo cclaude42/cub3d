@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/09 17:13:15 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 14:14:25 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,7 +171,7 @@ typedef struct	s_all
 void			ft_init(t_all s, char *cub, int bmp);
 void			ft_declare(t_all s, char *cub, int bmp);
 int				ft_cubed(t_all s, char *cub, int bmp);
-void			ft_draw(t_all *s);
+int				ft_draw(t_all *s);
 
 int				ft_parse(t_all *s, char *cub);
 int				get_next_line(int fd, char **line);

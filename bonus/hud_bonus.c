@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 15:43:00 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/09 17:25:25 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 14:34:04 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,10 @@ void	ft_hud(t_all *s)
 		ft_pistol(s, s->hud.f);
 	else
 		ft_knife(s, s->hud.f);
+	if (s->hud.f > 0)
+		s->hud.f++;
+	if (s->hud.f >= 20)
+		s->hud.f = 0;
 }
 
 void	ft_hudparse(t_all *s)

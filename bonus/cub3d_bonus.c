@@ -6,13 +6,13 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/09 17:12:10 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 14:25:49 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
 
-void	ft_draw(t_all *s)
+int		ft_draw(t_all *s)
 {
 	t_ray	ray;
 	t_hit	hit;
@@ -32,6 +32,7 @@ void	ft_draw(t_all *s)
 	mlx_put_image_to_window(s->mlx.ptr, s->win.ptr, s->img.ptr, 0, 0);
 	free(s->img.ptr);
 	free(s->img.adr);
+	return (0);
 }
 
 int		ft_cubed(t_all s, char *cub, int bmp)
@@ -56,6 +57,7 @@ int		ft_cubed(t_all s, char *cub, int bmp)
 	mlx_hook(s.win.ptr, 2, 0, ft_key, &s);
 	mlx_hook(s.win.ptr, 6, 0, ft_mouse, &s);
 	mlx_hook(s.win.ptr, 17, 0, ft_close, &s);
+	mlx_loop_hook(s.mlx.ptr, ft_draw, &s);
 	mlx_loop(s.mlx.ptr);
 	return (1);
 }
