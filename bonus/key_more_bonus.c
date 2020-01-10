@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 18:09:58 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 19:49:13 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 20:15:26 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,11 @@ void	ft_level(t_all *s)
 	free(s->tex.i);
 	free(s->tex.j);
 	ft_reset(s);
-	ft_parse(s, "maps/second.cubonus");
+	s->map.f++;
+	if (s->map.f == 2)
+		ft_parse(s, "maps/second.cubonus");
+	else if (s->map.f == 3)
+		ft_parse(s, "maps/third.cubonus");
 }
 
 void	ft_action(t_all *s)

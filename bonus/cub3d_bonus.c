@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 19:15:31 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 20:11:59 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	ft_declare(t_all s, char *cub, int bmp)
 	map.x = 0;
 	map.y = 0;
 	map.spr = 0;
+	map.f = 1;
 	s.map = map;
 	s.spr = spr;
 	s.stk = stk;

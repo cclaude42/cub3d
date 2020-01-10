@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 19:27:55 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 20:11:35 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ typedef struct	s_map
 	int				x;
 	int				y;
 	int				spr;
+	int				f;
 }				t_map;
 
 typedef struct	s_tex
