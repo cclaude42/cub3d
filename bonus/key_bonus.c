@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/09 17:44:49 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 16:51:57 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int		ft_close(t_all *s, int win)
 	free(s->hud.n);
 	free(s->hud.k);
 	free(s->hud.p);
+	free(s->hud.b);
 	if (win == 1)
 		mlx_destroy_window(s->mlx.ptr, s->win.ptr);
 	free(s->mlx.ptr);

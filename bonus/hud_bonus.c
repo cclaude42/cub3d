@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 15:43:00 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 14:34:04 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 17:04:42 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,27 +64,6 @@ void	ft_health(t_all *s)
 	}
 }
 
-void	ft_score(t_all *s, int loc, int num)
-{
-	unsigned int	color;
-	int				i;
-	int				j;
-
-	i = 0;
-	while (i < 35)
-	{
-		j = 0;
-		while (j < 40)
-		{
-			color = s->hud.n[i / 5 * 80 + j / 5 + num * 8];
-			if (color != NONE)
-				s->img.adr[s->win.x * (i + 37) + (j + s->win.x - loc)] = color;
-			j++;
-		}
-		i++;
-	}
-}
-
 void	ft_hud(t_all *s)
 {
 	int	loc;
@@ -105,10 +84,10 @@ void	ft_hud(t_all *s)
 		ft_pistol(s, s->hud.f);
 	else
 		ft_knife(s, s->hud.f);
-	if (s->hud.f > 0)
-		s->hud.f++;
-	if (s->hud.f >= 20)
-		s->hud.f = 0;
+	s->hud.f > 0 ? s->hud.f++ : 0;
+	s->hud.f >= 20 && s->hud.a > 0 ? s->hud.a-- : 0;
+	s->hud.f >= 20 ? s->hud.f = 0 : 0;
+	ft_ammo(s, 0, s->hud.a);
 }
 
 void	ft_hudparse(t_all *s)
@@ -117,4 +96,5 @@ void	ft_hudparse(t_all *s)
 	ft_xpm(s, &s->hud.n, "./textures/numbers.xpm");
 	ft_xpm(s, &s->hud.k, "./textures/knife.xpm");
 	ft_xpm(s, &s->hud.p, "./textures/pistol.xpm");
+	ft_xpm(s, &s->hud.b, "./textures/bullet.xpm");
 }

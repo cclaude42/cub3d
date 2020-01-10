@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 14:25:49 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 16:51:14 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ void	ft_init(t_all s, char *cub, int bmp)
 	hud.k = NULL;
 	hud.p = NULL;
 	hud.n = NULL;
+	hud.b = NULL;
 	hud.s = 0;
 	hud.h = 100;
 	hud.a = 8;

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 16:44:55 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 14:37:58 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 17:21:57 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,52 @@ void	ft_pistol(t_all *s, int frame)
 			index += (s->win.x - 96 * 4) / 2 + j;
 			if (color != NONE)
 				s->img.adr[index] = color;
+			j++;
+		}
+		i++;
+	}
+}
+
+void	ft_ammo(t_all *s, int loc, int ammo)
+{
+	unsigned int	index;
+	unsigned int	color;
+	int				i;
+	int				j;
+
+	i = 0;
+	ammo = 0;
+	while (i < 45)
+	{
+		j = 0;
+		while (j < 18)
+		{
+			color = s->hud.b[i / 3 * 6 + j / 3];
+			index = s->win.x * (s->win.y - 75 + i);
+			index += s->win.x * 0.75 - loc + j;
+			if (color != NONE)
+			s->img.adr[index] = color;
+			j++;
+		}
+		i++;
+	}
+}
+
+void	ft_score(t_all *s, int loc, int num)
+{
+	unsigned int	color;
+	int				i;
+	int				j;
+
+	i = 0;
+	while (i < 35)
+	{
+		j = 0;
+		while (j < 40)
+		{
+			color = s->hud.n[i / 5 * 80 + j / 5 + num * 8];
+			if (color != NONE)
+				s->img.adr[s->win.x * (i + 37) + (j + s->win.x - loc)] = color;
 			j++;
 		}
 		i++;

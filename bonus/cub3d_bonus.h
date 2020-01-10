@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 14:14:25 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 17:04:28 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ typedef struct	s_hud
 	unsigned int	*k;
 	unsigned int	*p;
 	unsigned int	*n;
+	unsigned int	*b;
 	unsigned int	s;
 	unsigned int	h;
 	unsigned int	a;
@@ -227,12 +228,13 @@ unsigned int	ft_spixel(t_all *s, int index, unsigned int col);
 
 void			ft_hudparse(t_all *s);
 void			ft_hud(t_all *s);
-void			ft_score(t_all *s, int loc, int num);
 void			ft_lifebar(t_all *s);
 void			ft_health(t_all *s);
 
 void			ft_knife(t_all *s, int frame);
 void			ft_pistol(t_all *s, int frame);
+void			ft_ammo(t_all *s, int loc, int ammo);
+void			ft_score(t_all *s, int loc, int num);
 
 int				ft_bitmap(t_all *s);
 void			ft_bdraw(t_all *s);
