@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 16:44:55 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 17:21:57 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 17:35:54 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,9 @@ void	ft_ammo(t_all *s, int loc, int ammo)
 		{
 			color = s->hud.b[i / 3 * 6 + j / 3];
 			index = s->win.x * (s->win.y - 75 + i);
-			index += s->win.x * 0.75 - loc + j;
+			index += s->win.x - loc + j;
 			if (color != NONE)
-			s->img.adr[index] = color;
+				s->img.adr[index] = color;
 			j++;
 		}
 		i++;

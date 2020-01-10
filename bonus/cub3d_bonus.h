@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 17:04:28 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 17:34:24 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,6 +228,7 @@ unsigned int	ft_spixel(t_all *s, int index, unsigned int col);
 
 void			ft_hudparse(t_all *s);
 void			ft_hud(t_all *s);
+void			ft_hudloop(t_all *s);
 void			ft_lifebar(t_all *s);
 void			ft_health(t_all *s);
 

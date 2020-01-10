@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 15:43:00 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 17:04:42 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/10 17:36:08 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,22 +64,34 @@ void	ft_health(t_all *s)
 	}
 }
 
-void	ft_hud(t_all *s)
+void	ft_hudloop(t_all *s)
 {
 	int	loc;
-	int	score;
+	int	num;
 
 	loc = 100;
-	score = s->hud.s;
+	num = s->hud.s;
 	ft_lifebar(s);
 	ft_health(s);
-	ft_score(s, loc, score % 10);
-	while (score > 0)
+	ft_score(s, loc, num % 10);
+	while (num > 0)
 	{
-		ft_score(s, loc, score % 10);
-		score /= 10;
+		ft_score(s, loc, num % 10);
+		num /= 10;
 		loc += 37;
 	}
+	loc = 60;
+	num = s->hud.a;
+	while (num > 0)
+	{
+		ft_ammo(s, loc, num);
+		num--;
+		loc += 23;
+	}
+}
+
+void	ft_hud(t_all *s)
+{
 	if (s->hud.a > 0)
 		ft_pistol(s, s->hud.f);
 	else
@@ -87,7 +99,7 @@ void	ft_hud(t_all *s)
 	s->hud.f > 0 ? s->hud.f++ : 0;
 	s->hud.f >= 20 && s->hud.a > 0 ? s->hud.a-- : 0;
 	s->hud.f >= 20 ? s->hud.f = 0 : 0;
-	ft_ammo(s, 0, s->hud.a);
+	ft_hudloop(s);
 }
 
 void	ft_hudparse(t_all *s)
