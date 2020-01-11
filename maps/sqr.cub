@@ -4,7 +4,7 @@ SO ./textures/blue.xpm
 WE ./textures/wood.xpm
 EA ./textures/grey.xpm
 
-S ./textures/item.xpm
+S ./textures/chalice.xpm
 F 224,172,105
 C 205,249,255
 

@@ -1,0 +1,30 @@
+R  1080 720
+
+NO ./bonus/textures/grey.xpm
+SO ./bonus/textures/hitler.xpm
+WE ./bonus/textures/banner.xpm
+EA ./bonus/textures/eagle.xpm
+
+D ./bonus/textures/door.xpm
+S ./bonus/textures/chest.xpm
+T ./bonus/textures/barrel.xpm
+F ./bonus/textures/floor.xpm
+C ./bonus/textures/skycrop.xpm
+
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 1
+1 1 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1
+1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1
+1 1 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1
+1 1 1 1 0 0 0 0 N 0 0 0 0 1 1 1 1
+1 1 1 1 1 1 1 1 5 1 1 1 1 1 1 1 1

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 15:43:00 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 18:41:59 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/11 14:02:44 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	ft_hud(t_all *s)
 		if (s->hud.f == 1)
 		{
 			pid = fork();
-			(pid == 0) ? system("afplay ./textures/sound/pistol.mp3") : 0;
+			(pid == 0) ? system("afplay ./bonus/sound/pistol.mp3") : 0;
 			(pid == 0) ? ft_close(s, 1) : 0;
 		}
 		ft_pistol(s, s->hud.f);
@@ -114,9 +114,9 @@ void	ft_hud(t_all *s)
 
 void	ft_hudparse(t_all *s)
 {
-	ft_xpm(s, &s->hud.l, "./textures/lifebar.xpm");
-	ft_xpm(s, &s->hud.n, "./textures/numbers.xpm");
-	ft_xpm(s, &s->hud.k, "./textures/knife.xpm");
-	ft_xpm(s, &s->hud.p, "./textures/pistol.xpm");
-	ft_xpm(s, &s->hud.b, "./textures/bullet.xpm");
+	ft_xpm(s, &s->hud.l, "./bonus/textures/lifebar.xpm");
+	ft_xpm(s, &s->hud.n, "./bonus/textures/numbers.xpm");
+	ft_xpm(s, &s->hud.k, "./bonus/textures/knife.xpm");
+	ft_xpm(s, &s->hud.p, "./bonus/textures/pistol.xpm");
+	ft_xpm(s, &s->hud.b, "./bonus/textures/bullet.xpm");
 }

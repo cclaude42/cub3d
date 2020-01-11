@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 20:39:20 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/11 14:01:59 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,6 @@ int		main(void)
 	s.mlx = mlx;
 	s.win = win;
 	s.img = img;
-	ft_init(s, "maps/first.cubonus", 0);
+	ft_init(s, "bonus/maps/first.cubonus", 0);
 	return (0);
 }
