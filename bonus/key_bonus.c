@@ -6,39 +6,20 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 20:39:56 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/11 18:09:54 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
 
-int		ft_close(t_all *s, int win)
+int		ft_mouse(int x, int y, t_all *s)
 {
-	int	i;
-
-	i = 0;
-	while (i < s->map.y)
-		free(s->map.tab[i++]);
-	free(s->map.tab);
-	free(s->spr);
-	free(s->tex.n);
-	free(s->tex.s);
-	free(s->tex.e);
-	free(s->tex.w);
-	free(s->tex.d);
-	free(s->tex.f);
-	free(s->tex.c);
-	free(s->tex.i);
-	free(s->tex.j);
-	free(s->hud.l);
-	free(s->hud.n);
-	free(s->hud.k);
-	free(s->hud.p);
-	free(s->hud.b);
-	(win == 1) ? mlx_destroy_window(s->mlx.ptr, s->win.ptr) : 0;
-	free(s->mlx.ptr);
-	exit(0);
-	return (1);
+	(void)y;
+	if (MOUSE && s->win.m != 10000)
+		ft_rotate(s, (x - s->win.m) / 5);
+	s->win.m = x;
+	ft_draw(s);
+	return (0);
 }
 
 void	ft_move(t_all *s, double c)

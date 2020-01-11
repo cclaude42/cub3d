@@ -6,21 +6,11 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 18:09:58 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/11 14:03:00 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/11 18:11:13 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
-
-int		ft_mouse(int x, int y, t_all *s)
-{
-	(void)y;
-	if (MOUSE && s->win.m != 10000)
-		ft_rotate(s, (x - s->win.m) / 5);
-	s->win.m = x;
-	ft_draw(s);
-	return (0);
-}
 
 void	ft_reset(t_all *s)
 {
@@ -30,6 +20,7 @@ void	ft_reset(t_all *s)
 	s->tex.e = NULL;
 	s->tex.w = NULL;
 	s->tex.d = NULL;
+	s->tex.x = NULL;
 	s->tex.f = NULL;
 	s->tex.c = NULL;
 	s->tex.i = NULL;
@@ -44,7 +35,7 @@ void	ft_reset(t_all *s)
 	s->err.p = 0;
 }
 
-void	ft_level(t_all *s)
+void	ft_free(t_all *s)
 {
 	int	i;
 
@@ -58,10 +49,31 @@ void	ft_level(t_all *s)
 	free(s->tex.e);
 	free(s->tex.w);
 	free(s->tex.d);
+	free(s->tex.x);
 	free(s->tex.f);
 	free(s->tex.c);
 	free(s->tex.i);
 	free(s->tex.j);
+}
+
+int		ft_close(t_all *s, int win)
+{
+	ft_free(s);
+	free(s->hud.l);
+	free(s->hud.n);
+	free(s->hud.k);
+	free(s->hud.p);
+	free(s->hud.b);
+	if (win == 1)
+		mlx_destroy_window(s->mlx.ptr, s->win.ptr);
+	free(s->mlx.ptr);
+	exit(0);
+	return (1);
+}
+
+void	ft_level(t_all *s)
+{
+	ft_free(s);
 	ft_reset(s);
 	s->map.f++;
 	if (s->map.f == 2)

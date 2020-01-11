@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:32:10 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/07 15:42:47 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/11 18:20:38 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_ver(t_all *s)
 	while ((int)floor(y) > 0 && (int)floor(y) < s->map.y)
 	{
 		c = s->map.tab[(int)floor(y)][(int)(x - 1 + s->ray.v)];
-		if (ft_is(WALL, c))
+		if (ft_is(WALL, c) || ft_is(DOOR, c))
 		{
 			s->hit.x = x;
 			s->hit.y = y;
@@ -76,7 +76,7 @@ void	ft_hor(t_all *s)
 	while ((int)floor(x) > 0 && (int)floor(x) < s->map.x)
 	{
 		c = s->map.tab[(int)(y - 1 + s->ray.w)][(int)floor(x)];
-		if (ft_is(WALL, c))
+		if (ft_is(WALL, c) || ft_is(DOOR, c))
 		{
 			if (s->hit.d > hypot(x - s->pos.x, y - s->pos.y))
 			{

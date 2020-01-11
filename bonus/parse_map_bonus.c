@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:41:46 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 19:25:49 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/11 18:18:56 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int		ft_slablen(t_all *s, char *line)
 	count = 0;
 	while (line[i] != '\0')
 	{
-		if (ft_is(WALL, line[i]) || ft_is(POS, line[i]))
+		if (ft_is(WALL, line[i]) || ft_is(POS, line[i]) || ft_is(DOOR, line[i]))
 			count++;
 		if (ft_is(SPRITE, line[i]) || ft_is(0, line[i]))
 			count++;
@@ -83,7 +83,8 @@ char	*ft_slab(t_all *s, char *line, int *i)
 	j = 0;
 	while (line[*i] != '\0')
 	{
-		if (ft_is(WALL, line[*i]) || ft_is(POS, line[*i]) || ft_is(0, line[*i]))
+		if ((ft_is(WALL, line[*i]) || ft_is(POS, line[*i]))
+			|| (ft_is(DOOR, line[*i]) || ft_is(0, line[*i])))
 			slab[j++] = line[*i];
 		else if (ft_is(SPRITE, line[*i]))
 		{

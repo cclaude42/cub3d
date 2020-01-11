@@ -6,8 +6,11 @@ WE ./bonus/textures/banner.xpm
 EA ./bonus/textures/eagle.xpm
 
 D ./bonus/textures/door.xpm
-S ./bonus/textures/chest.xpm
+E ./bonus/textures/exit.xpm
+
 T ./bonus/textures/barrel.xpm
+S ./bonus/textures/chest.xpm
+
 F ./bonus/textures/floor.xpm
 C ./bonus/textures/skycrop.xpm
 

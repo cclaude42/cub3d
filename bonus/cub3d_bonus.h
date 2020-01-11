@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/10 20:39:02 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/11 18:15:10 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@
 # define SPRITE 3
 # define DECOR 4
 # define PICK 5
+# define DOOR 6
 
 # define ANG 0.57595865315
 # define SPEED 15
@@ -91,6 +92,7 @@ typedef struct	s_tex
 	unsigned int	*e;
 	unsigned int	*w;
 	unsigned int	*d;
+	unsigned int	*x;
 	unsigned int	*c;
 	unsigned int	*f;
 	unsigned int	*i;
@@ -200,9 +202,13 @@ int				ft_key(int key, void *arg);
 void			ft_rotate(t_all *s, double c);
 void			ft_strafe(t_all *s, double c);
 void			ft_move(t_all *s, double c);
-int				ft_close(t_all *s, int win);
-
 int				ft_mouse(int x, int y, t_all *s);
+
+
+void			ft_reset(t_all *s);
+void			ft_free(t_all *s);
+int				ft_close(t_all *s, int win);
+void			ft_level(t_all *s);
 void			ft_action(t_all *s);
 
 void			ft_screen(t_all *s);
