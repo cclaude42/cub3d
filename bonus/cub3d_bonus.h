@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/13 16:22:10 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/13 18:44:06 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -217,7 +217,8 @@ void			ft_dir(t_all *s);
 void			ft_ver(t_all *s);
 void			ft_hor(t_all *s);
 
-void			ft_door(t_all *s);
+void			ft_vdoor(t_all *s, double x, double y);
+void			ft_hdoor(t_all *s, double x, double y);
 
 void			ft_sky(t_all *s);
 void			ft_floor(t_all *s);

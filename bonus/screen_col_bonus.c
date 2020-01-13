@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:37:22 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/13 11:56:35 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/13 18:53:44 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ unsigned int	ft_pixel(t_all *s, double i)
 {
 	int	index;
 
-	if (floor(s->hit.y) == s->hit.y)
+	if (floor(s->hit.y) == s->hit.y || floor(s->hit.y) + 0.5 == s->hit.y)
 		index = 64 * floor(64 * i) + 64 * (s->hit.x - floor(s->hit.x));
-	else if (floor(s->hit.x) == s->hit.x)
+	else if (floor(s->hit.x) == s->hit.x || floor(s->hit.x) + 0.5 == s->hit.x)
 		index = 64 * floor(64 * i) + 64 * (s->hit.y - floor(s->hit.y));
 	if (s->hit.c == '1')
 		return (s->tex.n[index]);
@@ -30,7 +30,7 @@ unsigned int	ft_pixel(t_all *s, double i)
 		return (s->tex.w[index]);
 	else if (s->hit.c == '5')
 		return (s->tex.x[index]);
-	else if (s->hit.c == '9')
+	else if (s->hit.c == 'D')
 		return (s->tex.d[index]);
 	return (BLACK);
 }

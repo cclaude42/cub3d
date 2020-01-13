@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 18:09:58 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/11 18:11:13 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/13 17:01:34 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_reset(t_all *s)
 	s->tex.c = NULL;
 	s->tex.i = NULL;
 	s->tex.j = NULL;
+	s->tex.k = NULL;
 	s->win.x = 0;
 	s->win.y = 0;
 	s->map.x = 0;
@@ -54,6 +55,7 @@ void	ft_free(t_all *s)
 	free(s->tex.c);
 	free(s->tex.i);
 	free(s->tex.j);
+	free(s->tex.k);
 }
 
 int		ft_close(t_all *s, int win)

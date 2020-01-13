@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/30 18:01:54 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/11 18:16:18 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/13 16:57:46 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ int		ft_is(int n, char c)
 		return (1);
 	else if (n == POS && (c == 'N' || c == 'S' || c == 'E' || c == 'W'))
 		return (1);
-	else if (n == 0 && (c == '0' || c == 'X'))
+	else if (n == 0 && (c == '0' || c == 'O' || c == 'X'))
 		return (1);
-	else if (n == DOOR && c == '9')
+	else if (n == DOOR && c == 'D')
 		return (1);
 	else
 		return (0);
