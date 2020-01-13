@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/13 11:59:08 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/13 15:06:33 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ typedef struct	s_tex
 	unsigned int	*f;
 	unsigned int	*i;
 	unsigned int	*j;
+	unsigned int	*k;
 }				t_tex;
 
 typedef struct	s_hud
@@ -232,6 +233,7 @@ void			ft_slocate(t_all *s, t_spr spr);
 
 void			ft_sdraw(t_all *s, int loc, double dist);
 void			ft_ddraw(t_all *s, int loc, double dist);
+void			ft_ldraw(t_all *s, int loc, double dist);
 unsigned int	ft_spixel(t_all *s, int index, unsigned int col);
 
 void			ft_hudparse(t_all *s);
@@ -242,7 +244,7 @@ void			ft_health(t_all *s);
 
 void			ft_knife(t_all *s, int frame);
 void			ft_pistol(t_all *s, int frame);
-void			ft_ammo(t_all *s, int loc, int ammo);
+void			ft_ammo(t_all *s, int loc);
 void			ft_score(t_all *s, int loc, int num);
 
 int				ft_bitmap(t_all *s);

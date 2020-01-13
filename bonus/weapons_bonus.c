@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 16:44:55 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/13 13:10:29 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/13 14:54:29 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ft_pistol(t_all *s, int frame)
 	}
 }
 
-void	ft_ammo(t_all *s, int loc, int ammo)
+void	ft_ammo(t_all *s, int loc)
 {
 	unsigned int	index;
 	unsigned int	color;
@@ -76,7 +76,6 @@ void	ft_ammo(t_all *s, int loc, int ammo)
 	int				j;
 
 	i = 0;
-	ammo = 0;
 	while (i < 45)
 	{
 		j = 0;

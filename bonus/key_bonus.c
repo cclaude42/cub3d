@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/11 18:09:54 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/13 14:58:44 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,12 @@ void	ft_move(t_all *s, double c)
 		s->pos.y -= c * (s->dir.y * SPEED / 100);
 	if (ft_is(PICK, s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)]))
 	{
+		if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == '7')
+			s->hud.h += 50;
+		else
+			s->hud.s += 1000;
 		s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] = '0';
 		s->map.spr--;
-		s->hud.s += 1000;
 		ft_slist(s);
 	}
 }
@@ -53,9 +56,12 @@ void	ft_strafe(t_all *s, double c)
 		s->pos.y -= c * (s->dir.x * SPEED / 100);
 	if (ft_is(PICK, s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)]))
 	{
+		if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == '7')
+			s->hud.h += 50;
+		else
+			s->hud.s += 1000;
 		s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] = '0';
 		s->map.spr--;
-		s->hud.s += 1000;
 		ft_slist(s);
 	}
 }

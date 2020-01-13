@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 15:43:00 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/13 13:10:44 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/13 15:01:30 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void	ft_hudloop(t_all *s)
 
 	loc = 100;
 	num = s->hud.s;
+	(s->hud.h > 100) ? s->hud.h = 100 : 0;
 	ft_lifebar(s);
 	ft_health(s);
 	ft_score(s, loc, num % 10);
@@ -84,7 +85,7 @@ void	ft_hudloop(t_all *s)
 	num = s->hud.a;
 	while (num > 0)
 	{
-		ft_ammo(s, loc, num);
+		ft_ammo(s, loc);
 		num--;
 		loc += 23;
 	}
@@ -119,4 +120,5 @@ void	ft_hudparse(t_all *s)
 	ft_xpm(s, &s->hud.k, "./bonus/textures/knife.xpm");
 	ft_xpm(s, &s->hud.p, "./bonus/textures/pistol.xpm");
 	ft_xpm(s, &s->hud.b, "./bonus/textures/bullet.xpm");
+	ft_xpm(s, &s->tex.k, "./bonus/textures/beer.xpm");
 }
