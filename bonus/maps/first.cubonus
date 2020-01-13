@@ -2,8 +2,8 @@ R  1080 720
 
 NO ./bonus/textures/grey.xpm
 SO ./bonus/textures/hitler.xpm
-WE ./bonus/textures/banner.xpm
-EA ./bonus/textures/eagle.xpm
+EA ./bonus/textures/banner.xpm
+WE ./bonus/textures/eagle.xpm
 
 D ./bonus/textures/wood.xpm
 E ./bonus/textures/exit.xpm

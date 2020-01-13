@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/11 18:15:10 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/13 11:59:08 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,7 +203,6 @@ void			ft_rotate(t_all *s, double c);
 void			ft_strafe(t_all *s, double c);
 void			ft_move(t_all *s, double c);
 int				ft_mouse(int x, int y, t_all *s);
-
 
 void			ft_reset(t_all *s);
 void			ft_free(t_all *s);
