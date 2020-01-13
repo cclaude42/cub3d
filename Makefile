@@ -37,6 +37,7 @@ B_SRC = screen_row \
 	sprite_draw \
 	key_more \
 	weapons \
+	door \
 	hud \
 
 B_FIL = $(addsuffix _bonus.c, $(addprefix bonus/, $(SRC) $(B_SRC)))

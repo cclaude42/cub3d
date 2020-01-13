@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:32:10 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/11 18:20:38 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/13 16:19:22 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,14 @@ void	ft_ver(t_all *s)
 	y = s->pos.y + (x - s->pos.x) * (s->ray.y / s->ray.x);
 	while ((int)floor(y) > 0 && (int)floor(y) < s->map.y)
 	{
-		c = s->map.tab[(int)floor(y)][(int)(x - 1 + s->ray.v)];
+		c = s->map.tab[(int)floor(y)][(int)floor(x - 1 + s->ray.v)];
 		if (ft_is(WALL, c) || ft_is(DOOR, c))
 		{
 			s->hit.x = x;
 			s->hit.y = y;
 			s->hit.d = hypot(x - s->pos.x, y - s->pos.y);
 			s->hit.c = c;
+			ft_is(DOOR, c) ? ft_door(s) : 0;
 			return ;
 		}
 		x += (2 * s->ray.v - 1);
@@ -75,7 +76,7 @@ void	ft_hor(t_all *s)
 	x = s->pos.x + (y - s->pos.y) * (s->ray.x / s->ray.y);
 	while ((int)floor(x) > 0 && (int)floor(x) < s->map.x)
 	{
-		c = s->map.tab[(int)(y - 1 + s->ray.w)][(int)floor(x)];
+		c = s->map.tab[(int)floor(y - 1 + s->ray.w)][(int)floor(x)];
 		if (ft_is(WALL, c) || ft_is(DOOR, c))
 		{
 			if (s->hit.d > hypot(x - s->pos.x, y - s->pos.y))
@@ -84,6 +85,7 @@ void	ft_hor(t_all *s)
 				s->hit.y = y;
 				s->hit.d = hypot(x - s->pos.x, y - s->pos.y);
 				s->hit.c = c;
+				ft_is(DOOR, c) ? ft_door(s) : 0;
 			}
 			return ;
 		}
