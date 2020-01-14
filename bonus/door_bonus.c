@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 16:20:45 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/14 15:11:14 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/14 15:48:44 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,31 +50,27 @@ void	ft_hordoor(t_all *s, double x, double y)
 	}
 }
 
-void	ft_posdoor(t_all *s, int *x, int *y)
-{
-	(void)s;
-	*x = 1;
-	*y = 0;
-}
-
 int		ft_opendoor(t_all *s)
 {
 	int	x;
 	int	y;
 	int	pid;
 
-	ft_posdoor(s, &x, &y);
-	if (s->map.tab[(int)floor(s->pos.y) + y][(int)floor(s->pos.x) + x] == 'D')
+	x = (int)floor(s->pos.x + s->dir.x);
+	y = (int)floor(s->pos.y + s->dir.y);
+	if (x == (int)floor(s->pos.x) && y == (int)floor(s->pos.y))
+		return (0);
+	if (s->map.tab[y][x] == 'D')
 	{
-		s->map.tab[(int)floor(s->pos.y) + y][(int)floor(s->pos.x) + x] = 'O';
+		s->map.tab[y][x] = 'O';
 		pid = fork();
 		(pid == 0) ? system("afplay ./bonus/sound/pistol.mp3") : 0;
 		(pid == 0) ? ft_close(s, 1) : 0;
 		return (1);
 	}
-	if (s->map.tab[(int)floor(s->pos.y) + y][(int)floor(s->pos.x) + x] == 'O')
+	if (s->map.tab[y][x] == 'O')
 	{
-		s->map.tab[(int)floor(s->pos.y) + y][(int)floor(s->pos.x) + x] = 'D';
+		s->map.tab[y][x] = 'D';
 		pid = fork();
 		(pid == 0) ? system("afplay ./bonus/sound/pistol.mp3") : 0;
 		(pid == 0) ? ft_close(s, 1) : 0;
