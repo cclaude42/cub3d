@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:37:22 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/13 18:53:44 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/14 15:54:37 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ unsigned int	ft_pixel(t_all *s, double i)
 		return (s->tex.s[index]);
 	else if (s->hit.c == '3')
 		return (s->tex.e[index]);
-	else if (s->hit.c == '4')
+	else if (s->hit.c == '4' || s->hit.c == '6')
 		return (s->tex.w[index]);
 	else if (s->hit.c == '5')
 		return (s->tex.x[index]);

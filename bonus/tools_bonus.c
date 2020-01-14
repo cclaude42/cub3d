@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/30 18:01:54 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/13 16:57:46 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/14 15:56:20 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,13 @@ int		ft_atoi(char *line, int *i)
 
 int		ft_is(int n, char c)
 {
-	if (n == WALL && (c == '1' || c == '2' || c == '3' || c == '4' || c == '5'))
+	if (n == WALL && (c == '1' || c == '2' || c == '3' || c == '4'))
+		return (1);
+	else if (n == WALL && (c == '4' || c == '5' || c == '6'))
 		return (1);
 	else if ((n == SPRITE || n == PICK) && (c == '7' || c == '8'))
 		return (1);
-	else if ((n == SPRITE || n == DECOR) && c == '6')
+	else if ((n == SPRITE || n == DECOR) && c == '9')
 		return (1);
 	else if (n == POS && (c == 'N' || c == 'S' || c == 'E' || c == 'W'))
 		return (1);
