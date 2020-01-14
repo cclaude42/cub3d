@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/13 18:44:06 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/14 15:03:32 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,8 +200,8 @@ int				ft_savecheck(char *arg, char *save);
 int				ft_namecheck(char *arg, char *ext);
 
 int				ft_key(int key, void *arg);
-void			ft_rotate(t_all *s, double c);
-void			ft_strafe(t_all *s, double c);
+void			ft_rotate(t_all *s, double coeff);
+void			ft_strafe(t_all *s, double coeff);
 void			ft_move(t_all *s, double c);
 int				ft_mouse(int x, int y, t_all *s);
 
@@ -217,8 +217,10 @@ void			ft_dir(t_all *s);
 void			ft_ver(t_all *s);
 void			ft_hor(t_all *s);
 
-void			ft_vdoor(t_all *s, double x, double y);
-void			ft_hdoor(t_all *s, double x, double y);
+void			ft_verdoor(t_all *s, double x, double y);
+void			ft_hordoor(t_all *s, double x, double y);
+int				ft_opendoor(t_all *s);
+void			ft_posdoor(t_all *s, int *x, int *y);
 
 void			ft_sky(t_all *s);
 void			ft_floor(t_all *s);

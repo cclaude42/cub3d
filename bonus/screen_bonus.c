@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:32:10 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/13 18:44:26 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/14 15:03:52 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_ver(t_all *s)
 			s->hit.y = y;
 			s->hit.d = hypot(x - s->pos.x, y - s->pos.y);
 			s->hit.c = c;
-			ft_is(DOOR, c) ? ft_vdoor(s, x, y) : 0;
+			ft_is(DOOR, c) ? ft_verdoor(s, x, y) : 0;
 			return ;
 		}
 		x += (2 * s->ray.v - 1);
@@ -86,8 +86,8 @@ void	ft_hor(t_all *s)
 				s->hit.d = hypot(x - s->pos.x, y - s->pos.y);
 				s->hit.c = c;
 			}
-			else if (ft_is(DOOR, c))
-				ft_hdoor(s, x, y);
+			else if (s->hit.d > hypot(x - s->pos.x, y - s->pos.y))
+				ft_hordoor(s, x, y);
 			return ;
 		}
 		y += (2 * s->ray.w - 1);
