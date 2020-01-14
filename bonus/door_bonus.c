@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 16:20:45 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/14 15:58:05 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/14 16:58:59 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ void	ft_verdoor(t_all *s, double x, double y)
 
 	x += s->ray.v - 0.5;
 	y += (s->ray.v - 0.5) * (s->ray.y / s->ray.x);
-	c = s->map.tab[(int)floor(y)][(int)floor(x)];
+	if ((int)floor(y) > 0 && (int)floor(y) < s->map.y)
+		c = s->map.tab[(int)floor(y)][(int)floor(x)];
+	else
+		c = 0;
 	if (ft_is(DOOR, c))
 	{
 		s->hit.x = x;
@@ -39,7 +42,10 @@ void	ft_hordoor(t_all *s, double x, double y)
 
 	y += s->ray.w - 0.5;
 	x += (s->ray.w - 0.5) * (s->ray.x / s->ray.y);
-	c = s->map.tab[(int)floor(y)][(int)floor(x)];
+	if ((int)floor(x) > 0 && (int)floor(x) < s->map.x)
+		c = s->map.tab[(int)floor(y)][(int)floor(x)];
+	else
+		c = 0;
 	if (s->hit.d > hypot(x - s->pos.x, y - s->pos.y) || ft_is(DOOR, c))
 	{
 		s->hit.x = x;
