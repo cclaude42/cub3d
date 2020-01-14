@@ -1,0 +1,12 @@
+{
+  "language.name": "Talossan",
+  "language.region": "Talossa",
+  "language.code": "tzl",
+  "container.crafting": "\u00a7fFabricaziun",
+  "entity.minecraft.villager.farmer": "\u00a7fPour",
+  "entity.minecraft.villager.fisherman": "\u00a7fPes'cheir",
+  "entity.minecraft.villager.librarian": "\u00a7fL\u00fcverveu",
+  "entity.minecraft.villager.none": "\u00a7fViatxaist",
+  "entity.minecraft.villager.shepherd": "\u00a7fPastour",
+  "entity.minecraft.villager": "\u00a7fViatxaist"
+}

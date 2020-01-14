@@ -1,0 +1,14 @@
+{
+    "variants": {
+        "stage=0": [
+        	{ "model": "block/sapling/birch/birch_sapling_0" },
+        	{ "model": "block/sapling/birch/birch_sapling_1" },
+        	{ "model": "block/sapling/birch/birch_sapling_2" }
+        ],
+        "stage=1": [
+        	{ "model": "block/sapling/birch/birch_sapling_3" },
+        	{ "model": "block/sapling/birch/birch_sapling_4" },
+        	{ "model": "block/sapling/birch/birch_sapling_5" }
+        ]
+    }
+}

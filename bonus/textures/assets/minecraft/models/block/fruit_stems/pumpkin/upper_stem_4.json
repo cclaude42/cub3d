@@ -1,0 +1,6 @@
+{ "parent": "block/fruit_stems/templates/upper_stem_with_leaves_mirrored",
+	"textures": {
+		"stem": "block/pumpkin_stem/upper_stem_3",
+		"leaves": "block/pumpkin_stem/leaves"
+	}
+}

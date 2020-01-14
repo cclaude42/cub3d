@@ -1,0 +1,5 @@
+{ "parent": "block/tinted_cross",
+  "textures": {
+    "cross": "block/fern_stems"
+  }
+}

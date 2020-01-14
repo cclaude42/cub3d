@@ -1,0 +1,22 @@
+{
+	"credit": "Made By WantedRobot",
+	"textures": {
+		"1": "block/item_frame_back",
+		"texture": "block/item_frame_front",
+		"particle": "block/item_frame_front"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 14.87],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 12.62]},
+			"faces": {
+				"east": {"uv": [0.5, 2, 1.5, 14], "rotation": 180, "texture": "#texture"},
+				"south": {"uv": [2, 2, 14, 14], "texture": "#1", "cullface": "south"},
+				"west": {"uv": [14.5, 2, 15.5, 14], "texture": "#texture"},
+				"up": {"uv": [2, 0.5, 14, 1.5], "texture": "#texture"},
+				"down": {"uv": [2, 14.5, 14, 15.5], "texture": "#texture"}
+			}
+		}
+	]
+}

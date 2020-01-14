@@ -1,0 +1,93 @@
+{ "multipart": [
+    { "when": { "OR": [
+        { "north": false, "east": false, "south": false, "west": false },
+        { "north": true, "east": false, "south": false, "west": false },
+        { "north": false, "east": true, "south": false, "west": false },
+        { "north": false, "east": false, "south": true, "west": false },
+        { "north": false, "east": false, "south": false, "west": true },
+        { "north": true, "east": true, "south": false, "west": false },
+        { "north": false, "east": true, "south": true, "west": false },
+        { "north": false, "east": false, "south": true, "west": true },
+        { "north": true, "east": false, "south": false, "west": true },
+        { "north": true, "east": true, "south": true, "west": false },
+        { "north": true, "east": true, "south": false, "west": true },
+        { "north": true, "east": false, "south": true, "west": true },
+        { "north": false, "east": true, "south": true, "west": true },
+        { "north": true, "east": true, "south": true, "west": true },
+        { "up": true }
+      ]},
+      "apply": [
+        { "model": "block/mossy_stone_brick_wall_post" },
+        { "model": "block/mossy_stone_brick_wall_post", "y": 90 },
+        { "model": "block/mossy_stone_brick_wall_post", "y": 180 },
+        { "model": "block/mossy_stone_brick_wall_post", "y": 270 }
+      ]
+    },
+    { "when": { "north": true, "east": false, "south": true, "west": false, "up": false },
+      "apply": { "model": "block/mossy_stone_brick_wall_railing" }
+    },
+    { "when": { "north": false, "east": true, "south": false, "west": true, "up": false },
+      "apply": { "model": "block/mossy_stone_brick_wall_railing", "y": 90 }
+    },
+    { "when": { "north": true, "east": false, "south": true, "west": false, "up": false },
+      "apply": [
+        { "model": "block/mossy_stone_brick_wall_small_post_1", "weight": 502 },
+        { "model": "block/mossy_stone_brick_wall_small_post_2", "weight": 501 },
+        { "model": "block/mossy_stone_brick_wall_small_post_3", "weight": 500 }
+      ]
+    },
+    { "when": { "north": false, "east": true, "south": false, "west": true, "up": false },
+      "apply": [
+        { "model": "block/mossy_stone_brick_wall_small_post_1", "weight": 502, "y": 90 },
+        { "model": "block/mossy_stone_brick_wall_small_post_2", "weight": 501, "y": 90 },
+        { "model": "block/mossy_stone_brick_wall_small_post_3", "weight": 500, "y": 90 }
+      ]
+    },
+    { "when": { "north": true, "east": false, "south": true, "west": false, "up": false },
+      "apply": [
+        { "model": "block/mossy_stone_brick_wall_small_post_1", "weight": 505, "y": 180 },
+        { "model": "block/mossy_stone_brick_wall_small_post_2", "weight": 504, "y": 180 },
+        { "model": "block/mossy_stone_brick_wall_small_post_3", "weight": 503, "y": 180 }
+      ]
+    },
+    { "when": { "north": false, "east": true, "south": false, "west": true, "up": false },
+      "apply": [
+        { "model": "block/mossy_stone_brick_wall_small_post_1", "weight": 505, "y": 270 },
+        { "model": "block/mossy_stone_brick_wall_small_post_2", "weight": 504, "y": 270 },
+        { "model": "block/mossy_stone_brick_wall_small_post_3", "weight": 503, "y": 270 }
+      ]
+    },
+    { "when": { "OR": [
+        { "north": true, "east": false, "south": false, "west": false },
+        { "north": true, "east": true },
+        { "north": true, "west": true },
+        { "north": true, "up": true }
+      ]},
+      "apply": { "model": "block/mossy_stone_brick_wall_north" }
+    },
+    { "when": { "OR": [
+        { "north": false, "east": true, "south": false, "west": false },
+        { "east": true, "north": true },
+        { "east": true, "south": true },
+        { "east": true, "up": true }
+      ]},
+      "apply": { "model": "block/mossy_stone_brick_wall_north", "y": 90 }
+    },
+    { "when": { "OR": [
+        { "north": false, "east": false, "south": true, "west": false },
+        { "south": true, "east": true },
+        { "south": true, "west": true },
+        { "south": true, "up": true }
+      ]},
+      "apply": { "model": "block/mossy_stone_brick_wall_south" }
+    },
+    { "when": { "OR": [
+        { "north": false, "east": false, "south": false, "west": true },
+        { "west": true, "north": true },
+        { "west": true, "south": true },
+        { "west": true, "up": true }
+      ]},
+      "apply": { "model": "block/mossy_stone_brick_wall_south", "y": 90 }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "textures": {
+    "particle": "block/bell_bottom",
+    "0": "block/bell_mount"
+  },
+  "elements": [
+    {
+      "from": [3, 13, 7],
+      "to": [16, 15, 9],
+      "faces": {
+        "north": {"uv": [14, 3, 16, 16], "rotation": 90, "texture": "#0"},
+        "east": {"uv": [1, 1, 3, 3], "texture": "#0", "cullface": "east"},
+        "south": {"uv": [14, 0, 16, 13], "rotation": 90, "texture": "#0"},
+        "west": {"uv": [1, 1, 3, 3], "texture": "#0"},
+        "up": {"uv": [14, 0, 16, 13], "rotation": 90, "texture": "#0"},
+        "down": {"uv": [14, 3, 16, 16], "rotation": 270, "texture": "#0"}
+      }
+    }
+  ]
+}

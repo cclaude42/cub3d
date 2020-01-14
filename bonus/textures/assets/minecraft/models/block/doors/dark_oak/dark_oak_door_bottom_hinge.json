@@ -1,0 +1,22 @@
+{
+	"credit": "Made By WantedRobot",
+	"ambientocclusion": false,
+	"textures": {
+		"bottom": "block/dark_oak_door_bottom",
+		"particle": "block/dark_oak_door_bottom",
+		"sides": "block/dark_oak_door_sides"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [3, 16, 16],
+			"faces": {
+				"north": {"uv": [3, 0, 6, 16], "texture": "#sides", "cullface": "north"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#bottom"},
+				"south": {"uv": [15, 0, 12, 16], "texture": "#sides", "cullface": "south"},
+				"west": {"uv": [16, 0, 0, 16], "texture": "#bottom", "cullface": "west"},
+				"down": {"uv": [0, 0, 3, 16], "texture": "#sides", "cullface": "down"}
+			}
+		}
+	]
+}

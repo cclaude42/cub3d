@@ -1,0 +1,46 @@
+{ "variants": {
+    "age=0": { "model": "block/fruit_stems/pumpkin/stem_stage_0" },
+    "age=1": [
+      { "model": "block/fruit_stems/pumpkin/stem_stage_1" },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_1", "y": 90 },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_1", "y": 180 },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_1", "y": 270 }
+    ],
+    "age=2": [
+      { "model": "block/fruit_stems/pumpkin/stem_stage_2" },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_2", "y": 90 },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_2", "y": 180 },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_2", "y": 270 }
+    ],
+    "age=3": [
+      { "model": "block/fruit_stems/pumpkin/stem_stage_3" },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_3", "y": 90 },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_3", "y": 180 },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_3", "y": 270 }
+    ],
+    "age=4": [
+      { "model": "block/fruit_stems/pumpkin/stem_stage_4" },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_4", "y": 90 },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_4", "y": 180 },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_4", "y": 270 }
+    ],
+    "age=5": [
+      { "model": "block/fruit_stems/pumpkin/stem_stage_5" },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_5", "y": 90 },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_5", "y": 180 },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_5", "y": 270 }
+    ],
+    "age=6": [
+      { "model": "block/fruit_stems/pumpkin/stem_stage_6" },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_6", "y": 90 },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_6", "y": 180 },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_6", "y": 270 }
+    ],
+    "age=7": [
+      { "model": "block/fruit_stems/pumpkin/stem_stage_7" },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_7", "y": 90 },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_7", "y": 180 },
+      { "model": "block/fruit_stems/pumpkin/stem_stage_7", "y": 270 }
+    ]
+  }
+}

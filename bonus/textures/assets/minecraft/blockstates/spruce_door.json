@@ -1,0 +1,39 @@
+{
+    "variants": {
+        "facing=east,half=lower,hinge=left,open=false":  { "model": "block/doors/spruce/spruce_door_bottom_es" },
+        "facing=south,half=lower,hinge=left,open=false": { "model": "block/doors/spruce/spruce_door_bottom_es", "y": 90 },
+        "facing=west,half=lower,hinge=left,open=false":  { "model": "block/doors/spruce/spruce_door_bottom_es", "y": 180 },
+        "facing=north,half=lower,hinge=left,open=false": { "model": "block/doors/spruce/spruce_door_bottom_es", "y": 270 },
+        "facing=east,half=lower,hinge=right,open=false":  { "model": "block/doors/spruce/spruce_door_bottom_nw" },
+        "facing=south,half=lower,hinge=right,open=false": { "model": "block/doors/spruce/spruce_door_bottom_nw", "y": 90 },
+        "facing=west,half=lower,hinge=right,open=false":  { "model": "block/doors/spruce/spruce_door_bottom_nw", "y": 180 },
+        "facing=north,half=lower,hinge=right,open=false": { "model": "block/doors/spruce/spruce_door_bottom_nw", "y": 270 },
+
+        "facing=east,half=upper,hinge=left,open=false":  { "model": "block/doors/spruce/spruce_door_top_es" },
+        "facing=south,half=upper,hinge=left,open=false": { "model": "block/doors/spruce/spruce_door_top_es", "y": 90 },
+        "facing=west,half=upper,hinge=left,open=false":  { "model": "block/doors/spruce/spruce_door_top_es", "y": 180 },
+        "facing=north,half=upper,hinge=left,open=false": { "model": "block/doors/spruce/spruce_door_top_es", "y": 270 },
+        "facing=east,half=upper,hinge=right,open=false":  { "model": "block/doors/spruce/spruce_door_top_nw" },
+        "facing=south,half=upper,hinge=right,open=false": { "model": "block/doors/spruce/spruce_door_top_nw", "y": 90 },
+        "facing=west,half=upper,hinge=right,open=false":  { "model": "block/doors/spruce/spruce_door_top_nw", "y": 180 },
+        "facing=north,half=upper,hinge=right,open=false": { "model": "block/doors/spruce/spruce_door_top_nw", "y": 270 },
+
+        "facing=east,half=lower,hinge=left,open=true":  { "model": "block/doors/spruce/spruce_door_bottom_hinge_es", "y": 90 },
+        "facing=south,half=lower,hinge=left,open=true": { "model": "block/doors/spruce/spruce_door_bottom_hinge_es", "y": 180 },
+        "facing=west,half=lower,hinge=left,open=true":  { "model": "block/doors/spruce/spruce_door_bottom_hinge_es", "y": 270 },
+        "facing=north,half=lower,hinge=left,open=true": { "model": "block/doors/spruce/spruce_door_bottom_hinge_es" },
+        "facing=east,half=lower,hinge=right,open=true":  { "model": "block/doors/spruce/spruce_door_bottom_hinge_nw", "y": 270 },
+        "facing=south,half=lower,hinge=right,open=true": { "model": "block/doors/spruce/spruce_door_bottom_hinge_nw" },
+        "facing=west,half=lower,hinge=right,open=true":  { "model": "block/doors/spruce/spruce_door_bottom_hinge_nw", "y": 90 },
+        "facing=north,half=lower,hinge=right,open=true": { "model": "block/doors/spruce/spruce_door_bottom_hinge_nw", "y": 180 },
+
+        "facing=east,half=upper,hinge=left,open=true":  { "model": "block/doors/spruce/spruce_door_top_hinge_es", "y": 90 },
+        "facing=south,half=upper,hinge=left,open=true": { "model": "block/doors/spruce/spruce_door_top_hinge_es", "y": 180 },
+        "facing=west,half=upper,hinge=left,open=true":  { "model": "block/doors/spruce/spruce_door_top_hinge_es", "y": 270 },
+        "facing=north,half=upper,hinge=left,open=true": { "model": "block/doors/spruce/spruce_door_top_hinge_es" },
+        "facing=east,half=upper,hinge=right,open=true":  { "model": "block/doors/spruce/spruce_door_top_hinge_nw", "y": 270 },
+        "facing=south,half=upper,hinge=right,open=true": { "model": "block/doors/spruce/spruce_door_top_hinge_nw" },
+        "facing=west,half=upper,hinge=right,open=true":  { "model": "block/doors/spruce/spruce_door_top_hinge_nw", "y": 90 },
+        "facing=north,half=upper,hinge=right,open=true": { "model": "block/doors/spruce/spruce_door_top_hinge_nw", "y": 180 }
+    }
+}

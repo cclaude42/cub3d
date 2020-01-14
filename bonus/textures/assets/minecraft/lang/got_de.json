@@ -1,0 +1,20 @@
+{
+  "language.name": "Gutrazda",
+  "language.region": "Gutland",
+  "language.code": "got",
+  "container.barrel": "\u00a7fBarils",
+  "container.loom": "\u00a7fWaibjastols",
+  "container.cartography_table": "\u00a7fKartjabiu\u00fes",
+  "container.smoker": "\u00a7fRaukja",
+  "container.stonecutter": "\u00a7fStainamaitja",
+  "container.blast_furnace": "\u00a7fBlastauhns",
+  "merchant.level.1": "\u00a7fDuginnands",
+  "merchant.level.2": "\u00a7fSiponeis",
+  "merchant.level.3": "\u00a7fGasin\u00feja",
+  "merchant.level.4": "\u00a7fFro\u00fes",
+  "merchant.level.5": "\u00a7fFrauja",
+  "merchant.trades": "\u00a7fKaupa",
+  "entity.minecraft.villager.mason": "\u00a7fTimrja",
+  "entity.minecraft.villager.weaponsmith": "\u00a7fWepnasmi\u00feja",
+  "entity.minecraft.wandering_trader": "\u00a7fFarands Lewja"
+}

@@ -1,0 +1,6 @@
+{ "parent": "block/fruit_stems/templates/upper_stem_with_leaves",
+	"textures": {
+		"stem": "block/melon_stem/upper_stem_3",
+		"leaves": "block/melon_stem/leaves"
+	}
+}

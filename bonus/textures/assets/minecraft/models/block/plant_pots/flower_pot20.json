@@ -1,0 +1,5 @@
+{ "parent": "block/plant_pots/templates/flower_pot_type_5",
+	"textures": {
+	  "pot": "block/flower_pot_4"
+	}
+  }

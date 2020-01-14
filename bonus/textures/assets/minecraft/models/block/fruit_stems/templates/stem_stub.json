@@ -1,0 +1,15 @@
+{ "ambientocclusion": false,
+	"elements": [
+		{ "from": [-9.5, 16, 6.5],
+			"to": [-6.5, 17, 9.5],
+			"rotation": {"angle": -45, "axis": "y", "origin": [-8, 16.5, 8]},
+			"faces": {
+				"north": {"uv": [0, 15, 3, 16], "texture": "#stub"},
+				"east": {"uv": [0, 15, 3, 16], "texture": "#stub"},
+				"south": {"uv": [0, 15, 3, 16], "texture": "#stub"},
+				"west": {"uv": [0, 15, 3, 16], "texture": "#stub"},
+				"up": {"uv": [0, 12, 3, 15], "texture": "#stub"}
+			}
+		}
+	]
+}

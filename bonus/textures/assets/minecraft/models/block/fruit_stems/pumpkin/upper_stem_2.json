@@ -1,0 +1,6 @@
+{ "parent": "block/fruit_stems/templates/upper_stem_with_fruit",
+	"textures": {
+		"stem": "block/pumpkin_stem/upper_stem_2",
+		"fruit": "block/pumpkin_stem/small_pumpkins"
+	}
+}

@@ -1,0 +1,44 @@
+{ "parent": "block/block",
+	"textures": {
+		"0": "block/stone_brick_wall_post",
+		"particle": "block/stone_bricks"
+	},
+	"elements": [
+		{ "from": [4, 0, 4],
+			"to": [12, 12, 12],
+			"color": 7,
+			"faces": {
+				"north": {"uv": [8, 4, 16, 16], "texture": "#0"},
+				"east": {"uv": [8, 4, 16, 16], "texture": "#0"},
+				"south": {"uv": [8, 4, 16, 16], "texture": "#0"},
+				"west": {"uv": [8, 4, 16, 16], "texture": "#0"},
+				"up": {"uv": [0, 8, 8, 16], "texture": "#0"},
+				"down": {"uv": [0, 8, 8, 16], "texture": "#0"}
+			}
+		},
+		{ "from": [5, 12, 5],
+			"to": [11, 16, 11],
+			"color": 7,
+			"faces": {
+				"north": {"uv": [9, 0, 15, 4], "texture": "#0"},
+				"east": {"uv": [9, 0, 15, 4], "texture": "#0"},
+				"south": {"uv": [9, 0, 15, 4], "texture": "#0"},
+				"west": {"uv": [9, 0, 15, 4], "texture": "#0"},
+				"up": {"uv": [1, 1, 7, 7], "texture": "#0", "cullface": "up"},
+				"down": {"uv": [0, 0, 6, 6], "texture": "#0"}
+			}
+		},
+		{ "from": [4, 13, 4],
+			"to": [12, 15, 12],
+			"color": 7,
+			"faces": {
+				"north": {"uv": [8, 1, 16, 3], "texture": "#0"},
+				"east": {"uv": [8, 1, 16, 3], "texture": "#0"},
+				"south": {"uv": [8, 1, 16, 3], "texture": "#0"},
+				"west": {"uv": [8, 1, 16, 3], "texture": "#0"},
+				"up": {"uv": [0, 0, 8, 8], "texture": "#0"},
+				"down": {"uv": [0, 0, 8, 8], "texture": "#0"}
+			}
+		}
+	]
+}

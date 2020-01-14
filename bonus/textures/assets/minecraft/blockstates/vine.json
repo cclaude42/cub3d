@@ -1,0 +1,42 @@
+{ "multipart": [
+    { "when": { "south": true },
+      "apply": { "model": "block/vine" }
+    },
+    { "when": { "west": true },
+      "apply": { "model": "block/vine", "y": 90 }
+    },
+    { "when": { "north": true },
+      "apply": { "model": "block/vine", "y": 180 }
+    },
+    { "when": { "east": true },
+      "apply": { "model": "block/vine", "y": 270 }
+    },
+    { "when": { "OR": [
+        { "up": true, "south": true },
+        { "up": true, "south": false, "north": false, "west": false, "east": false }
+      ]},
+      "apply": { "model": "block/vine_hanging" }
+    },
+    { "when": { "up": true, "south": false, "north": true },
+      "apply": { "model": "block/vine_hanging", "y": 180 }
+    },
+    { "when": { "up": true, "south": false, "north": false, "west": true },
+      "apply": { "model": "block/vine_hanging", "y": 90 }
+    },
+    { "when": { "up": true, "south": false, "north": false, "west": false, "east": true },
+      "apply": { "model": "block/vine_hanging", "y": 270 }
+    },
+    { "when": { "up": true, "south": true },
+      "apply": { "model": "block/vine_hanging_connection" }
+    },
+    { "when": { "up": true, "south": false, "north": true },
+      "apply": { "model": "block/vine_hanging_connection", "y": 180 }
+    },
+    { "when": { "up": true, "south": false, "north": false, "west": true },
+      "apply": { "model": "block/vine_hanging_connection", "y": 90 }
+    },
+    { "when": { "up": true, "south": false, "north": false, "west": false, "east": true },
+      "apply": { "model": "block/vine_hanging_connection", "y": 270 }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{	"textures": {
+		"0": "block/vine_hanging_stems_1",
+		"particle": "block/vine_leaves_back"
+	},
+	"elements": [
+		{	"from": [7.84693, 0.5, 0.13045],
+			"to": [7.84693, 15.5, 16.13045],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [7.84693, 8, 8.13045]},
+			"shade": false,
+			"faces": {
+				"east": {"uv": [0, 0, 16, 15], "texture": "#0"},
+				"west": {"uv": [16, 0, 0, 15], "texture": "#0"}
+			}
+		}
+	]
+}

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 16:20:45 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/14 16:58:59 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/14 18:41:26 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int		ft_opendoor(t_all *s)
 	{
 		s->map.tab[y][x] = 'O';
 		pid = fork();
-		(pid == 0) ? system("afplay ./bonus/sound/pistol.mp3") : 0;
+		(pid == 0) ? system("afplay ./bonus/sound/open.mp3") : 0;
 		(pid == 0) ? ft_close(s, 1) : 0;
 		return (1);
 	}
@@ -78,7 +78,7 @@ int		ft_opendoor(t_all *s)
 	{
 		s->map.tab[y][x] = 'D';
 		pid = fork();
-		(pid == 0) ? system("afplay ./bonus/sound/pistol.mp3") : 0;
+		(pid == 0) ? system("afplay ./bonus/sound/close.mp3") : 0;
 		(pid == 0) ? ft_close(s, 1) : 0;
 		return (1);
 	}

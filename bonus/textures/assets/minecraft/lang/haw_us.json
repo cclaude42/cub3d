@@ -1,0 +1,9 @@
+{
+  "language.name": "\u02bb\u014clelo Hawai\u02bbi",
+  "language.region": "Hawai\u02bbi",
+  "language.code": "haw",
+  "container.furnace": "\u00a7fUmu",
+  "container.chest": "\u00a7fPahu",
+  "entity.minecraft.villager.farmer": "\u00a7fMahiai",
+  "entity.minecraft.villager.fisherman": "\u00a7fLawai\u02bba"
+}

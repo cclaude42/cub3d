@@ -1,0 +1,43 @@
+Name	Item(s)	Stash ID	Crop (WxH+X+Y) (Optional)	File Name
+Diamond Cutlass	diamond_sword	22964		diamond_cutlass
+Golden Cutlass	golden_sword	22965		golden_cutlass
+Iron Cutlass	iron_sword	22967		iron_cutlass
+Stone Cutlass	stone_sword	22966		stone_cutlass
+Wooden Cutlass	wooden_sword	22968		wooden_cutlass
+Diamond Halberd	diamond_axe	3229	32x32+96+0	diamond_halberd
+Golden Halberd	golden_axe	3229	32x32+128+0	golden_halberd
+Iron Halberd	iron_axe	3229	32x32+64+0	iron_halberd
+Stone Halberd	stone_axe	3229	32x32+32+0	stone_halberd
+Wooden Halberd	wooden_axe	3229	32x32+0+0	wooden_halberd
+Xmas Diamond Sword	diamond_sword	22120		xmas_diamond_sword
+Xmas Diamond Pickaxe	diamond_pickaxe	22121		xmas_diamond_pickaxe
+Xmas Diamond Hoe	diamond_hoe	22123		xmas_diamond_hoe
+Xmas Diamond Shovel	diamond_shovel	22119		xmas_diamond_shovel
+Xmas Iron Pickaxe	iron_pickaxe	22126		xmas_iron_pickaxe
+Xmas Iron Hoe	iron_hoe	22124		xmas_iron_hoe
+Xmas Iron Shovel	iron_shovel	22127		xmas_iron_shovel
+Xmas Iron Sword	iron_sword	22128		xmas_iron_sword
+Xmas Iron Axe	iron_axe	22125		xmas_iron_axe
+Xmas Golden Sword	golden_sword	22114		xmas_golden_sword
+Xmas Golden Pickaxe	golden_pickaxe	22116		xmas_golden_pickaxe
+Xmas Golden Hoe	golden_hoe	22118		xmas_golden_hoe
+Xmas Golden Shovel	golden_shovel	22115		xmas_golden_shovel
+Xmas Golden Axe	golden_axe	22117		xmas_golden_axe
+Bone Sword	wooden_sword	16076		bone_sword
+Bone Pickaxe	wooden_pickaxe	20914		bone_pickaxe
+Bone Shovel	wooden_shovel	20915		bone_shovel
+Bone Hoe	wooden_hoe	20912		bone_hoe
+Bone Axe	wooden_axe	16075		bone_axe
+Lance	stick	18976		lance
+Paint Roller	stick	20914		paint_roller
+Paint Brush	stick	1366		paint_brush
+Wooden Lighter	flint_and_steel	16507		wooden_lighter
+Golden Lighter	flint_and_steel	16506		golden_lighter
+Iron Lighter	flint_and_steel	16072		iron_lighter
+Bomb		3391		bomb
+Green Apple	apple	418		green_apple
+Strawberry	apple	18896		strawberry
+Cucumber	apple	17460		cucumber
+Lemon	apple	17459		lemon
+Onion	apple	17368		onion
+Pineapple	apple	17466		pineapple

@@ -1,0 +1,149 @@
+{
+    "variants": {
+        "facing=down,open=false": [
+        { "model": "block/barrel/barrel", "x": 180 },
+        { "model": "block/barrel/barrel", "x": 180, "y": 90 },
+        { "model": "block/barrel/barrel", "x": 180, "y": 180 },
+        { "model": "block/barrel/barrel", "x": 180, "y": 270 },
+        { "model": "block/barrel/barrel_alt", "x": 180 },
+        { "model": "block/barrel/barrel_alt", "x": 180, "y": 90 },
+        { "model": "block/barrel/barrel_alt", "x": 180, "y": 180 },
+        { "model": "block/barrel/barrel_alt", "x": 180, "y": 270 },
+        { "model": "block/barrel/barrel", "x": 180 },
+        { "model": "block/barrel/barrel", "x": 180, "y": 90 },
+        { "model": "block/barrel/barrel", "x": 180, "y": 180 },
+        { "model": "block/barrel/barrel", "x": 180, "y": 270 },
+        { "model": "block/barrel/barrel_alt", "x": 180 },
+        { "model": "block/barrel/barrel_alt", "x": 180, "y": 90 },
+        { "model": "block/barrel/barrel_alt", "x": 180, "y": 180 },
+        { "model": "block/barrel/barrel_alt", "x": 180, "y": 270 }
+    ],
+        "facing=up,open=false": [
+        	{ "model": "block/barrel/barrel" },
+        	{ "model": "block/barrel/barrel", "y": 90 },
+        	{ "model": "block/barrel/barrel", "y": 180 },
+        	{ "model": "block/barrel/barrel", "y": 270 },
+        	{ "model": "block/barrel/barrel_alt" },
+        	{ "model": "block/barrel/barrel_alt", "y": 90  },
+        	{ "model": "block/barrel/barrel_alt", "y": 180  },
+        	{ "model": "block/barrel/barrel_alt", "y": 270  },
+        	{ "model": "block/barrel/barrel" },
+        	{ "model": "block/barrel/barrel", "y": 90 },
+        	{ "model": "block/barrel/barrel", "y": 180 },
+        	{ "model": "block/barrel/barrel", "y": 270 },
+        	{ "model": "block/barrel/barrel_alt" },
+        	{ "model": "block/barrel/barrel_alt", "y": 90  },
+        	{ "model": "block/barrel/barrel_alt", "y": 180  },
+        	{ "model": "block/barrel/barrel_alt", "y": 270  }
+        ],
+        "facing=north,open=false": [
+        	{ "model": "block/barrel/barrel", "x": 90 },
+        	{ "model": "block/barrel/barrel_alt", "x": 90 },
+        	{ "model": "block/barrel/barrel", "x": 90 },
+        	{ "model": "block/barrel/barrel_alt", "x": 90 }
+        ],
+
+        "facing=south,open=false": [
+        	{ "model": "block/barrel/barrel", "x": 90, "y": 180 },
+        	{ "model": "block/barrel/barrel_alt", "x": 90, "y": 180 },
+        	{ "model": "block/barrel/barrel", "x": 90, "y": 180 },
+        	{ "model": "block/barrel/barrel_alt", "x": 90, "y": 180 }
+        ],
+        "facing=west,open=false": [
+        	{ "model": "block/barrel/barrel", "x": 90, "y": 270 },
+			{ "model": "block/barrel/barrel_alt", "x": 90, "y": 270 },
+			{ "model": "block/barrel/barrel", "x": 90, "y": 270 },
+			{ "model": "block/barrel/barrel_alt", "x": 90, "y": 270 }
+        ],
+        "facing=east,open=false": [
+        	{ "model": "block/barrel/barrel", "x": 90, "y": 90 },
+        	{ "model": "block/barrel/barrel_alt", "x": 90, "y": 90 },
+        	{ "model": "block/barrel/barrel", "x": 90, "y": 90 },
+        	{ "model": "block/barrel/barrel_alt", "x": 90, "y": 90 }
+        ],
+        "facing=down,open=true": [
+        	{ "model": "block/barrel/barrel_open_half", "x": 180 },
+        	{ "model": "block/barrel/barrel_open_half", "x": 180, "y": 90 },
+        	{ "model": "block/barrel/barrel_open_half", "x": 180, "y": 180 },
+        	{ "model": "block/barrel/barrel_open_half", "x": 180, "y": 270 },
+        	{ "model": "block/barrel/barrel_open_half_alt", "x": 180 },
+        	{ "model": "block/barrel/barrel_open_half_alt", "x": 180, "y": 90 },
+        	{ "model": "block/barrel/barrel_open_half_alt", "x": 180, "y": 180 },
+        	{ "model": "block/barrel/barrel_open_half_alt", "x": 180, "y": 270 },
+        	{ "model": "block/barrel/barrel_open_full", "x": 180 },
+        	{ "model": "block/barrel/barrel_open_full", "x": 180, "y": 90 },
+        	{ "model": "block/barrel/barrel_open_full", "x": 180, "y": 180 },
+        	{ "model": "block/barrel/barrel_open_full", "x": 180, "y": 270 },
+        	{ "model": "block/barrel/barrel_open_full_alt", "x": 180 },
+        	{ "model": "block/barrel/barrel_open_full_alt", "x": 180, "y": 90 },
+        	{ "model": "block/barrel/barrel_open_full_alt", "x": 180, "y": 180 },
+        	{ "model": "block/barrel/barrel_open_full_alt", "x": 180, "y": 270 }
+        ],
+        "facing=up,open=true": [
+        	{ "model": "block/barrel/barrel_open_half" },
+        	{ "model": "block/barrel/barrel_open_half","y": 90 },
+        	{ "model": "block/barrel/barrel_open_half", "y": 180 },
+        	{ "model": "block/barrel/barrel_open_half", "y": 270 },
+        	{ "model": "block/barrel/barrel_open_half_alt" },
+        	{ "model": "block/barrel/barrel_open_half_alt", "y": 90 },
+        	{ "model": "block/barrel/barrel_open_half_alt", "y": 180 },
+        	{ "model": "block/barrel/barrel_open_half_alt", "y": 270 },
+        	{ "model": "block/barrel/barrel_open_full" },
+        	{ "model": "block/barrel/barrel_open_full", "y": 90 },
+        	{ "model": "block/barrel/barrel_open_full", "y": 180 },
+        	{ "model": "block/barrel/barrel_open_full", "y": 270 },
+        	{ "model": "block/barrel/barrel_open_full_alt" },
+        	{ "model": "block/barrel/barrel_open_full_alt", "y": 90 },
+        	{ "model": "block/barrel/barrel_open_full_alt", "y": 180 },
+        	{ "model": "block/barrel/barrel_open_full_alt", "y": 270 }
+        ],
+        "facing=north,open=true": [
+        	{ "model": "block/barrel/barrel_open_half", "x": 90 },
+        	{ "model": "block/barrel/barrel_open_half_alt", "x": 90 },
+        	{ "model": "block/barrel/barrel_open_full", "x": 90 },
+        	{ "model": "block/barrel/barrel_open_full_alt", "x": 90 }
+        ],
+        "facing=north,open=true": [
+        	{ "model": "block/barrel/barrel_open_half", "x": 90 },
+        	{ "model": "block/barrel/barrel_open_half_alt", "x": 90 },
+        	{ "model": "block/barrel/barrel_open_full", "x": 90 },
+        	{ "model": "block/barrel/barrel_open_full_alt", "x": 90 }
+        ],
+        "facing=south,open=true": [
+        	{ "model": "block/barrel/barrel_open_half", "x": 90, "y": 180 },
+        	{ "model": "block/barrel/barrel_open_half_alt", "x": 90, "y": 180 },
+        	{ "model": "block/barrel/barrel_open_full", "x": 90, "y": 180 },
+        	{ "model": "block/barrel/barrel_open_full_alt", "x": 90, "y": 180 }
+        ],
+        "facing=south,open=true": [
+        	{ "model": "block/barrel/barrel_open_half", "x": 90, "y": 180 },
+        	{ "model": "block/barrel/barrel_open_half_alt", "x": 90, "y": 180 },
+        	{ "model": "block/barrel/barrel_open_full", "x": 90, "y": 180 },
+        	{ "model": "block/barrel/barrel_open_full_alt", "x": 90, "y": 180 }
+        ],
+        "facing=west,open=true": [
+        	{ "model": "block/barrel/barrel_open_half", "x": 90, "y": 270 },
+        	{ "model": "block/barrel/barrel_open_half_alt", "x": 90, "y": 270 },
+        	{ "model": "block/barrel/barrel_open_full", "x": 90, "y": 270 },
+        	{ "model": "block/barrel/barrel_open_full_alt", "x": 90, "y": 270 }
+        ],
+        "facing=west,open=true": [
+        	{ "model": "block/barrel/barrel_open_half", "x": 90, "y": 270 },
+        	{ "model": "block/barrel/barrel_open_half_alt", "x": 90, "y": 270 },
+        	{ "model": "block/barrel/barrel_open_full", "x": 90, "y": 270 },
+        	{ "model": "block/barrel/barrel_open_full_alt", "x": 90, "y": 270 }
+        ],
+        "facing=east,open=true": [
+        	{ "model": "block/barrel/barrel_open_half", "x": 90, "y": 90 },
+        	{ "model": "block/barrel/barrel_open_half_alt", "x": 90, "y": 90 },
+        	{ "model": "block/barrel/barrel_open_full", "x": 90, "y": 90 },
+        	{ "model": "block/barrel/barrel_open_full_alt", "x": 90, "y": 90 }
+        ],
+        "facing=east,open=true": [
+        	{ "model": "block/barrel/barrel_open_half", "x": 90, "y": 90 },
+        	{ "model": "block/barrel/barrel_open_half_alt", "x": 90, "y": 90 },
+        	{ "model": "block/barrel/barrel_open_full", "x": 90, "y": 90 },
+        	{ "model": "block/barrel/barrel_open_full_alt", "x": 90, "y": 90 }
+        ]
+    }
+}

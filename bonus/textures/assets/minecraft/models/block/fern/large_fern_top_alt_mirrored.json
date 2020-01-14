@@ -1,0 +1,5 @@
+{ "parent": "block/tinted_cross_mirrored",
+  "textures": {
+    "cross": "block/large_fern_top_3"
+  }
+}

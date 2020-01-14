@@ -1,0 +1,7 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/template_glass_pane_noside",
+	"textures": {
+		"pane": "block/blue_stained_glass_pane"
+	}
+}

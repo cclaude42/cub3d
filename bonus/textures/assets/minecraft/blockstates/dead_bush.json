@@ -1,0 +1,17 @@
+{ "variants": {
+    "": [
+      { "model": "block/flower/dead_bush/0" },
+      { "model": "block/flower/dead_bush/1" },
+      { "model": "block/flower/dead_bush/2" },
+      { "model": "block/flower/dead_bush/3" },
+      { "model": "block/flower/dead_bush/4" },
+      { "model": "block/flower/dead_bush/5" },
+      { "model": "block/flower/dead_bush/6" },
+      { "model": "block/flower/dead_bush/7" },
+      { "model": "block/flower/dead_bush/8" },
+      { "model": "block/flower/dead_bush/9" },
+      { "model": "block/flower/dead_bush/10" },
+      { "model": "block/flower/dead_bush/11" }
+    ]
+  }
+}

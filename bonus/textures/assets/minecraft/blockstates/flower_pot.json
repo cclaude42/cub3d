@@ -1,0 +1,35 @@
+{
+	"multipart": [{
+			"apply": [
+				{ "model": "block/plant_pots/flower_pot", "weight":2 },
+				{ "model": "block/plant_pots/flower_pot2", "weight":2 },
+				{ "model": "block/plant_pots/flower_pot3", "weight":2 },
+				{ "model": "block/plant_pots/flower_pot4", "weight":2 },
+				{ "model": "block/plant_pots/flower_pot5", "weight":2 },
+				{ "model": "block/plant_pots/flower_pot6", "weight":2 },
+				{ "model": "block/plant_pots/flower_pot7", "weight":2 },
+				{ "model": "block/plant_pots/flower_pot8", "weight":2 },
+				{ "model": "block/plant_pots/flower_pot9", "weight":1 },
+				{ "model": "block/plant_pots/flower_pot10", "weight":1 },
+				{ "model": "block/plant_pots/flower_pot11", "weight":1 },
+				{ "model": "block/plant_pots/flower_pot12", "weight":1 },
+				{ "model": "block/plant_pots/flower_pot13", "weight":1 },
+				{ "model": "block/plant_pots/flower_pot14", "weight":1 },
+				{ "model": "block/plant_pots/flower_pot15", "weight":1 },
+				{ "model": "block/plant_pots/flower_pot16", "weight":1 },
+				{ "model": "block/plant_pots/flower_pot9", "y":90, "weight":1 },
+				{ "model": "block/plant_pots/flower_pot10", "y":90, "weight":1 },
+				{ "model": "block/plant_pots/flower_pot11", "y":90, "weight":1 },
+				{ "model": "block/plant_pots/flower_pot12", "y":90, "weight":1 },
+				{ "model": "block/plant_pots/flower_pot13", "y":90, "weight":1 },
+				{ "model": "block/plant_pots/flower_pot14", "y":90, "weight":1 },
+				{ "model": "block/plant_pots/flower_pot15", "y":90, "weight":1 },
+				{ "model": "block/plant_pots/flower_pot16", "y":90, "weight":1 },
+				{ "model": "block/plant_pots/flower_pot17", "weight":2 },
+				{ "model": "block/plant_pots/flower_pot18", "weight":2 },
+				{ "model": "block/plant_pots/flower_pot19", "weight":2 },
+				{ "model": "block/plant_pots/flower_pot20", "weight":2 }
+			]
+		}
+	]
+}

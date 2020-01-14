@@ -1,0 +1,9 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/cube_bottom_top",
+	"textures": {
+		"bottom": "block/dirt",
+		"top": "block/snow",
+		"side": "block/podzol_side_snow"
+	}
+}

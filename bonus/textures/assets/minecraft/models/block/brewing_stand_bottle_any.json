@@ -1,0 +1,1 @@
+{"textures":{"particle":"block/brewing_stand","stand":"block/brewing_stand"},"elements":[{"from":[7.5,13.5,7.5],"to":[8.5,14,8.5],"faces":{"north":{"uv":[8,5.5,10,6],"texture":"#stand"},"south":{"uv":[8,5.5,10,6],"texture":"#stand"},"west":{"uv":[8,5.5,10,6],"texture":"#stand"},"east":{"uv":[8,5.5,10,6],"texture":"#stand"}}}]}

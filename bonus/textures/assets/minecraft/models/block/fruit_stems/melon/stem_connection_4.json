@@ -1,0 +1,6 @@
+{ "parent": "block/fruit_stems/templates/stem_connection_with_leaves_mirrored",
+  "textures": {
+    "stem": "block/melon_stem/stem_connection_2",
+    "leaves": "block/melon_stem/leaves"
+  }
+}

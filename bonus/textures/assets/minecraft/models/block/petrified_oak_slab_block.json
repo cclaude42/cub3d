@@ -1,0 +1,7 @@
+{
+	"credit": "Made By WantedRobot",
+	"parent": "block/cube_all",
+	"textures": {
+        "all": "block/petrified_oak"
+	}
+}

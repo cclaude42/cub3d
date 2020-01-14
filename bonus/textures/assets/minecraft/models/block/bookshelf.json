@@ -1,0 +1,9 @@
+{
+	"credit": "Made By WantedRobot",
+	"parent": "block/cube_bottom_top",
+	"textures": {
+		"bottom": "block/bookshelf_bottom",
+		"top": "block/bookshelf_top",
+		"side": "block/bookshelf"
+	}
+}

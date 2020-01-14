@@ -1,0 +1,55 @@
+{
+	"credit": "Made By WantedRobot",
+	"parent": "block/template_orientable_trapdoor_open",
+	"textures": {
+		"sides": "block/iron_trapdoor_rim",
+		"texture": "block/iron_trapdoor",
+		"particle": "block/iron_trapdoor"
+	},
+	"elements": [
+		{
+			"from": [6, 10.5, 13],
+			"to": [10, 16, 16],
+			"faces": {
+				"north": {"uv": [6, 10.5, 10, 16], "rotation": 180, "texture": "#texture"},
+				"south": {"uv": [6, 10.5, 10, 16], "rotation": 180, "texture": "#texture", "cullface": "south"},
+				"up": {"uv": [3, 6, 6, 10], "rotation": 270, "texture": "#sides", "cullface": "up"},
+				"down": {"uv": [0, 6.5, 3, 10.5], "rotation": 90, "texture": "#sides"}
+			}
+		},
+		{
+			"from": [0, 0, 13],
+			"to": [6, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 6, 16], "rotation": 180, "texture": "#texture"},
+				"east": {"uv": [0, 0, 3, 16], "texture": "#sides"},
+				"south": {"uv": [10, 0, 16, 16], "rotation": 180, "texture": "#texture", "cullface": "south"},
+				"west": {"uv": [0, 0, 3, 16], "rotation": 180, "texture": "#sides", "cullface": "west"},
+				"up": {"uv": [3, 0, 6, 6], "rotation": 270, "texture": "#sides", "cullface": "up"},
+				"down": {"uv": [3, 10, 6, 16], "rotation": 90, "texture": "#sides", "cullface": "down"}
+			}
+		},
+		{
+			"from": [10, 0, 13],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [10, 0, 16, 16], "rotation": 180, "texture": "#texture"},
+				"east": {"uv": [0, 0, 3, 16], "rotation": 180, "texture": "#sides", "cullface": "east"},
+				"south": {"uv": [0, 0, 6, 16], "rotation": 180, "texture": "#texture", "cullface": "south"},
+				"west": {"uv": [0, 0, 3, 16], "rotation": 180, "texture": "#sides"},
+				"up": {"uv": [3, 10, 6, 16], "rotation": 270, "texture": "#sides", "cullface": "up"},
+				"down": {"uv": [3, 0, 6, 6], "rotation": 90, "texture": "#sides", "cullface": "down"}
+			}
+		},
+		{
+			"from": [6, 0, 13],
+			"to": [10, 6, 16],
+			"faces": {
+				"north": {"uv": [6, 0, 10, 6], "rotation": 180, "texture": "#texture"},
+				"south": {"uv": [6, 0, 10, 6], "rotation": 180, "texture": "#texture", "cullface": "south"},
+				"up": {"uv": [0, 6.5, 3, 10.5], "rotation": 270, "texture": "#sides"},
+				"down": {"uv": [3, 6.5, 6, 10.5], "rotation": 90, "texture": "#sides", "cullface": "down"}
+			}
+		}
+	]
+}

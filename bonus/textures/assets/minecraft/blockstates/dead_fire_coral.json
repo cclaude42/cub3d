@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "": [
+        { "model": "block/coral/dead_fire_coral/0" },
+        { "model": "block/coral/dead_fire_coral/1" },
+        { "model": "block/coral/dead_fire_coral/2" }
+    ]
+    }
+}

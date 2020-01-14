@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "": [
+        	{ "model": "block/coral/kelp_plant/0" },
+        	{ "model": "block/coral/kelp_plant/1" },
+        	{ "model": "block/coral/kelp_plant/2" }
+        ]
+    }
+}

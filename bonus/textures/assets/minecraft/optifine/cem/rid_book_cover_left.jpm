@@ -1,0 +1,15 @@
+{
+	"credit": "Made by WantedRobot",
+	"textureSize": [64, 32],
+	"boxes": [
+		{
+			"coordinates": [-6, -15.5, 0, 5.5, 9, 0.5],
+			"uvNorth": [16, 0, 22, 10],
+			"uvEast": [7, 0, 8, 10],
+			"uvSouth": [22, 0, 28, 10],
+			"uvWest": [19, 0, 20, 10],
+			"uvUp": [16, 2, 22, 3],
+			"uvDown": [16, 6, 22, 7]
+		}
+	]
+}

@@ -1,0 +1,29 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
+    "elements": [
+        {
+            "name": "bar-top",
+            "from": [ 7.0, 12.0, 0.0 ], 
+            "to": [ 9.0, 15.0, 6.0 ], 
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 12.0, 0.0, 14.0, 3.0 ] },
+                "east": { "texture": "#0", "uv": [ 4.0, 4.0, 10.0, 7.0 ] },
+                "west": { "texture": "#0", "uv": [ 10.0, 4.0, 16.0, 7.0 ] },
+                "up": { "texture": "#0", "uv": [ 4.0, 7.0, 10.0, 9.0 ], "rotation": 270 },
+                "down": { "texture": "#0", "uv": [ 4.0, 7.0, 10.0, 9.0 ], "rotation": 270 }
+            }
+        },
+        {
+            "name": "bar-btm",
+            "from": [ 7.0, 6.0, 0.0 ], 
+            "to": [ 9.0, 9.0, 6.0 ], 
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 12.0, 0.0, 14.0, 3.0 ] },
+                "east": { "texture": "#0", "uv": [ 4.0, 4.0, 10.0, 7.0 ] },
+                "west": { "texture": "#0", "uv": [ 10.0, 4.0, 16.0, 7.0 ] },
+                "up": { "texture": "#0", "uv": [ 4.0, 7.0, 10.0, 9.0 ], "rotation": 270 },
+                "down": { "texture": "#0", "uv": [ 4.0, 7.0, 10.0, 9.0 ], "rotation": 270 }
+            }
+        }
+    ]
+}

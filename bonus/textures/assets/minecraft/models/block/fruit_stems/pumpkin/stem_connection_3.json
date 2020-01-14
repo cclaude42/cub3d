@@ -1,0 +1,6 @@
+{ "parent": "block/fruit_stems/templates/stem_connection_with_leaves",
+  "textures": {
+    "stem": "block/pumpkin_stem/stem_connection_2",
+    "leaves": "block/pumpkin_stem/leaves"
+  }
+}

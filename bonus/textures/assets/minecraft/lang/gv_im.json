@@ -1,0 +1,23 @@
+{
+  "language.name": "Gaelg",
+  "language.region": "Mannin",
+  "language.code": "gv_IM",
+  "container.hopper": "\u00a7fCrannag Nheeghyn",
+  "container.crafting": "\u00a7fKeirdyn",
+  "container.enchant": "\u00a7fDruiaghtaghey",
+  "container.repair": "\u00a7fKerree as Enmys",
+  "container.creative": "\u00a7fReih Nheeghyn",
+  "container.chestDouble": "\u00a7fCoyr Mooar",
+  "itemGroup.buildingBlocks": "\u00a7fBlick Hrockee",
+  "itemGroup.decorations": "\u00a7fBlick Yesheenagh",
+  "itemGroup.transportation": "\u00a7fEebyrtys",
+  "itemGroup.search": "\u00a7fRonsaghey Nheeghyn",
+  "itemGroup.food": "\u00a7fBee",
+  "itemGroup.tools": "\u00a7fGreieyn",
+  "itemGroup.combat": "\u00a7fCaggey",
+  "itemGroup.brewing": "\u00a7fImbyl",
+  "itemGroup.materials": "\u00a7fStooghyn",
+  "itemGroup.inventory": "\u00a7fCooid Vayrnaght",
+  "entity.minecraft.villager.none": "\u00a7fTheayagh",
+  "entity.minecraft.villager": "\u00a7fTheayagh"
+}

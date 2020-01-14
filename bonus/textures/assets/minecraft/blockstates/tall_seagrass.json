@@ -1,0 +1,18 @@
+{
+    "variants": {
+        "half=lower": [
+        	{ "model": "block/coral/tall_seagrass/rocks0" },
+        	{ "model": "block/coral/tall_seagrass/rocks1" },
+        	{ "model": "block/coral/tall_seagrass/rocks2" },
+        	{ "model": "block/coral/tall_seagrass/rocks3" },
+        	{ "model": "block/coral/tall_seagrass/rocks4" }
+        ],
+        "half=upper": [
+        	{ "model": "block/coral/tall_seagrass/0" },
+        	{ "model": "block/coral/tall_seagrass/1" },
+        	{ "model": "block/coral/tall_seagrass/2" },
+        	{ "model": "block/coral/tall_seagrass/3" },
+        	{ "model": "block/coral/tall_seagrass/4" }
+        ]
+    }
+}

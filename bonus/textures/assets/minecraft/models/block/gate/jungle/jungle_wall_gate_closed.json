@@ -1,0 +1,7 @@
+{
+    "parent": "block/gate/wall_gate_closed",
+    "textures": {
+        "particle": "block/jungle_planks",
+        "0": "block/jungle_fence_gate"
+    }
+}

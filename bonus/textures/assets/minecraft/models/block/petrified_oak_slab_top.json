@@ -1,0 +1,9 @@
+{
+	"credit": "Made By WantedRobot",
+	"parent": "block/slab_top",
+	"textures": {
+		"bottom": "block/petrified_oak",
+        "top": "block/petrified_oak",
+        "side": "block/petrified_oak"
+	}
+}

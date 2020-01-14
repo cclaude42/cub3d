@@ -1,0 +1,123 @@
+{ "multipart": [
+    { "when": { "half": "lower" },
+      "apply": [
+        { "model": "block/fern/large_fern_bottom", "weight": 5 },
+        { "model": "block/fern/large_fern_bottom_mirrored", "weight": 5 },
+        { "model": "block/fern/large_fern_bottom_alt", "weight": 1 },
+        { "model": "block/fern/large_fern_bottom_alt_mirrored", "weight": 1 }
+      ]
+    },
+    { "when": { "half": "lower" },
+      "apply": [
+        { "model": "block/fern/fern_ground" },
+        { "model": "block/fern/fern_ground", "y": 90 },
+        { "model": "block/fern/fern_ground", "y": 180 },
+        { "model": "block/fern/fern_ground", "y": 270 }
+      ]
+    },
+    { "when": { "half": "lower" },
+      "apply": [
+        { "model": "block/fern/fern_1",  "weight": 1501 },
+        { "model": "block/fern/fern_2",  "weight": 1502 },
+        { "model": "block/fern/fern_3",  "weight": 1503 },
+        { "model": "block/fern/fern_4",  "weight": 1504 },
+        { "model": "block/fern/fern_5",  "weight": 1505 },
+        { "model": "block/fern/fern_6",  "weight": 1506 },
+        { "model": "block/fern/fern_7",  "weight": 1507 },
+        { "model": "block/fern/fern_8",  "weight": 1508 },
+        { "model": "block/fern/fern_9",  "weight": 1509 },
+        { "model": "block/fern/fern_10", "weight": 1510 },
+        { "model": "block/fern/fern_11", "weight": 1511 },
+        { "model": "block/fern/fern_12", "weight": 1512 },
+        { "model": "block/fern/fern_13", "weight": 1513 },
+        { "model": "block/fern/fern_14", "weight": 1514 },
+        { "model": "block/fern/fern_15", "weight": 1515 },
+        { "model": "block/fern/fern_16", "weight": 1516 },
+        { "model": "block/fern/fern_17", "weight": 1517 },
+        { "model": "block/fern/fern_18", "weight": 1518 },
+        { "model": "block/fern/fern_19", "weight": 1519 },
+        { "model": "block/fern/fern_20", "weight": 1520 }
+      ]
+    },
+    { "when": { "half": "lower" },
+      "apply": [
+        { "model": "block/fern/fern_1",  "y": 90, "weight": 2511 },
+        { "model": "block/fern/fern_2",  "y": 90, "weight": 2505 },
+        { "model": "block/fern/fern_3",  "y": 90, "weight": 2519 },
+        { "model": "block/fern/fern_4",  "y": 90, "weight": 2513 },
+        { "model": "block/fern/fern_5",  "y": 90, "weight": 2515 },
+        { "model": "block/fern/fern_6",  "y": 90, "weight": 2504 },
+        { "model": "block/fern/fern_7",  "y": 90, "weight": 2517 },
+        { "model": "block/fern/fern_8",  "y": 90, "weight": 2512 },
+        { "model": "block/fern/fern_9",  "y": 90, "weight": 2506 },
+        { "model": "block/fern/fern_10", "y": 90, "weight": 2502 },
+        { "model": "block/fern/fern_11", "y": 90, "weight": 2514 },
+        { "model": "block/fern/fern_12", "y": 90, "weight": 2507 },
+        { "model": "block/fern/fern_13", "y": 90, "weight": 2503 },
+        { "model": "block/fern/fern_14", "y": 90, "weight": 2520 },
+        { "model": "block/fern/fern_15", "y": 90, "weight": 2516 },
+        { "model": "block/fern/fern_16", "y": 90, "weight": 2501 },
+        { "model": "block/fern/fern_17", "y": 90, "weight": 2509 },
+        { "model": "block/fern/fern_18", "y": 90, "weight": 2508 },
+        { "model": "block/fern/fern_19", "y": 90, "weight": 2518 },
+        { "model": "block/fern/fern_20", "y": 90, "weight": 2510 }
+      ]
+    },
+    { "when": { "half": "lower" },
+      "apply": [
+        { "model": "block/fern/fern_1",  "y": 180, "weight": 3514 },
+        { "model": "block/fern/fern_2",  "y": 180, "weight": 3518 },
+        { "model": "block/fern/fern_3",  "y": 180, "weight": 3509 },
+        { "model": "block/fern/fern_4",  "y": 180, "weight": 3508 },
+        { "model": "block/fern/fern_5",  "y": 180, "weight": 3512 },
+        { "model": "block/fern/fern_6",  "y": 180, "weight": 3510 },
+        { "model": "block/fern/fern_7",  "y": 180, "weight": 3519 },
+        { "model": "block/fern/fern_8",  "y": 180, "weight": 3515 },
+        { "model": "block/fern/fern_9",  "y": 180, "weight": 3511 },
+        { "model": "block/fern/fern_10", "y": 180, "weight": 3505 },
+        { "model": "block/fern/fern_11", "y": 180, "weight": 3520 },
+        { "model": "block/fern/fern_12", "y": 180, "weight": 3516 },
+        { "model": "block/fern/fern_13", "y": 180, "weight": 3503 },
+        { "model": "block/fern/fern_14", "y": 180, "weight": 3517 },
+        { "model": "block/fern/fern_15", "y": 180, "weight": 3501 },
+        { "model": "block/fern/fern_16", "y": 180, "weight": 3513 },
+        { "model": "block/fern/fern_17", "y": 180, "weight": 3507 },
+        { "model": "block/fern/fern_18", "y": 180, "weight": 3502 },
+        { "model": "block/fern/fern_19", "y": 180, "weight": 3504 },
+        { "model": "block/fern/fern_20", "y": 180, "weight": 3506 }
+      ]
+    },
+    { "when": { "half": "lower" },
+      "apply": [
+        { "model": "block/fern/fern_1",  "y": 270, "weight": 4513 },
+        { "model": "block/fern/fern_2",  "y": 270, "weight": 4506 },
+        { "model": "block/fern/fern_3",  "y": 270, "weight": 4515 },
+        { "model": "block/fern/fern_4",  "y": 270, "weight": 4518 },
+        { "model": "block/fern/fern_5",  "y": 270, "weight": 4516 },
+        { "model": "block/fern/fern_6",  "y": 270, "weight": 4502 },
+        { "model": "block/fern/fern_7",  "y": 270, "weight": 4504 },
+        { "model": "block/fern/fern_8",  "y": 270, "weight": 4507 },
+        { "model": "block/fern/fern_9",  "y": 270, "weight": 4505 },
+        { "model": "block/fern/fern_10", "y": 270, "weight": 4519 },
+        { "model": "block/fern/fern_11", "y": 270, "weight": 4520 },
+        { "model": "block/fern/fern_12", "y": 270, "weight": 4503 },
+        { "model": "block/fern/fern_13", "y": 270, "weight": 4501 },
+        { "model": "block/fern/fern_14", "y": 270, "weight": 4512 },
+        { "model": "block/fern/fern_15", "y": 270, "weight": 4510 },
+        { "model": "block/fern/fern_16", "y": 270, "weight": 4509 },
+        { "model": "block/fern/fern_17", "y": 270, "weight": 4514 },
+        { "model": "block/fern/fern_18", "y": 270, "weight": 4517 },
+        { "model": "block/fern/fern_19", "y": 270, "weight": 4511 },
+        { "model": "block/fern/fern_20", "y": 270, "weight": 4508 }
+      ]
+    },
+    { "when": { "half": "upper" },
+      "apply": [
+        { "model": "block/fern/large_fern_top", "weight": 5 },
+        { "model": "block/fern/large_fern_top_mirrored", "weight": 5 },
+        { "model": "block/fern/large_fern_top_alt", "weight": 1 },
+        { "model": "block/fern/large_fern_top_alt_mirrored", "weight": 1 }
+      ]
+    }
+  ]
+}

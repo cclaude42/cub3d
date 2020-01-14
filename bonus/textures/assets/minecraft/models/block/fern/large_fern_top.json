@@ -1,0 +1,6 @@
+{ "parent": "block/tinted_cross_two_sides",
+  "textures": {
+    "side_1": "block/large_fern_top",
+    "side_2": "block/large_fern_top_2"
+  }
+}

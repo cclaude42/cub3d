@@ -5,7 +5,7 @@ SO ./bonus/textures/hitler.xpm
 EA ./bonus/textures/banner.xpm
 WE ./bonus/textures/eagle.xpm
 
-D ./bonus/textures/wood.xpm
+D ./bonus/textures/door.xpm
 E ./bonus/textures/exit.xpm
 
 T ./bonus/textures/barrel.xpm

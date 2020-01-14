@@ -1,0 +1,20 @@
+{
+  "credit": "Made by WantedRobot",
+  "models": 
+  [
+    {
+      "model": "rid_shulker_shell_bottom.jpm",
+      "part": "base", 
+	  "attach": false,
+      "translate": [ 8, 0, -8],
+      "rotate": [0, 0, 0]
+    },
+	{
+      "model": "rid_shulker_shell_top.jpm",
+      "part": "lid", 
+	  "attach": false,
+      "translate": [ 8, 0, -8],
+      "rotate": [0, 0, 0]
+    }
+  ]
+}

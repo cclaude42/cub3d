@@ -1,0 +1,45 @@
+{ "variants": {
+    "axis=y": [
+      { "model": "block/log/spruce/0",  "weight": 3 },
+      { "model": "block/log/spruce/1",  "weight": 3 },
+      { "model": "block/log/spruce/2",  "weight": 3 },
+      { "model": "block/log/spruce/3",  "weight": 3 },
+      { "model": "block/log/spruce/4",  "weight": 3 },
+      { "model": "block/log/spruce/5",  "weight": 3 },
+      { "model": "block/log/spruce/6",  "weight": 3 },
+      { "model": "block/log/spruce/7",  "weight": 3 },
+      { "model": "block/log/spruce/8",  "weight": 3 },
+      { "model": "block/log/spruce/9",  "weight": 3 },
+      { "model": "block/log/spruce/10", "weight": 3 },
+      { "model": "block/log/spruce/11", "weight": 1 }
+    ],
+    "axis=z": [
+      { "model": "block/log/spruce/0",  "x": 90, "weight": 3 },
+      { "model": "block/log/spruce/1",  "x": 90, "weight": 3 },
+      { "model": "block/log/spruce/2",  "x": 90, "weight": 3 },
+      { "model": "block/log/spruce/3",  "x": 90, "weight": 3 },
+      { "model": "block/log/spruce/4",  "x": 90, "weight": 3 },
+      { "model": "block/log/spruce/5",  "x": 90, "weight": 3 },
+      { "model": "block/log/spruce/6",  "x": 90, "weight": 3 },
+      { "model": "block/log/spruce/7",  "x": 90, "weight": 3 },
+      { "model": "block/log/spruce/8",  "x": 90, "weight": 3 },
+      { "model": "block/log/spruce/9",  "x": 90, "weight": 3 },
+      { "model": "block/log/spruce/10", "x": 90, "weight": 3 },
+      { "model": "block/log/spruce/11", "x": 90, "weight": 1 }
+    ],
+    "axis=x": [
+      { "model": "block/log/spruce/0",  "x": 90, "y": 90, "weight": 3 },
+      { "model": "block/log/spruce/1",  "x": 90, "y": 90, "weight": 3 },
+      { "model": "block/log/spruce/2",  "x": 90, "y": 90, "weight": 3 },
+      { "model": "block/log/spruce/3",  "x": 90, "y": 90, "weight": 3 },
+      { "model": "block/log/spruce/4",  "x": 90, "y": 90, "weight": 3 },
+      { "model": "block/log/spruce/5",  "x": 90, "y": 90, "weight": 3 },
+      { "model": "block/log/spruce/6",  "x": 90, "y": 90, "weight": 3 },
+      { "model": "block/log/spruce/7",  "x": 90, "y": 90, "weight": 3 },
+      { "model": "block/log/spruce/8",  "x": 90, "y": 90, "weight": 3 },
+      { "model": "block/log/spruce/9",  "x": 90, "y": 90, "weight": 3 },
+      { "model": "block/log/spruce/10", "x": 90, "y": 90, "weight": 3 },
+      { "model": "block/log/spruce/11", "x": 90, "y": 90, "weight": 1 }
+    ]
+  }
+}

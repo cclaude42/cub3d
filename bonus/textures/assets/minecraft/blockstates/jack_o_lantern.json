@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": [{ "model": "block/pumpkins/jack_o_lantern" },{"model": "block/pumpkins/jack_o_lantern2"}],
+        "facing=south": [{ "model": "block/pumpkins/jack_o_lantern", "y": 180 },{"model": "block/pumpkins/jack_o_lantern2", "y": 180 }],
+        "facing=west":  [{ "model": "block/pumpkins/jack_o_lantern", "y": 270 },{"model": "block/pumpkins/jack_o_lantern2", "y": 270 }],
+        "facing=east":  [{ "model": "block/pumpkins/jack_o_lantern", "y": 90 },{"model": "block/pumpkins/jack_o_lantern2", "y": 90 }]
+    }
+}

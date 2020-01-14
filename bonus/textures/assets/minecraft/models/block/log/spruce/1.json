@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "block/log/spruce/1",
+        "side": "block/spruce_log"
+    }
+}

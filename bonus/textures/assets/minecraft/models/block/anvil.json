@@ -1,0 +1,68 @@
+{
+	"credit": "Made By WantedRobot",
+	"parent": "block/block",
+	"textures": {
+		"body": "block/anvil",
+		"particle": "block/anvil",
+		"top": "block/anvil_top"
+	},
+	"elements": [
+		{
+			"name": "Anvil base",
+			"from": [2, 0, 2],
+			"to": [14, 4, 14],
+			"faces": {
+				"north": {"uv": [2, 12, 14, 16], "texture": "#body"},
+				"east": {"uv": [6.5, 2, 2.5, 14], "rotation": 270, "texture": "#body"},
+				"south": {"uv": [2, 12, 14, 16], "texture": "#body"},
+				"west": {"uv": [2.5, 2, 6.5, 14], "rotation": 90, "texture": "#body"},
+				"up": {"uv": [2, 2, 14, 14], "rotation": 180, "texture": "#body"},
+				"down": {"uv": [2, 2, 14, 14], "rotation": 180, "texture": "#body", "cullface": "down"}
+			}
+		},
+		{
+			"name": "Lower narrow portion",
+			"from": [4, 4, 3],
+			"to": [12, 5, 13],
+			"faces": {
+				"north": {"uv": [4, 11, 12, 12], "texture": "#body"},
+				"east": {"uv": [5, 3, 4, 13], "rotation": 270, "texture": "#body"},
+				"south": {"uv": [4, 11, 12, 12], "texture": "#body"},
+				"west": {"uv": [4, 3, 5, 13], "rotation": 90, "texture": "#body"},
+				"up": {"uv": [4, 3, 12, 13], "rotation": 180, "texture": "#body"}
+			}
+		},
+		{
+			"name": "Wider section beneath top portion",
+			"from": [6, 5, 4],
+			"to": [10, 10, 12],
+			"faces": {
+				"north": {"uv": [6, 1, 10, 6], "rotation": 180, "texture": "#top"},
+				"east": {"uv": [4, 11, 12, 16], "texture": "#top"},
+				"south": {"uv": [6, 1, 10, 6], "rotation": 180, "texture": "#top"},
+				"west": {"uv": [4, 11, 12, 16], "texture": "#top"},
+				"up": {"uv": [0, 0, 0, 0], "texture": "#top"},
+				"down": {"uv": [0, 0, 0, 0], "texture": "#top"}
+			}
+		},
+		{
+			"name": "Anvil top",
+			"from": [3, 10, 0],
+			"to": [13, 16, 16],
+			"faces": {
+				"north": {"uv": [3, 5, 13, 11], "texture": "#body"},
+				"east": {"uv": [16, 0, 10, 16], "rotation": 270, "texture": "#body"},
+				"south": {"uv": [3, 5, 13, 11], "texture": "#body"},
+				"west": {"uv": [10, 0, 16, 16], "rotation": 90, "texture": "#body"},
+				"up": {"uv": [3, 0, 13, 16], "rotation": 180, "texture": "#top"},
+				"down": {"uv": [3, 0, 13, 16], "texture": "#top"}
+			}
+		}
+	],
+	"display": {
+		"fixed": {
+			"rotation": [0, 90, 0],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	}
+}

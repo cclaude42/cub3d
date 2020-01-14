@@ -1,0 +1,7 @@
+{ "parent": "block/fruit_stems/templates/stem_stage_6",
+  "textures": {
+    "stem": "block/melon_stem/growth_stages",
+    "leaves": "block/melon_stem/leaves",
+    "fruit": "block/melon_stem/small_melons"
+  }
+}

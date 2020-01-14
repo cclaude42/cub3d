@@ -1,0 +1,13 @@
+{
+  "language.name": "Af-Soomaali",
+  "language.region": "Soomaaliya",
+  "language.code": "so_SO",
+  "container.barrel": "\u00a7fFoosto",
+  "container.loom": "\u00a7fDhar",
+  "container.grindstone_title": "\u00a7fDayactir & Nadaafad",
+  "container.smoker": "\u00a7fSigaarka",
+  "container.blast_furnace": "\u00a7ffoornada_qarxa",
+  "entity.minecraft.villager.mason": "\u00a7fDhageysiga",
+  "entity.minecraft.villager.toolsmith": "\u00a7fGawaarida",
+  "entity.minecraft.villager.weaponsmith": "\u00a7fHubka"
+}

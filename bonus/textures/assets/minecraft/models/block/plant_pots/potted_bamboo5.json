@@ -1,0 +1,82 @@
+{
+	"credit": "Made By WantedRobot",
+	"ambientocclusion": false,
+	"textures": {
+		"1": "block/potted_plants/potted_bamboo_stalk"
+	},
+	"elements": [
+		{
+			"name": "leaf",
+			"from": [3.5, 20.5, 8],
+			"to": [6.5, 23.5, 8],
+			"faces": {
+				"north": {"uv": [3, 2, 0, 5], "texture": "#1", "cullface": "up"},
+				"south": {"uv": [0, 2, 3, 5], "texture": "#1", "cullface": "up"}
+			}
+		},
+		{
+			"name": "leaf",
+			"from": [2, 15.5, 8],
+			"to": [7, 20.5, 8],
+			"faces": {
+				"north": {"uv": [5, 7, 0, 2], "texture": "#1"},
+				"south": {"uv": [0, 7, 5, 2], "texture": "#1"}
+			}
+		},
+		{
+			"name": "lower",
+			"from": [7, 7.5, 7],
+			"to": [9, 15.5, 9],
+			"faces": {
+				"north": {"uv": [0, 8, 2, 16], "texture": "#1"},
+				"east": {"uv": [0, 8, 2, 16], "texture": "#1"},
+				"south": {"uv": [0, 8, 2, 16], "texture": "#1"},
+				"west": {"uv": [0, 8, 2, 16], "texture": "#1"}
+			}
+		},
+		{
+			"name": "upper",
+			"from": [7, 15.5, 7],
+			"to": [9, 23.5, 9],
+			"faces": {
+				"north": {"uv": [0, 8, 2, 16], "texture": "#1"},
+				"east": {"uv": [0, 8, 2, 16], "texture": "#1"},
+				"south": {"uv": [0, 8, 2, 16], "texture": "#1"},
+				"west": {"uv": [0, 8, 2, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#1", "cullface": "up"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 135, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 135, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, 135, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"translation": [0, 0, -1],
+			"scale": [0.75, 0.75, 0.75]
+		}
+	}
+}

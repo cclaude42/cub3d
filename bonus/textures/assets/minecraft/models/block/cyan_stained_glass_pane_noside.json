@@ -1,0 +1,7 @@
+{
+	"credit": "Made By WantedRobot",
+	"parent": "block/template_glass_pane_noside",
+	"textures": {
+		"pane": "block/cyan_stained_glass_pane"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"credit": "Made By WantedRobot",
+	"ambientocclusion": false,
+	"textures": {
+		"edge": "block/glass_pane_top"
+	},
+	"elements": [
+		{
+			"from": [7, 0, 7],
+			"to": [9, 16, 9],
+			"faces": {
+				"up": {"uv": [11, 2, 13, 4], "texture": "#edge"},
+				"down": {"uv": [11, 2, 13, 4], "rotation": 180, "texture": "#edge"}
+			}
+		}
+	]
+}

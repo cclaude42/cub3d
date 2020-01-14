@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "": [
+        	{ "model": "block/sapling/bamboo/0" },
+        	{ "model": "block/sapling/bamboo/1" },
+        	{ "model": "block/sapling/bamboo/2" }
+        ]
+    }
+}

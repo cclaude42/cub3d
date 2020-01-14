@@ -1,0 +1,5 @@
+{ "parent": "block/fruit_stems/templates/lower_stem_right_leaves",
+	"textures": {
+		"leaves": "block/melon_stem/leaves"
+	}
+}

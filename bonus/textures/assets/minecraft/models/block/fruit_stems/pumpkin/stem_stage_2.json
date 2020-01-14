@@ -1,0 +1,6 @@
+{ "parent": "block/fruit_stems/templates/stem_stage_2",
+  "textures": {
+    "stem": "block/pumpkin_stem/growth_stages",
+    "leaves": "block/pumpkin_stem/leaves"
+  }
+}

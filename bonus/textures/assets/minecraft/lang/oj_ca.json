@@ -1,0 +1,10 @@
+{
+  "language.name": "Ojibwemowin",
+  "language.region": "Anishinaabewaki",
+  "language.code": "oji",
+  "container.chest": "\u00a7fMakak",
+  "container.chestDouble": "\u00a7fGichi-makak",
+  "container.enderchest": "\u00a7fEnder Makak",
+  "entity.minecraft.villager.none": "\u00a7fOdenawinini",
+  "entity.minecraft.villager": "\u00a7fOdenawinini"
+}

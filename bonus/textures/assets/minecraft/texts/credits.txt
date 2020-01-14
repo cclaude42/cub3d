@@ -1,0 +1,203 @@
+﻿[C]§f===============
+[C]§eMinecraft Credits
+[C]§f===============
+
+§7Created by:
+§f			Markus Persson
+
+§7Game design, programming and graphics:
+§f			Markus Persson
+§f			Jens Bergensten
+
+§7Music and sound:
+§f			Daniel Rosenfeld
+
+§7Ingame artwork and paintings:
+§f			Kristoffer Zetterstrand
+
+§7End game narrative:
+§f			Julian Gough
+
+§7Website development:
+§f			Tobias Möllstam
+§f			Daniel Frisk
+§f			Leonard Axelsson
+§f			Jens Bergensten
+§f			Markus Persson
+
+§7Logo and promotional artwork:
+§f			Markus Toivonen
+
+§7Business and administration:
+§f			Carl Manneh
+§f			Daniel Kaplan
+
+§7Director of fun:
+§f			Lydia Winters
+
+§7Number crunching and statistics:
+§f			Patrick Geuder
+
+§7Additional programming:
+§f			Paul Spooner
+§f			Ryan 'Scaevolus' Hitchman
+§f			Elliot 'Hippoplatimus' Segal
+
+§7Technologies used:
+§f			Java by Oracle
+§f			LWJGL by many talented people
+§f			"3d Sound System" by Paul Lamb
+§f			JOrbis by JCraft
+
+§7Texture pack used:
+§f			DokuCraft TSC Light
+
+§7Music used:
+§f			Evening Breeze
+§f			Spring Charm
+§f			Morning Dew
+§f			Cliffs of Moher
+§f			The Fall of Enêxa-Lir
+§f			Beautiful Dreams
+§f			Wild Flower
+§f			Ode to the Fallen
+§f			Kingdom of Bards
+§f			Land of the Free
+§f			What the Forest Taught Me
+§f			Phantom and a Rose
+§f			Star of Darkness
+§f			Circle of Life
+§f			A Celtic Tale
+§f			Gaelic Earth
+§f			Prophecy
+§f			A Celtic Lore
+§f			Where I Belong
+§f			Dance with the Trees
+§f			Hail to the King
+§f			Wolf Blood
+§f			Evocation
+
+§f			all Music by AdrianvonZiegler
+
+§7Texture pack creators:
+§f			Doku
+§f			WantedRobot
+§f			CCCode
+§f			Bastikeks
+§f			nameless023
+§f			recneps4444
+§f			Duru
+§f			Leostereo
+§f			stylus02
+§f			Diece
+§f			dist7action
+§f			Wessexstock
+§f			dubca7
+§f			Aceofhrts97
+§f			Raziel_DSM
+§f			ACanOfWin
+§f			HienkyakuX
+§f			NoobCrafter14
+§f			MrTrofl
+§f			HabaneroArrow
+§f			Foodstamp
+§f			RaydenCZE
+§f			KensukeNL
+§f			Handsome_Dan
+§f			Tipiak
+§f			Investigator
+§f			Dark_Tundra
+§f			D00med
+§f			InsaneLaughing
+§f			Oys
+§f			SageHarpuia
+§f			Zomeraktii
+§f			Darkcrafter31
+§f			WolfKit
+§f			ShirtLessCow
+§f			AzzBazza
+§f			LTK_70
+§f			PlasmaSnake13
+§f			darthbrick
+§f			weekyZ
+§f			Milliya
+§f			jcaspian
+§f			Cpt_Punch
+§f			lordofsax
+§f			bart0nboy
+§f			omega234
+§f			Roostar
+§f			Kiajinn
+§f			SpitfireBro
+§f			Minechomp
+§f			Kingstoogen
+§f			exiledalchemist
+§f			FrIkY_
+§f			dark_pilot23
+§f			kerii
+§f			Aqua_KaZ
+§f			CommanderPearl
+§f			Alexium
+§f			datwr
+§f			TWiiSt3D
+§f			RadioactiveBanana9
+§f			Rorax
+§f			smuecke
+§f			aussie_modder
+§f			SerAaron
+§f			zaph34r
+§f			xFlakesID
+§f			FallenAwake
+§f			ManschoPanscho
+§f			Diet
+§f			Taco
+§f			Reubenx
+§f			fish2
+§f			Deolrin
+§f			Kyraleese
+§f			luna_panshiel
+§f			PixelJoint
+§f			Dotty_d
+§f			SpinBuilder
+§f			Etajims
+§f			Keto888
+§f			straxael
+§f			xXGeramNinjaXx
+§f			RawRxFuZioNzZ
+§f			sm284614
+§f			Namorax
+§f			themadcrafter
+§f			Holyknight3000
+§f			yair10
+§f			xXDominic13Xx
+§f			Rovan2008
+§f			Balthasarx
+§f			shadownick22
+§f			jkirby97
+§f			tdriling
+§f			infinity_fox
+§f			Malivil
+§f			SoaringAlex
+§f			ElectricGremlin
+§f			Dagnatic
+§f			Metatron
+§f			DWSkanska
+§f			iComet
+§f			FTWBurn
+§f			Magnarock
+§f			99NFT
+§f			Savage_Alien
+§f			moomoomoo309
+§f			Joshofsouls1993
+§f			DirtDiglett	
+§f			Staretta
+§f			SpAcE_mOnKeY126
+§f			InfectedSkies
+§f      SyndiShanX
+§f      Joanarr
+
+
+
+
+
+§f"Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover." §7- Unknown

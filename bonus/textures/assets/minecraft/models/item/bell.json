@@ -1,0 +1,72 @@
+{
+	"textures": {
+		"0": "block/bell_mount",
+		"1": "entity/bell/bell_body"
+	},
+	"elements": [
+		{
+			"from": [7, 14, 7],
+			"to": [9, 17, 9],
+			"faces": {
+				"north": {"uv": [14, 0, 16, 3], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [14, 0, 16, 3], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [14, 0, 16, 3], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [14, 0, 16, 3], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [1, 1, 3, 3], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [1, 1, 3, 3], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"from": [4, 4, 4],
+			"to": [12, 14, 12],
+			"faces": {
+				"north": {"uv": [0, 3, 3, 6.5], "texture": "#1"},
+				"east": {"uv": [0, 3, 3, 6.5], "texture": "#1"},
+				"south": {"uv": [0, 3, 3, 6.5], "texture": "#1"},
+				"west": {"uv": [0, 3, 3, 6.5], "texture": "#1"},
+				"up": {"uv": [6, 0, 9, 3], "texture": "#1"},
+				"down": {"uv": [3, 0, 6, 3], "texture": "#1"}
+			}
+		},
+		{
+			"from": [2, 2, 2],
+			"to": [14, 4, 14],
+			"faces": {
+				"north": {"uv": [0, 10.5, 4, 11.5], "texture": "#1"},
+				"east": {"uv": [0, 10.5, 4, 11.5], "texture": "#1"},
+				"south": {"uv": [0, 10.5, 4, 11.5], "texture": "#1"},
+				"west": {"uv": [0, 10.5, 4, 11.5], "texture": "#1"},
+				"up": {"uv": [8, 6.5, 12, 10.5], "texture": "#1"},
+				"down": {"uv": [4, 6.5, 8, 10.5], "texture": "#1"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [70, 0, 0],
+			"translation": [0, -3, -3.5],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [70, 0, 0],
+			"translation": [0, -3, -3.5],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_lefthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"ground": {
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"gui": {
+			"rotation": [30, 225, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"head": {
+			"translation": [0, 12.5, 0]
+		}
+	}
+}

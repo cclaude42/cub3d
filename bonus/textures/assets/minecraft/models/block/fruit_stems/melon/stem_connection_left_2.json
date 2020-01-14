@@ -1,0 +1,6 @@
+{ "parent": "block/fruit_stems/templates/stem_connection_left_fruit_2",
+  "textures": {
+    "stem": "block/melon_stem/small_branches",
+    "fruit": "block/melon_stem/small_melons"
+  }
+}

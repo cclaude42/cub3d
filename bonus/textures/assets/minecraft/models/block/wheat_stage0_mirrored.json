@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop_mirrored",
+    "textures": {
+        "crop": "block/wheat_stage0"
+    }
+}

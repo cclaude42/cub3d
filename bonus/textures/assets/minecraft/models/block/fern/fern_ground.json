@@ -1,0 +1,17 @@
+{ "ambientocclusion": false,
+  "textures": {
+    "0": "block/fern_ground",
+    "particle": "block/fern_ground"
+  },
+  "elements": [
+    { "from": [-2, 3.5, -2],
+      "to": [18, 3.5, 18],
+      "shade": false,
+      "rotation": {"angle": 45, "axis": "y", "origin": [8, 3.5, 8]},
+      "faces": {
+        "up": {"uv": [0, 0, 10, 10], "rotation": 270, "texture": "#0", "tintindex": 0},
+        "down": {"uv": [0, 10, 10, 0], "rotation": 90, "texture": "#0", "tintindex": 0}
+      }
+    }
+  ]
+}

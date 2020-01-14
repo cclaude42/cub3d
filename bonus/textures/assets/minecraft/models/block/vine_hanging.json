@@ -1,0 +1,71 @@
+{	"textures": {
+		"1": "block/vine_stems",
+		"2": "block/vine_leaves",
+		"3": "block/vine_leaves_back",
+		"5": "block/vine_hanging_stems_2",
+		"particle": "block/vine_leaves_back"
+	},
+	"elements": [
+		{
+			"from": [0, 15.2, 0],
+			"to": [16, 15.2, 16],
+			"faces": {
+				"up": {"uv": [16, 0, 0, 16], "texture": "#3", "cullface": "up", "tintindex": 0},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#3", "tintindex": 0}
+			}
+		},
+		{
+			"from": [0, 15.5, 0],
+			"to": [16, 15.5, 16],
+			"faces": {
+				"up": {"uv": [16, 0, 0, 16], "texture": "#1", "cullface": "up"},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#1"}
+			}
+		},
+		{
+			"from": [0, 11.08608, 0.71351],
+			"to": [16, 15.08608, 0.71351],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 13.28608, 0.01351]},
+			"faces": {
+				"north": {"uv": [16, 4, 0, 0], "rotation": 180, "texture": "#2", "tintindex": 0},
+				"south": {"uv": [16, 0, 0, 4], "texture": "#2", "tintindex": 0}
+			}
+		},
+		{
+			"from": [0, 11.08608, 4.71351],
+			"to": [16, 15.08608, 4.71351],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 13.28608, 4.01351]},
+			"faces": {
+				"north": {"uv": [16, 8, 0, 4], "rotation": 180, "texture": "#2", "tintindex": 0},
+				"south": {"uv": [16, 4, 0, 8], "texture": "#2", "tintindex": 0}
+			}
+		},
+		{
+			"from": [0, 11.08608, 8.71351],
+			"to": [16, 15.08608, 8.71351],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 13.28608, 8.01351]},
+			"faces": {
+				"north": {"uv": [16, 12, 0, 8], "rotation": 180, "texture": "#2", "tintindex": 0},
+				"south": {"uv": [16, 8, 0, 12], "texture": "#2", "tintindex": 0}
+			}
+		},
+		{
+			"from": [0, 11.08608, 12.71351],
+			"to": [16, 15.08608, 12.71351],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 13.28608, 12.01351]},
+			"faces": {
+				"north": {"uv": [16, 16, 0, 12], "rotation": 180, "texture": "#2", "tintindex": 0},
+				"south": {"uv": [16, 12, 0, 16], "texture": "#2", "tintindex": 0}
+			}
+		},
+		{
+			"from": [8, 0.5, 0.5],
+			"to": [8, 15.5, 16.5],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 8, 8.5]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 15], "texture": "#5"},
+				"west": {"uv": [16, 0, 0, 15], "texture": "#5"}
+			}
+		}
+	]
+}
