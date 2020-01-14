@@ -1,6 +1,0 @@
-{ "parent": "block/fern/templates/high_1_left",
-  "textures": {
-    "upper": "block/fern_upper_1",
-    "lower": "block/fern_lower_1"
-  }
-}

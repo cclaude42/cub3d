@@ -1,9 +1,0 @@
-{ "variants": {
-    "": [
-      { "model": "block/ore/lapis/0" },
-      { "model": "block/ore/lapis/1" },
-      { "model": "block/ore/lapis/2" },
-      { "model": "block/ore/lapis/3" }
-    ]
-  }
-}
