@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/14 15:55:01 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/15 18:21:49 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,13 +126,16 @@ int		main(void)
 	win.ptr = NULL;
 	img.ptr = NULL;
 	img.adr = NULL;
+	mlx.pid = -1;
 	win.x = 0;
 	win.y = 0;
 	win.m = 10000;
 	img.fsh = 0;
+	mlx.pid = fork();
 	s.mlx = mlx;
 	s.win = win;
 	s.img = img;
-	ft_init(s, "bonus/maps/first.cubonus", 0);
+	(mlx.pid == 0) ? system("afplay ./bonus/sound/music.mp3") : 0;
+	(mlx.pid != 0) ? ft_init(s, "bonus/maps/first.cubonus", 0) : 0;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/14 14:58:27 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/15 17:46:21 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,8 @@ int		ft_key(int key, void *arg)
 		ft_rotate(arg, -1);
 	else if (key == RIGHT)
 		ft_rotate(arg, 1);
+	else if (key == UP)
+		ft_open(arg);
 	else if (key == SPACE)
 		ft_action(arg);
 	ft_draw(arg);

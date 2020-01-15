@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/14 15:59:07 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/15 18:03:58 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <math.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include <signal.h>
 
 # define NONE 0xFF000000
 # define WHITE 0x00FFFFFF
@@ -52,6 +53,7 @@
 typedef struct	s_mlx
 {
 	void			*ptr;
+	int				pid;
 }				t_mlx;
 
 typedef struct	s_win
@@ -208,8 +210,8 @@ int				ft_mouse(int x, int y, t_all *s);
 void			ft_reset(t_all *s);
 void			ft_free(t_all *s);
 int				ft_close(t_all *s, int win);
-void			ft_level(t_all *s);
 void			ft_action(t_all *s);
+void			ft_open(t_all *s);
 
 void			ft_screen(t_all *s);
 void			ft_ray(t_all *s);
