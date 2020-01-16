@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/15 18:03:58 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/16 18:46:09 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ typedef struct	s_tex
 	unsigned int	*i;
 	unsigned int	*j;
 	unsigned int	*k;
+	unsigned int	*g;
 }				t_tex;
 
 typedef struct	s_hud
@@ -211,7 +212,6 @@ void			ft_reset(t_all *s);
 void			ft_free(t_all *s);
 int				ft_close(t_all *s, int win);
 void			ft_action(t_all *s);
-void			ft_open(t_all *s);
 
 void			ft_screen(t_all *s);
 void			ft_ray(t_all *s);
@@ -223,6 +223,7 @@ void			ft_verdoor(t_all *s, double x, double y);
 void			ft_hordoor(t_all *s, double x, double y);
 int				ft_opendoor(t_all *s);
 int				ft_secretdoor(t_all *s);
+void			ft_open(t_all *s);
 
 void			ft_sky(t_all *s);
 void			ft_floor(t_all *s);
@@ -241,6 +242,7 @@ void			ft_slocate(t_all *s, t_spr spr);
 void			ft_sdraw(t_all *s, int loc, double dist);
 void			ft_ddraw(t_all *s, int loc, double dist);
 void			ft_ldraw(t_all *s, int loc, double dist);
+void			ft_edraw(t_all *s, int loc, double dist, int frame);
 unsigned int	ft_spixel(t_all *s, int index, unsigned int col);
 
 void			ft_hudparse(t_all *s);

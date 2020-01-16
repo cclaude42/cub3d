@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/30 18:01:54 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/14 15:56:20 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/16 18:15:47 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,11 @@ int		ft_is(int n, char c)
 		return (1);
 	else if (n == WALL && (c == '4' || c == '5' || c == '6'))
 		return (1);
-	else if ((n == SPRITE || n == PICK) && (c == '7' || c == '8'))
+	else if ((n == SPRITE || n == PICK) && (c == '7' || c == '8' || c == '-'))
 		return (1);
-	else if ((n == SPRITE || n == DECOR) && c == '9')
+	else if ((n == SPRITE || n == DECOR) && (c == '9' || c == '+' || c == '#'))
+		return (1);
+	else if ((n == SPRITE || n == DECOR) && (c == '&' || c == '$' || c == '*'))
 		return (1);
 	else if (n == POS && (c == 'N' || c == 'S' || c == 'E' || c == 'W'))
 		return (1);

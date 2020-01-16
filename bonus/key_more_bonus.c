@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 18:09:58 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/15 18:22:06 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/16 17:58:01 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,23 +78,4 @@ void	ft_action(t_all *s)
 {
 	if (s->hud.f == 0)
 		s->hud.f++;
-}
-
-void	ft_open(t_all *s)
-{
-	if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == 'X')
-	{
-		ft_free(s);
-		ft_reset(s);
-		s->map.f++;
-		if (s->map.f == 2)
-			ft_parse(s, "bonus/maps/second.cubonus");
-		else if (s->map.f == 3)
-			ft_parse(s, "bonus/maps/third.cubonus");
-		return ;
-	}
-	else if (ft_secretdoor(s) == 1)
-		return ;
-	else if (ft_opendoor(s) == 1)
-		return ;
 }

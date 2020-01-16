@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 15:43:00 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/14 15:06:13 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/16 18:43:48 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ void	ft_hud(t_all *s)
 {
 	int	pid;
 
+	if (s->hud.a > 10)
+		s->hud.a = 10;
 	if (s->hud.a > 0)
 	{
 		if (s->hud.f == 1)
@@ -121,4 +123,5 @@ void	ft_hudparse(t_all *s)
 	ft_xpm(s, &s->hud.p, "./bonus/textures/pistol.xpm");
 	ft_xpm(s, &s->hud.b, "./bonus/textures/bullet.xpm");
 	ft_xpm(s, &s->tex.k, "./bonus/textures/beer.xpm");
+	ft_xpm(s, &s->tex.g, "./bonus/textures/enemy.xpm");
 }

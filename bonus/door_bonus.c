@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 16:20:45 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/14 18:41:26 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/16 18:10:16 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,28 @@ int		ft_secretdoor(t_all *s)
 	{
 		s->map.tab[y][x] = '0';
 		pid = fork();
-		(pid == 0) ? system("afplay ./bonus/sound/pistol.mp3") : 0;
+		(pid == 0) ? system("afplay ./bonus/sound/secret.mp3") : 0;
 		(pid == 0) ? ft_close(s, 1) : 0;
 		return (1);
 	}
 	return (0);
+}
+
+void	ft_open(t_all *s)
+{
+	if (s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] == 'X')
+	{
+		ft_free(s);
+		ft_reset(s);
+		s->map.f++;
+		if (s->map.f == 2)
+			ft_parse(s, "bonus/maps/second.cubonus");
+		else if (s->map.f == 3)
+			ft_parse(s, "bonus/maps/third.cubonus");
+		return ;
+	}
+	else if (ft_secretdoor(s) == 1)
+		return ;
+	else if (ft_opendoor(s) == 1)
+		return ;
 }
