@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 18:04:34 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/16 18:49:39 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/16 19:15:04 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ void	ft_slocate(t_all *s, t_spr spr)
 		ft_sdraw(s, angle * s->win.x / 66, spr.d);
 	else if (spr.c == '9')
 		ft_ddraw(s, angle * s->win.x / 66, spr.d);
-	else if (spr.c == '+')
-		ft_edraw(s, angle * s->win.x / 66, spr.d, 0);
+	else if (ft_is(ENEMY, spr.c))
+		ft_edraw(s, angle * s->win.x / 66, spr.d, s->hud.f / 6);
 	else if (spr.c == '-')
-		ft_edraw(s, angle * s->win.x / 66, spr.d, 0);
+		ft_edraw(s, angle * s->win.x / 66, spr.d, 3);
 }
 
 void	ft_sorder(t_all *s)

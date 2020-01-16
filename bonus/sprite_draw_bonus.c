@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 18:04:34 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/16 18:45:41 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/16 19:06:17 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,7 @@ void			ft_edraw(t_all *s, int loc, double dist, int frame)
 		while ((loc + i >= 0 && loc + i < s->win.x) &&
 				(j < size && s->stk[loc + i].d > dist))
 		{
-			col = 192 * floor(64 * (double)j / size) + (double)i / size * 64;
+			col = 256 * floor(64 * (double)j / size) + (double)i / size * 64;
 			col = s->tex.g[col + frame * 64];
 			index = loc + i + (s->win.y / 2 - (int)size / 2 + j) * s->win.x;
 			if (index < s->win.x * s->win.y)

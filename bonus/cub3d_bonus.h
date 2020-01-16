@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/16 18:46:09 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/16 19:06:35 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@
 # define DECOR 4
 # define PICK 5
 # define DOOR 6
+# define ENEMY 7
 
 # define ANG 0.57595865315
 # define SPEED 15
