@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 18:09:58 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/16 17:58:01 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/17 14:59:43 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	ft_reset(t_all *s)
 	s->tex.c = NULL;
 	s->tex.i = NULL;
 	s->tex.j = NULL;
-	s->tex.k = NULL;
 	s->win.x = 0;
 	s->win.y = 0;
 	s->map.x = 0;
@@ -55,7 +54,6 @@ void	ft_free(t_all *s)
 	free(s->tex.c);
 	free(s->tex.i);
 	free(s->tex.j);
-	free(s->tex.k);
 }
 
 int		ft_close(t_all *s, int win)
@@ -66,6 +64,8 @@ int		ft_close(t_all *s, int win)
 	free(s->hud.k);
 	free(s->hud.p);
 	free(s->hud.b);
+	free(s->tex.k);
+	free(s->tex.g);
 	if (win == 1)
 		mlx_destroy_window(s->mlx.ptr, s->win.ptr);
 	free(s->mlx.ptr);

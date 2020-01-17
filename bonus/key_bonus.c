@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/17 13:56:59 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/17 17:02:07 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_move(t_all *s, double coeff)
 	if (ft_is(PICK, c))
 	{
 		if (c == '7')
-			s->hud.h += 50;
+			s->hud.h += 35;
 		else if (c == '8')
 			s->hud.s += 1000;
 		else if (c == '-')
@@ -65,7 +65,7 @@ void	ft_strafe(t_all *s, double coeff)
 	if (ft_is(PICK, c))
 	{
 		if (c == '7')
-			s->hud.h += 50;
+			s->hud.h += 35;
 		else if (c == '8')
 			s->hud.s += 1000;
 		else if (c == '-')

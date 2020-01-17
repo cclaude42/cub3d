@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 15:43:00 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/17 13:57:43 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/17 17:15:09 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_health(t_all *s)
 		{
 			color = s->hud.l[(i / 4 + 18) * 65 + j / 4];
 			index = s->win.x * (i + 20) + (j + 20);
-			if (color != NONE && j - 56 < s->hud.h * 2)
+			if (color != NONE && j - 56 < (unsigned int)s->hud.h * 2)
 				s->img.adr[index] = color;
 			j++;
 		}
@@ -95,6 +95,11 @@ void	ft_hud(t_all *s)
 {
 	int	pid;
 
+	if (s->hud.h <= 0)
+	{
+		write(1, "Game Over!\n", 11);
+		ft_close(s, 1);
+	}
 	if (s->hud.a > 8)
 		s->hud.a = 8;
 	if (s->hud.f == 1 && s->hud.a > 0)
@@ -103,7 +108,7 @@ void	ft_hud(t_all *s)
 		(pid == 0) ? system("afplay ./bonus/sound/pistol.mp3") : 0;
 		(pid == 0) ? ft_close(s, 1) : 0;
 	}
-	if (s->hud.f == 12)
+	if (s->hud.f == 11)
 		ft_attack(s, s->hud.a / 1);
 	if (s->hud.a > 0)
 		ft_pistol(s, s->hud.f);
