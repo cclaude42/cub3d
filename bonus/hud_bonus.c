@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 15:43:00 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/17 13:11:59 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/17 13:57:43 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,8 @@ void	ft_hud(t_all *s)
 {
 	int	pid;
 
-	if (s->hud.a > 10)
-		s->hud.a = 10;
+	if (s->hud.a > 8)
+		s->hud.a = 8;
 	if (s->hud.f == 1 && s->hud.a > 0)
 	{
 		pid = fork();
