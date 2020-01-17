@@ -37,6 +37,7 @@ B_SRC = screen_row \
 	sprite_draw \
 	key_more \
 	weapons \
+	enemy \
 	door \
 	hud \
 

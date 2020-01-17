@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/16 18:18:28 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/17 12:59:46 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	ft_strafe(t_all *s, double coeff)
 		else if (c == '8')
 			s->hud.s += 1000;
 		else if (c == '-')
-			s->hud.a += 5;
+			s->hud.a += 3;
 		s->map.tab[(int)floor(s->pos.y)][(int)floor(s->pos.x)] = '0';
 		s->map.spr--;
 		ft_slist(s);

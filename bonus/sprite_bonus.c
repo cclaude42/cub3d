@@ -6,13 +6,27 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 18:04:34 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/16 19:15:04 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/17 12:56:36 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
 
-void	ft_slocate(t_all *s, t_spr spr)
+void	ft_sdraw(t_all *s, t_spr spr)
+{
+	if (spr.c == '7')
+		ft_ldraw(s, spr.a * s->win.x / 66, spr.d);
+	else if (spr.c == '8')
+		ft_idraw(s, spr.a * s->win.x / 66, spr.d);
+	else if (spr.c == '9')
+		ft_ddraw(s, spr.a * s->win.x / 66, spr.d);
+	else if (ft_is(ENEMY, spr.c))
+		ft_edraw(s, spr.a * s->win.x / 66, spr.d, 0);
+	else if (spr.c == '-')
+		ft_edraw(s, spr.a * s->win.x / 66, spr.d, 3);
+}
+
+double	ft_slocate(t_all *s, t_spr spr)
 {
 	double	angle;
 
@@ -27,16 +41,7 @@ void	ft_slocate(t_all *s, t_spr spr)
 		angle -= 360;
 	else if (angle <= -180)
 		angle += 360;
-	if (spr.c == '7')
-		ft_ldraw(s, angle * s->win.x / 66, spr.d);
-	else if (spr.c == '8')
-		ft_sdraw(s, angle * s->win.x / 66, spr.d);
-	else if (spr.c == '9')
-		ft_ddraw(s, angle * s->win.x / 66, spr.d);
-	else if (ft_is(ENEMY, spr.c))
-		ft_edraw(s, angle * s->win.x / 66, spr.d, s->hud.f / 6);
-	else if (spr.c == '-')
-		ft_edraw(s, angle * s->win.x / 66, spr.d, 3);
+	return (angle);
 }
 
 void	ft_sorder(t_all *s)
@@ -100,6 +105,7 @@ void	ft_sprite(t_all *s)
 	while (i < s->map.spr)
 	{
 		s->spr[i].d = hypot(s->spr[i].x - s->pos.x, s->spr[i].y - s->pos.y);
+		s->spr[i].a = ft_slocate(s, s->spr[i]);
 		i++;
 	}
 	ft_sorder(s);
@@ -108,7 +114,7 @@ void	ft_sprite(t_all *s)
 	{
 		s->hit.x = s->spr[i].x;
 		s->hit.y = s->spr[i].y;
-		ft_slocate(s, s->spr[i]);
+		ft_sdraw(s, s->spr[i]);
 		i++;
 	}
 	free(s->stk);

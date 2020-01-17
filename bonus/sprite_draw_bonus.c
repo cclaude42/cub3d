@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 18:04:34 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/16 19:06:17 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/17 12:35:42 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ unsigned int	ft_spixel(t_all *s, int index, unsigned int col)
 	return (ft_shadow(s, col));
 }
 
-void			ft_sdraw(t_all *s, int loc, double dist)
+void			ft_idraw(t_all *s, int loc, double dist)
 {
 	unsigned int	col;
 	double			size;

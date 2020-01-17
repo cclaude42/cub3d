@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/16 19:06:35 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/17 13:11:39 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,6 +152,7 @@ typedef struct	s_spr
 	double			x;
 	double			y;
 	double			d;
+	double			a;
 	char			c;
 }				t_spr;
 
@@ -238,9 +239,10 @@ unsigned int	ft_pixel(t_all *s, double i);
 void			ft_sprite(t_all *s);
 int				ft_slist(t_all *s);
 void			ft_sorder(t_all *s);
-void			ft_slocate(t_all *s, t_spr spr);
+double			ft_slocate(t_all *s, t_spr spr);
+void			ft_sdraw(t_all *s, t_spr spr);
 
-void			ft_sdraw(t_all *s, int loc, double dist);
+void			ft_idraw(t_all *s, int loc, double dist);
 void			ft_ddraw(t_all *s, int loc, double dist);
 void			ft_ldraw(t_all *s, int loc, double dist);
 void			ft_edraw(t_all *s, int loc, double dist, int frame);
@@ -256,6 +258,9 @@ void			ft_knife(t_all *s, int frame);
 void			ft_pistol(t_all *s, int frame);
 void			ft_ammo(t_all *s, int loc);
 void			ft_score(t_all *s, int loc, int num);
+
+void			ft_hit(t_all *s, char *c, int x, int y);
+void			ft_attack(t_all *s, int weapon);
 
 int				ft_bitmap(t_all *s);
 void			ft_bdraw(t_all *s);
