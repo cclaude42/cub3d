@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/17 17:13:28 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/17 18:02:01 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -278,6 +278,7 @@ char			*buf_join(char *stock, char *buf);
 char			*stock_trim(char *stock);
 char			*get_line(char *stock);
 
+int				ft_endflag(t_all *s);
 int				ft_atoi(char *line, int *i);
 void			ft_spaceskip(char *line, int *i);
 int				ft_is(int n, char c);

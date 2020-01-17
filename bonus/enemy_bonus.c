@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 12:18:45 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/17 17:16:01 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/17 17:34:18 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_attack(t_all *s, int weapon)
 			if (s->spr[i].d > s->stk[540].d)
 				break ;
 			pid = fork();
-			(pid == 0) ? system("afplay ./bonus/sound/death.wav -v 4") : 0;
+			(pid == 0) ? system("afplay ./bonus/sound/death.wav -v 2") : 0;
 			(pid == 0) ? ft_close(s, 1) : 0;
 			ft_hit(s, &s->spr[i].c, floor(s->spr[i].x), floor(s->spr[i].y));
 			ft_hit(s, &s->spr[i].c, floor(s->spr[i].x), floor(s->spr[i].y));

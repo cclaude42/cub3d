@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/17 17:15:14 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/17 18:07:36 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int		ft_draw(t_all *s)
 	hit.c = 0;
 	s->ray = ray;
 	s->hit = hit;
+	if (ft_endflag(s))
+		ft_close(s, 1);
 	ft_screen(s);
 	mlx_put_image_to_window(s->mlx.ptr, s->win.ptr, s->img.ptr, 0, 0);
 	free(s->img.ptr);
@@ -108,7 +110,7 @@ void	ft_init(t_all s, char *cub, int bmp)
 	hud.b = NULL;
 	hud.s = 0;
 	hud.h = 100;
-	hud.a = 6;
+	hud.a = 5;
 	hud.f = 0;
 	s.tex = tex;
 	s.hud = hud;

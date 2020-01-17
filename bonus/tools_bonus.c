@@ -6,11 +6,32 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/30 18:01:54 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/16 19:13:04 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/17 18:07:21 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
+
+int		ft_endflag(t_all *s)
+{
+	int	i;
+	int	enemy;
+
+	i = 0;
+	enemy = 0;
+	while (i < s->map.spr)
+	{
+		if (ft_is(ENEMY, s->spr[i].c))
+			enemy++;
+		i++;
+	}
+	if (enemy > 0)
+		return (0);
+	if (s->map.f < 3)
+		return (0);
+	write(1, "Congratulations !\n", 18);
+	return (1);
+}
 
 void	ft_spaceskip(char *line, int *i)
 {
