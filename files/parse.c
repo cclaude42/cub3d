@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/02 16:55:38 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/20 19:20:42 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_line(t_all *s, char *line)
 
 	i = 0;
 	ft_spaceskip(line, &i);
-	if ((line[i] == '1' && line[i + 1] == ' ') || s->err.m == 1)
+	if ((line[i] == '1') || s->err.m == 1)
 		s->err.n = ft_map(s, line, &i);
 	else if (line[i] == 'R' && line[i + 1] == ' ')
 		s->err.n = ft_res(s, line, &i);

@@ -1,4 +1,4 @@
-R 4096 720
+R 642982 516464
 
 NO ./textures/brick.xpm
 SO ./textures/blue.xpm
@@ -6,7 +6,7 @@ WE ./textures/wood.xpm
 EA ./textures/grey.xpm
 
 S ./textures/barrel.xpm
-F 0,0,0
+F 100,0,100
 C 0,0,0
 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1

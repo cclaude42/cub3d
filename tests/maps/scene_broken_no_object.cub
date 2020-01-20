@@ -1,0 +1,8 @@
+R 800 400
+NO ./tests/maps/textures/sponge.xpm
+SO ./tests/maps/textures/sponge.xpm
+WE ./tests/maps/textures/sponge.xpm
+EA ./tests/maps/textures/sponge.xpm
+S ./tests/maps/textures/sponge.xpm
+C 225,30,0
+F 225,30,0
