@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/17 18:02:01 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/20 12:51:04 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,10 @@
 # define A 0
 # define S 1
 # define D 2
-# define UP 126
-# define DOWN 125
 # define LEFT 123
 # define RIGHT 124
 # define SPACE 49
+# define SHIFT 257
 
 # define WALL 1
 # define POS 2
