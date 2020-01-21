@@ -1,5 +1,5 @@
 R    800    400 
-NO    ./tests/maps/textures/sponge.xpm 
+NO ./tests/maps/textures/sponge.xpm
 SO        ./tests/maps/textures/sponge.xpm 
 WE    ./tests/maps/textures/sponge.xpm 
 EA   ./tests/maps/textures/sponge.xpm 

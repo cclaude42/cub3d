@@ -29,8 +29,6 @@ FIL = $(addsuffix .c, $(addprefix files/, $(SRC)))
 
 OBJ = $(FIL:.c=.o)
 
-BIN = $(addsuffix .o, $(SRC))
-
 B_HEADER = cub3d_bonus.h
 
 B_SRC = screen_row \
@@ -45,20 +43,13 @@ B_FIL = $(addsuffix _bonus.c, $(addprefix bonus/, $(SRC) $(B_SRC)))
 
 B_OBJ = $(B_FIL:.c=.o)
 
-B_BIN = $(addsuffix _bonus.o, $(SRC) $(B_SRC))
-
 .PHONY: all clean fclean re bonus test sqr bmp err inv norm
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "\033[0;33mCompiling..."
-	$(CC) -o $(NAME) -L $(MLX) $(LXFLAGS) $(BIN)
-	@echo "\033[0m"
-
-	@echo "\033[0;32mMoving binaries..."
-	mkdir -p bin
-	mv $(BIN) bin/
+	$(CC) -o $(NAME) -L $(MLX) $(LXFLAGS) $(OBJ)
 	@echo "\033[0m"
 
 %.o: %.c
@@ -68,7 +59,7 @@ $(NAME): $(OBJ)
 
 clean:
 	@echo "\033[0;31mCleaning..."
-	rm -rf bin
+	rm -rf $(OBJ) $(B_OBJ)
 	rm -f bitmap.bmp
 	@echo "\033[0m"
 
@@ -82,11 +73,6 @@ re: fclean all
 bonus: fclean $(B_OBJ)
 	@echo "\033[0;33mCompiling bonus..."
 	$(CC) -o $(NAME) -L $(MLX) $(LXFLAGS) $(B_BIN)
-	@echo "\033[0m"
-
-	@echo "\033[0;32mMoving binaries..."
-	mkdir -p bin
-	mv $(B_BIN) bin/
 	@echo "\033[0m"
 
 	./$(NAME)

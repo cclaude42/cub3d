@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 23:01:17 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/20 19:20:42 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/21 12:50:53 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_line(t_all *s, char *line)
 
 	i = 0;
 	ft_spaceskip(line, &i);
-	if ((line[i] == '1') || s->err.m == 1)
+	if ((line[i] == '1' || s->err.m == 1) && line[i] != '\0')
 		s->err.n = ft_map(s, line, &i);
 	else if (line[i] == 'R' && line[i + 1] == ' ')
 		s->err.n = ft_res(s, line, &i);
@@ -36,7 +36,7 @@ int		ft_line(t_all *s, char *line)
 		s->err.n = ft_colors(&s->tex.f, line, &i);
 	else if (line[i] == 'C' && line[i + 1] == ' ')
 		s->err.n = ft_colors(&s->tex.c, line, &i);
-	if (s->err.n == 0 && line[i] != '\0')
+	if (ft_spaceskip(line, &i) && s->err.n == 0 && line[i] != '\0')
 		return (ft_strerror(-10));
 	return (s->err.n < 0 ? ft_strerror(s->err.n) : 0);
 }
@@ -80,13 +80,13 @@ int		ft_parse(t_all *s, char *cub)
 	fd = open(cub, O_RDONLY);
 	if (fd == -1)
 		return (ft_strerror(-1));
-	while ((ret = get_next_line(fd, &line)) == 1)
+	while (ret == 1)
 	{
-		if ((ret = ft_line(s, line)) == -1)
-			break ;
+		ret = get_next_line(fd, &line);
+		if (ft_line(s, line) == -1)
+			ret = -1;
 		free(line);
 	}
-	free(line);
 	close(fd);
 	if (ret == -1 || ret == -3)
 		return (ft_strerror(ret + 1));
