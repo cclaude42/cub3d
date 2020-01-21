@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:41:46 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/21 12:58:01 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/01/21 14:36:36 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,12 +114,9 @@ int		ft_map(t_all *s, char *line, int *i)
 	s->err.m = 1;
 	if (!(tmp = malloc(sizeof(char *) * (s->map.y + 2))))
 		return (-11);
-	j = 0;
-	while (j < s->map.y)
-	{
+	j = -1;
+	while (++j < s->map.y)
 		tmp[j] = s->map.tab[j];
-		j++;
-	}
 	if ((tmp[s->map.y] = ft_slab(s, line, i)) == NULL)
 	{
 		free(tmp);
