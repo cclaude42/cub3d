@@ -2,7 +2,7 @@ NAME = cub3D
 
 CC = clang
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -O3 -Wall -Wextra -Werror
 
 MLX = mlxopengl
 
