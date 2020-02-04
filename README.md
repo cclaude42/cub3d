@@ -14,6 +14,12 @@ The project runs using the MiniLibX, a simplified version of the Xlib. It can th
 
 ### The game
 
+Just like B.J. Blazkowicz in Wolfenstein 3D, you have infiltrated a nazi stronghold.
+
+You got what you needed, but you won't get out unnoticed. You're gonna have to fight your way out !
+
+You should be able to survive if you get to the third floor, and kill everyone there. Good luck !
+
 <p align="center">
   <img src="https://i.imgur.com/ll5P9RN.png" width="60%" />
 </p>
@@ -23,8 +29,6 @@ The project runs using the MiniLibX, a simplified version of the Xlib. It can th
 Using ``make bonus`` will build the executable and run it.
 
 To run it again without remaking, you can simply run the executable with ``./cub3D``.
-
-Try and beat the game !
 
 ### Controls
 
@@ -38,8 +42,7 @@ To exit the game, press ``ESC`` or click the red cross.
 
 ### The mandatory part
 
-The basic program that was required to pass. It only includes wall textures and a sprite ; no floor/ceiling textures, no game elements, etc
-
+The basic program that was required to pass. It only includes wall textures and a sprite ; no floor/ceiling textures, no weapons, no enemies, no game elements at all.
 
 <p align="center">
   <img src="https://i.imgur.com/Vf1HLRE.png" width="60%" />
