@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 18:09:58 by cclaude           #+#    #+#             */
-/*   Updated: 2020/03/05 12:00:17 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/03/05 12:49:34 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,11 +90,10 @@ int		ft_set(t_all *s, int key, int set)
 		s->key.l = set;
 	else if (key == RIGHT)
 		s->key.r = set;
-	else if (key == SHIFT)
-		s->key.h = set;
+	else if (key == SHIFT && set)
+		ft_open(s);
 	else if (key == SPACE)
 		s->key.x = set;
-	// ft_key(s);
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/03/05 12:45:27 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/03/05 12:52:03 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@
 
 # define ANG 0.57595865315
 # define SPEED 10
-# define TURN 0.025
+# define TURN 0.03
 # define SHADOW 35
 # define MOUSE 1
 

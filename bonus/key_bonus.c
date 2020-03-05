@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2020/03/05 11:45:37 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/03/05 12:50:57 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_mouse(int x, int y, t_all *s)
 	if (MOUSE && s->win.m != 10000)
 		ft_rotate(s, (x - s->win.m) / 5);
 	s->win.m = x;
-	ft_draw(s);
+	ft_key(s);
 	return (0);
 }
 
@@ -108,8 +108,6 @@ int		ft_key(t_all *s)
 		ft_rotate(s, -1);
 	if (s->key.r)
 		ft_rotate(s, 1);
-	if (s->key.h)
-		ft_open(s);
 	if (s->key.x)
 	{
 		if (s->hud.f == 0)
