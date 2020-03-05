@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 12:18:45 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/17 17:34:18 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/03/05 12:37:03 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,4 +105,25 @@ void	ft_seen(t_all *s, t_spr *spr)
 	}
 	spr->v++;
 	ft_getshot(s, spr);
+}
+
+int		ft_endflag(t_all *s)
+{
+	int	i;
+	int	enemy;
+
+	i = 0;
+	enemy = 0;
+	while (i < s->map.spr)
+	{
+		if (ft_is(ENEMY, s->spr[i].c))
+			enemy++;
+		i++;
+	}
+	if (enemy > 0)
+		return (0);
+	if (s->map.f < 3)
+		return (0);
+	write(1, "Congratulations !\n", 18);
+	return (1);
 }

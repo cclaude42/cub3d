@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/03/05 12:00:25 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/03/05 12:45:27 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@
 # define ENEMY 7
 
 # define ANG 0.57595865315
-# define SPEED 15
-# define TURN 0.05
+# define SPEED 10
+# define TURN 0.025
 # define SHADOW 35
 # define MOUSE 1
 
@@ -280,6 +280,7 @@ void			ft_hit(t_all *s, char *c, int x, int y);
 void			ft_attack(t_all *s, int weapon);
 void			ft_seen(t_all *s, t_spr *spr);
 void			ft_getshot(t_all *s, t_spr *spr);
+int				ft_endflag(t_all *s);
 
 int				ft_bitmap(t_all *s);
 void			ft_bdraw(t_all *s);
@@ -293,7 +294,7 @@ char			*buf_join(char *stock, char *buf);
 char			*stock_trim(char *stock);
 char			*get_line(char *stock);
 
-int				ft_endflag(t_all *s);
+void			ft_bzero(void *s, size_t n);
 int				ft_atoi(char *line, int *i);
 void			ft_spaceskip(char *line, int *i);
 int				ft_is(int n, char c);

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2020/03/05 12:28:27 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/03/05 12:37:45 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,6 @@
 
 int		ft_draw(t_all *s)
 {
-	t_ray	ray;
-	t_hit	hit;
-
-	ray.x = 0;
-	ray.y = 0;
-	ray.i = 0;
-	ray.v = 0;
-	ray.w = 0;
-	hit.x = 0;
-	hit.y = 0;
-	hit.d = 0;
-	hit.c = 0;
-	s->ray = ray;
-	s->hit = hit;
 	if (ft_endflag(s))
 		ft_close(s, 1);
 	ft_screen(s);
@@ -39,15 +25,6 @@ int		ft_draw(t_all *s)
 
 int		ft_cubed(t_all s, char *cub, int bmp)
 {
-	t_pos	pos;
-	t_dir	dir;
-
-	pos.x = 0;
-	pos.y = 0;
-	dir.x = 0;
-	dir.y = 0;
-	s.pos = pos;
-	s.dir = dir;
 	s.mlx.ptr = mlx_init();
 	if (ft_parse(&s, cub) == -1)
 		return (ft_close(&s, 0));
@@ -69,19 +46,20 @@ void	ft_declare(t_all s, char *cub, int bmp)
 {
 	t_spr	*spr;
 	t_stk	*stk;
-	t_err	err;
 	t_key	key;
+	t_ray	ray;
+	t_hit	hit;
 
-	spr = NULL;
-	stk = NULL;
-	err.n = 0;
-	err.m = 0;
-	err.p = 0;
-	bzero(&key, sizeof(key));
+	ft_bzero(&spr, sizeof(spr));
+	ft_bzero(&stk, sizeof(stk));
+	ft_bzero(&key, sizeof(key));
+	ft_bzero(&ray, sizeof(ray));
+	ft_bzero(&hit, sizeof(hit));
 	s.spr = spr;
 	s.stk = stk;
-	s.err = err;
 	s.key = key;
+	s.ray = ray;
+	s.hit = hit;
 	ft_cubed(s, cub, bmp);
 }
 
@@ -89,28 +67,22 @@ void	ft_init(t_all s, char *cub, int bmp)
 {
 	t_tex	tex;
 	t_hud	hud;
+	t_err	err;
+	t_pos	pos;
+	t_dir	dir;
 
-	tex.n = NULL;
-	tex.s = NULL;
-	tex.e = NULL;
-	tex.w = NULL;
-	tex.d = NULL;
-	tex.x = NULL;
-	tex.c = NULL;
-	tex.f = NULL;
-	tex.i = NULL;
-	tex.j = NULL;
-	hud.l = NULL;
-	hud.k = NULL;
-	hud.p = NULL;
-	hud.n = NULL;
-	hud.b = NULL;
-	hud.s = 0;
+	ft_bzero(&tex, sizeof(tex));
+	ft_bzero(&hud, sizeof(hud));
+	ft_bzero(&err, sizeof(err));
+	ft_bzero(&pos, sizeof(pos));
+	ft_bzero(&dir, sizeof(dir));
 	hud.h = 100;
 	hud.a = 5;
-	hud.f = 0;
 	s.tex = tex;
 	s.hud = hud;
+	s.err = err;
+	s.pos = pos;
+	s.dir = dir;
 	ft_declare(s, cub, bmp);
 }
 
@@ -122,10 +94,10 @@ int		main(void)
 	t_img	img;
 	t_map	map;
 
-	bzero(&mlx, sizeof(mlx));
-	bzero(&win, sizeof(win));
-	bzero(&img, sizeof(img));
-	bzero(&map, sizeof(map));
+	ft_bzero(&mlx, sizeof(mlx));
+	ft_bzero(&win, sizeof(win));
+	ft_bzero(&img, sizeof(img));
+	ft_bzero(&map, sizeof(map));
 	mlx.pid = -1;
 	win.m = 10000;
 	map.f = 1;
