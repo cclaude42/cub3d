@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/20 12:51:04 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/03/05 12:00:25 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,6 +146,19 @@ typedef struct	s_hit
 	char			c;
 }				t_hit;
 
+typedef struct	s_key
+{
+	int				e;
+	int				w;
+	int				a;
+	int				s;
+	int				d;
+	int				l;
+	int				r;
+	int				h;
+	int				x;
+}				t_key;
+
 typedef struct	s_spr
 {
 	double			x;
@@ -177,6 +190,7 @@ typedef struct	s_all
 	t_dir			dir;
 	t_ray			ray;
 	t_hit			hit;
+	t_key			key;
 	t_spr			*spr;
 	t_stk			*stk;
 }				t_all;
@@ -205,7 +219,7 @@ int				ft_mapcheck(t_all *s);
 int				ft_savecheck(char *arg, char *save);
 int				ft_namecheck(char *arg, char *ext);
 
-int				ft_key(int key, void *arg);
+int				ft_key(t_all *s);
 void			ft_rotate(t_all *s, double coeff);
 void			ft_strafe(t_all *s, double coeff);
 void			ft_move(t_all *s, double c);
@@ -214,7 +228,9 @@ int				ft_mouse(int x, int y, t_all *s);
 void			ft_reset(t_all *s);
 void			ft_free(t_all *s);
 int				ft_close(t_all *s, int win);
-void			ft_action(t_all *s);
+int				ft_set(t_all *s, int key, int set);
+int				ft_press(int key, void *arg);
+int				ft_release(int key, void *arg);
 
 void			ft_screen(t_all *s);
 void			ft_ray(t_all *s);

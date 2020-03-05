@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 18:09:58 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/21 14:51:18 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/03/05 12:00:17 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,38 @@ int		ft_close(t_all *s, int win)
 	return (1);
 }
 
-void	ft_action(t_all *s)
+int		ft_set(t_all *s, int key, int set)
 {
-	if (s->hud.f == 0)
-		s->hud.f++;
+	if (key == ESC)
+		s->key.e = set;
+	else if (key == W)
+		s->key.w = set;
+	else if (key == A)
+		s->key.a = set;
+	else if (key == S)
+		s->key.s = set;
+	else if (key == D)
+		s->key.d = set;
+	else if (key == LEFT)
+		s->key.l = set;
+	else if (key == RIGHT)
+		s->key.r = set;
+	else if (key == SHIFT)
+		s->key.h = set;
+	else if (key == SPACE)
+		s->key.x = set;
+	// ft_key(s);
+	return (1);
+}
+
+int		ft_press(int key, void *arg)
+{
+	ft_set(arg, key, 1);
+	return (1);
+}
+
+int		ft_release(int key, void *arg)
+{
+	ft_set(arg, key, 0);
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 19:31:08 by cclaude           #+#    #+#             */
-/*   Updated: 2020/01/20 12:53:18 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/03/05 11:45:37 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,26 +92,29 @@ void	ft_rotate(t_all *s, double c)
 		s->dir.a = 360 - acos(s->dir.x / dist) * 180 / M_PI;
 }
 
-int		ft_key(int key, void *arg)
+int		ft_key(t_all *s)
 {
-	if (key == ESC)
-		ft_close(arg, 1);
-	else if (key == W)
-		ft_move(arg, 1);
-	else if (key == A)
-		ft_strafe(arg, -1);
-	else if (key == S)
-		ft_move(arg, -1);
-	else if (key == D)
-		ft_strafe(arg, 1);
-	else if (key == LEFT)
-		ft_rotate(arg, -1);
-	else if (key == RIGHT)
-		ft_rotate(arg, 1);
-	else if (key == SHIFT)
-		ft_open(arg);
-	else if (key == SPACE)
-		ft_action(arg);
-	ft_draw(arg);
+	if (s->key.e)
+		ft_close(s, 1);
+	if (s->key.w)
+		ft_move(s, 1);
+	if (s->key.a)
+		ft_strafe(s, -1);
+	if (s->key.s)
+		ft_move(s, -1);
+	if (s->key.d)
+		ft_strafe(s, 1);
+	if (s->key.l)
+		ft_rotate(s, -1);
+	if (s->key.r)
+		ft_rotate(s, 1);
+	if (s->key.h)
+		ft_open(s);
+	if (s->key.x)
+	{
+		if (s->hud.f == 0)
+			s->hud.f++;
+	}
+	ft_draw(s);
 	return (1);
 }

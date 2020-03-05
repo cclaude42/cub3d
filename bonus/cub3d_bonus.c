@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:00:04 by cclaude           #+#    #+#             */
-/*   Updated: 2020/02/04 12:49:49 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/03/05 12:28:27 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,35 +56,32 @@ int		ft_cubed(t_all s, char *cub, int bmp)
 		return (ft_bitmap(&s));
 	s.win.ptr = mlx_new_window(s.mlx.ptr, s.win.x, s.win.y, "cub3D");\
 	ft_draw(&s);
-	mlx_hook(s.win.ptr, 2, 0, ft_key, &s);
+	mlx_hook(s.win.ptr, 2, 0, ft_press, &s);
+	mlx_hook(s.win.ptr, 3, 0, ft_release, &s);
 	mlx_hook(s.win.ptr, 6, 0, ft_mouse, &s);
 	mlx_hook(s.win.ptr, 17, 0, ft_close, &s);
-	mlx_loop_hook(s.mlx.ptr, ft_draw, &s);
+	mlx_loop_hook(s.mlx.ptr, ft_key, &s);
 	mlx_loop(s.mlx.ptr);
 	return (1);
 }
 
 void	ft_declare(t_all s, char *cub, int bmp)
 {
-	t_map	map;
 	t_spr	*spr;
 	t_stk	*stk;
 	t_err	err;
+	t_key	key;
 
-	map.tab = NULL;
 	spr = NULL;
 	stk = NULL;
 	err.n = 0;
 	err.m = 0;
 	err.p = 0;
-	map.x = 0;
-	map.y = 0;
-	map.spr = 0;
-	map.f = 1;
-	s.map = map;
+	bzero(&key, sizeof(key));
 	s.spr = spr;
 	s.stk = stk;
 	s.err = err;
+	s.key = key;
 	ft_cubed(s, cub, bmp);
 }
 
@@ -123,20 +120,20 @@ int		main(void)
 	t_mlx	mlx;
 	t_win	win;
 	t_img	img;
+	t_map	map;
 
-	mlx.ptr = NULL;
-	win.ptr = NULL;
-	img.ptr = NULL;
-	img.adr = NULL;
+	bzero(&mlx, sizeof(mlx));
+	bzero(&win, sizeof(win));
+	bzero(&img, sizeof(img));
+	bzero(&map, sizeof(map));
 	mlx.pid = -1;
-	win.x = 0;
-	win.y = 0;
 	win.m = 10000;
-	img.fsh = 0;
+	map.f = 1;
 	mlx.pid = fork();
 	s.mlx = mlx;
 	s.win = win;
 	s.img = img;
+	s.map = map;
 	(mlx.pid == 0) ? system("afplay ./bonus/sound/music.mp3") : 0;
 	(mlx.pid != 0) ? ft_init(s, "bonus/maps/first.cubonus", 0) : 0;
 	return (0);
